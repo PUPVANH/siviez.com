@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.siviez.com"
+        }
+      ],
+      "destination": "https://siviez.com",
+      "permanent": true
+    }
+  ]
+}

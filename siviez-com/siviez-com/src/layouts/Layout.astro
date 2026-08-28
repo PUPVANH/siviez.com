@@ -1,0 +1,65 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Siviez · The gateway to the 4 Vallées · Swiss Alps',
+  description = 'Discover Siviez — hidden alpine hamlet at 1730m in Valais, Switzerland. Gateway to the 4 Vallées ski area (410 km slopes), 8 bisses de Nendaz, and Lac de Cleuson. Home to Rosablanche C34, a ski-in apartment for 7.',
+  ogImage = 'https://siviez.com/lac-de-cleuson-hero.jpg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:locale" content="nl_BE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="/lac-de-cleuson-hero.jpg" media="(min-width: 701px)" />
+  <link rel="preload" as="image" href="/lac-de-cleuson-med.jpg" media="(max-width: 700px)" />
+
+  <Analytics />
+</head>
+<body>
+  <slot />
+</body>
+</html>

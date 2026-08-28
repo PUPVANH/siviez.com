@@ -1,0 +1,233 @@
+================================================================
+SIVIEZ.COM · Astro Project Setup
+================================================================
+
+Dit pakket bevat een volledig Astro project voor siviez.com.
+Onderstaande stappen leiden je van 0 naar live in ± 30 minuten.
+
+Als iets niet lukt, stop en meld het — ik help je verder.
+
+
+================================================================
+STAP 1 · GITHUB REPO AANMAKEN (5 min)
+================================================================
+
+1. Ga naar github.com → login met je account
+2. Klik rechtsboven op het "+" icoon → "New repository"
+3. Vul in:
+     Repository name : siviez-com
+     Description     : Travel guide to Siviez and Rosablanche C34
+     Visibility      : Public (of Private, jouw keuze)
+     ⚠️ VINK NIETS AAN bij "Initialize this repository with"
+        (Geen README, geen .gitignore, geen license)
+4. Klik "Create repository"
+
+De repo is nu leeg en je ziet een pagina met git-instructies.
+Laat dit tabblad even open — je hebt de repo URL zo nodig.
+
+
+================================================================
+STAP 2 · MAP UITPAKKEN + LOKAAL KLAARZETTEN (5 min)
+================================================================
+
+1. Pak deze zip volledig uit, ergens waar je hem terugvindt
+   (bv. Documents/siviez-com)
+
+2. Verifieer de mapstructuur — het moet er zo uitzien:
+
+   siviez-com/
+   ├── .gitignore
+   ├── LEESMIJ.txt        (dit bestand)
+   ├── README.md
+   ├── astro.config.mjs
+   ├── package.json
+   ├── vercel.json
+   ├── public/
+   │   ├── favicon.svg
+   │   ├── lac-de-cleuson-hero.jpg
+   │   └── lac-de-cleuson-med.jpg
+   └── src/
+       ├── layouts/
+       │   └── Layout.astro
+       ├── pages/
+       │   └── index.astro
+       └── styles/
+           └── global.css
+
+
+================================================================
+STAP 3 · GITHUB DESKTOP · UPLOAD NAAR GITHUB (5 min)
+================================================================
+
+1. Open GitHub Desktop
+2. File → "Add local repository"
+3. Kies de map "siviez-com" die je in stap 2 uitpakte
+4. GitHub Desktop zal zeggen: "This directory does not appear
+   to be a Git repository. Would you like to create a
+   repository here?"
+   → Klik JA / "create a repository"
+
+5. In het venster dat opent:
+     Name        : siviez-com
+     Description : Travel guide to Siviez and Rosablanche C34
+     Local Path  : (staat al goed)
+     Git Ignore  : None (we hebben er al een)
+     License     : None
+   → Klik "Create Repository"
+
+6. Rechts zie je alle bestanden als "changes"
+7. Onderaan links: typ als commit message:
+     Initial pre-launch site
+8. Klik "Commit to main"
+
+9. Bovenaan zie je "Publish repository" — klik daarop
+10. Vul in:
+     Name        : siviez-com (al ingevuld)
+     Description : Travel guide to Siviez and Rosablanche C34
+     ⚠️ Vink UIT "Keep this code private" als je Public wil
+       (of laat aan voor Private — beide werkt)
+11. Klik "Publish Repository"
+
+Refresh nu je GitHub-tab in de browser (van stap 1) → je ziet
+alle bestanden staan in de repo. 🎉
+
+
+================================================================
+STAP 4 · VERCEL · NIEUW PROJECT AANMAKEN (5 min)
+================================================================
+
+1. Ga naar vercel.com → login
+2. Klik op "Add New..." → "Project" (rechtsboven op je dashboard)
+3. Onder "Import Git Repository" zie je je GitHub repos
+   → Zoek "siviez-com" → klik "Import"
+
+4. Op de "Configure Project" pagina:
+     Project Name       : siviez-com (al ingevuld)
+     Framework Preset   : Astro (wordt automatisch gedetecteerd)
+     Root Directory     : ./ (al goed)
+     Build & Output     : laat de defaults staan
+     Environment Vars   : geen
+
+5. Klik "Deploy"
+
+Vercel bouwt en deployt (± 1 minuut). Je krijgt een tijdelijke
+URL zoals siviez-com-xxx.vercel.app. Klik erop om te testen.
+
+Als de site laadt met de Lac de Cleuson foto → alles werkt ✅
+
+
+================================================================
+STAP 5 · SIVIEZ.COM DOMAIN VERHUIZEN (5 min)
+================================================================
+
+Nu de site draait op de tijdelijke URL, verhuis siviez.com
+van het huidige PUPVANH-project naar dit nieuwe siviez-com project.
+
+⚠️ Belangrijk: je moet siviez.com EERST loskoppelen van PUPVANH
+   VOOR je het kunt koppelen aan siviez-com.
+
+5A · Loskoppelen van PUPVANH:
+     1. Vercel Dashboard → open PUPVANH project
+     2. Settings → Domains
+     3. Vind "siviez.com" in de lijst
+     4. Klik op de "..." (drie puntjes) → "Remove Domain"
+     5. Bevestig
+
+5B · Koppelen aan siviez-com:
+     1. Vercel Dashboard → open siviez-com project
+     2. Settings → Domains
+     3. Klik "Add"
+     4. Typ: siviez.com → Add
+     5. Vercel zegt "Configuring..." → wacht ± 30 seconden
+     6. Groen vinkje ✅
+
+5C · Ook www toevoegen:
+     1. Zelfde plek, klik "Add" opnieuw
+     2. Typ: www.siviez.com → Add
+     3. Kies "Redirect to siviez.com" (Vercel biedt dit aan)
+
+
+================================================================
+STAP 6 · TESTEN (2 min)
+================================================================
+
+Wacht 1-2 minuten na de domain-verhuizing, dan test:
+
+1. Open siviez.com in de browser → moet de nieuwe pre-launch
+   tonen (Lac de Cleuson foto, "Siviez" titel)
+2. Open www.siviez.com → moet doorsturen naar siviez.com
+3. Test op mobiel (via je telefoon)
+4. Test taalwissel NL / EN / FR
+5. Klik "Boek op Airbnb" → gaat naar Airbnb
+6. Klik "Volg @siviez" → gaat naar Instagram
+7. Klik "PUPVANH Projects →" in footer → gaat naar pupvanh.vercel.app
+
+Als alles werkt → 🎉 je site is live!
+
+
+================================================================
+STAP 7 · WAT NOG TE DOEN NADIEN (later, apart)
+================================================================
+
+Deze zijn NIET nodig om nu live te zijn. Voor volgende cyclus:
+
+□ 301 redirect van pupvanh.vercel.app/siviez naar siviez.com
+   (in PUPVANH project — voorkomt dubbele content voor Google)
+
+□ Siviez-link in PUPVANH nav aanpassen naar siviez.com
+   (met externe-link icoontje ↗)
+
+□ FeedIndex / FeaturedSplit in PUPVANH homepage bijwerken
+
+□ Instagram bio updaten met "siviez.com" als link
+
+□ Google Search Console setup voor siviez.com
+   (submit sitemap zodra multi-page bestaat)
+
+□ Meer content bouwen: /hiking, /skiing, /apartment, /village
+   (kunnen we in aparte cyclus doen)
+
+
+================================================================
+STAP 8 · UPDATES DOORVOEREN IN DE TOEKOMST
+================================================================
+
+Zodra alles draait, hoef je voor elke wijziging alleen:
+
+1. In GitHub Desktop:
+   - Wijzigingen zichtbaar in "Changes"
+   - Commit met een korte omschrijving
+   - Click "Push origin"
+
+2. Vercel deploy automatisch (± 30 sec)
+
+Voor code-wijzigingen: stuur me het huidige bestand op
+(zoals altijd), ik lever een nieuwe versie in zip.
+
+
+================================================================
+KLEUR & LETTERTYPES · voor eigen aanpassingen later
+================================================================
+
+Kleuren zitten in src/styles/global.css als CSS variabelen:
+  --teal   : #0E6B6F (Alpine Teal)
+  --gold   : #C8A35F (Champagne Gold)
+  --ember  : #E85D2F (Ember Orange · CTA's)
+  --ivory  : #F4F0E8 (Ivory · tekst)
+  --forest : #1E3A34 (Deep Forest · achtergrond)
+  --deep   : #0F2622 (Very Dark · footer)
+
+Fonts (Google Fonts, geladen in Layout.astro):
+  - Playfair Display (titels, cursief accenten)
+  - JetBrains Mono   (labels, mono kleine tekst)
+  - Inter            (body)
+
+
+================================================================
+VRAGEN OF PROBLEMEN?
+================================================================
+
+Blokkeert iets? Klop het aan bij mij in Claude en stuur
+zo mogelijk een screenshot mee. Ik help je verder.
+
+Veel succes met de launch 🏔️
