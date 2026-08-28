@@ -53,8 +53,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     rel="stylesheet"
   />
 
-  <!-- Preload hero image for LCP -->
-  <link rel="preload" as="image" href="/lac-de-cleuson-hero.jpg" media="(min-width: 701px)" />
+  <!-- Preload hero image for LCP - different image per viewport -->
+  <link rel="preload" as="image" href="/lac-de-cleuson-wide.jpg" media="(min-width: 901px)" />
+  <link rel="preload" as="image" href="/lac-de-cleuson-hero.jpg" media="(min-width: 701px) and (max-width: 900px)" />
   <link rel="preload" as="image" href="/lac-de-cleuson-med.jpg" media="(max-width: 700px)" />
 
   <Analytics />
