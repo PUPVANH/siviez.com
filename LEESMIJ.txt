@@ -1,0 +1,222 @@
+================================================================
+SIVIEZ.COM · Astro-project · Lokaal draaien én online zetten
+================================================================
+
+Wat zit erin:
+  · Homepage (siviez.com) — pre-launch met Lac de Cleuson hero
+  · /appartement — volledige subpagina met SEO, UTM tracking, JSON-LD
+  · Alle stijlen, foto's, favicon, config
+
+Deze zip is klaar om:
+  1) LOKAAL te draaien op je PC (aan te raden voor snel iteraties)
+  2) ONLINE te zetten via GitHub → Vercel
+
+
+================================================================
+DEEL 1 · LOKAAL DRAAIEN OP JE PC
+================================================================
+
+Stap 1: Node.js installeren (eenmalig, als je het nog niet hebt)
+─────────────────────────────────────────────────────────
+1. Ga naar https://nodejs.org
+2. Klik op de groene "LTS" knop (Long Term Support versie)
+3. Download en installeer met alle standaard opties
+4. Herstart je PC (belangrijk!)
+
+Controleer of het gelukt is:
+  · Open PowerShell (Windows) of Terminal (Mac)
+  · Typ: node --version
+  · Er moet een versienummer verschijnen zoals v20.10.0
+  · Typ: npm --version
+  · Ook hier een versienummer zoals 10.2.3
+
+Als er "not recognized" verschijnt: Node.js is niet correct
+geïnstalleerd, herstart en probeer opnieuw.
+
+
+Stap 2: De site klaarzetten
+─────────────────────────────────────────────────────────
+1. Pak deze zip uit ergens waar je hem gemakkelijk terugvindt
+   Aanbevolen: C:\Projects\siviez.com (Windows)
+                /Users/[jouwnaam]/Projects/siviez.com (Mac)
+
+2. Open PowerShell (Windows) of Terminal (Mac)
+
+3. Navigeer naar die map:
+   Windows: cd C:\Projects\siviez.com
+   Mac:     cd ~/Projects/siviez.com
+
+4. Installeer alle dependencies (eenmalig, duurt 1-2 min):
+   npm install
+
+   Je ziet veel tekst voorbij scrollen. Wacht tot je terug bij de
+   prompt bent. Als er waarschuwingen zijn is dat OK, alleen bij
+   ECHTE ERROR moet je stoppen.
+
+
+Stap 3: De site starten
+─────────────────────────────────────────────────────────
+Typ in dezelfde terminal:
+   npm run dev
+
+Je ziet:
+   🚀 astro v4.x.x started in xxx ms
+   ┃ Local    http://localhost:4321/
+   ┃ Network  use --host to expose
+
+Open je browser en ga naar:
+   http://localhost:4321      (homepage)
+   http://localhost:4321/appartement  (appartement pagina)
+
+Wijzigen ondertussen? Sla het bestand op → de browser refresht
+zichzelf. Geen restart nodig.
+
+Stoppen? Druk Ctrl+C in de terminal.
+
+
+================================================================
+DEEL 2 · ONLINE ZETTEN (via GitHub → Vercel)
+================================================================
+
+Alleen doen als je klaar bent om te publiceren.
+
+Optie A · Via GitHub Desktop (aanbevolen, visueel):
+─────────────────────────────────────────────────────────
+1. Open GitHub Desktop
+2. File → "Clone repository..." → kies PUPVANH/siviez.com
+3. Kopieer al deze bestanden (behalve node_modules en LEESMIJ.txt)
+   naar de gekloonde map
+4. GitHub Desktop toont welke bestanden gewijzigd zijn
+5. Onderaan: typ commit message "Add /appartement page + UTM tracking"
+6. Klik "Commit to main"
+7. Klik "Push origin"
+8. Vercel deployt automatisch binnen 30 seconden
+
+Optie B · Via GitHub web editor:
+─────────────────────────────────────────────────────────
+1. Ga naar github.com/PUPVANH/siviez.com
+2. Voor elk nieuw/gewijzigd bestand:
+   · Klik "Add file" → "Upload files" of navigeer naar bestand
+   · Sleep het bestand erin of edit inhoud
+   · Commit changes
+3. Vercel deployt automatisch
+
+
+================================================================
+DEEL 3 · STRUCTUUR van het project
+================================================================
+
+siviez.com/
+├── public/                     Statische bestanden (foto's, favicon)
+│   ├── favicon.svg
+│   ├── lac-de-cleuson-hero.jpg    (portrait, tablet)
+│   ├── lac-de-cleuson-med.jpg     (portrait, mobiel)
+│   └── lac-de-cleuson-wide.jpg    (landscape, desktop)
+│
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro        Layout voor homepage
+│   ├── pages/
+│   │   ├── index.astro         Homepage (siviez.com/)
+│   │   └── appartement.astro   Appartement (siviez.com/appartement) ⭐ NIEUW
+│   └── styles/
+│       └── global.css          Globale stijlen voor homepage
+│
+├── astro.config.mjs            Astro configuratie
+├── package.json                Dependencies + scripts
+├── vercel.json                 Vercel deployment config
+├── .gitignore                  Wat GitHub moet negeren
+└── README.md                   Korte projectinfo
+
+
+================================================================
+DEEL 4 · WAT NIEUW IS TOV ONLINE VERSIE
+================================================================
+
+NIEUW BESTAND:
+  src/pages/appartement.astro  — volledige /appartement pagina
+
+Wat de nieuwe pagina bevat:
+  ✓ Text-hero (zoals originele /siviez op pupvanh)
+  ✓ Reveal-on-scroll navigatie (verschijnt bij scrollen)
+  ✓ 15 secties: hero, marquee, about, seizoenen, waarom hier,
+    kamers, wandelingen, rondom Siviez, picks, praktisch,
+    aankomst, reviews, FAQ, final CTA, footer
+  ✓ NL/EN/FR meertaligheid met JS switcher
+  ✓ Vercel Analytics geïntegreerd
+  ✓ UTM parameters op ALLE Airbnb links:
+    · nav_button          (nav rechtsboven)
+    · hero_button          (hero primary CTA)
+    · cta_strip_apartment  (na apartment sectie)
+    · final_cta            (Klaar voor de bergen?)
+    · floating_widget      (drijvende Boek-knop)
+  ✓ Custom tracking events (event: airbnb_nav, airbnb_hero, etc.)
+  ✓ VacationRental JSON-LD schema (voor Google rich results)
+  ✓ FAQPage JSON-LD schema (voor Google FAQ direct in resultaten)
+  ✓ Beschrijvende alt-teksten op alle foto's
+  ✓ H1 uniek: "Rosablanche C34"
+  ✓ Canonical URL, OG tags, alternate hreflang locales
+
+
+================================================================
+DEEL 5 · UTM TRACKING & VERCEL ANALYTICS
+================================================================
+
+Elke Airbnb-link heeft nu unieke UTM tags. Zodra siviez.com/appartement
+online staat, kan je in Vercel Dashboard zien:
+
+Vercel Dashboard → siviez project → Analytics tab
+
+Wat je ziet:
+1. "Outbound Links" sectie:
+   Toont welke URLs naar Airbnb worden geklikt, inclusief
+   utm_campaign parameter zodat je precies weet WELKE knop.
+   
+   Bijvoorbeeld:
+   airbnb.com/rooms/10012437?utm_campaign=hero_button    → 45 clicks
+   airbnb.com/rooms/10012437?utm_campaign=floating_widget → 78 clicks
+
+2. "Events" sectie:
+   Custom events per klik (airbnb_hero, airbnb_float, etc)
+   met extra metadata (campaign, source, page).
+
+3. "Top Pages" sectie:
+   Welke pagina's bekeken, referral bronnen, geografie.
+
+
+Voor Instagram bio kan je nu ook UTM gebruiken:
+   siviez.com?utm_source=instagram&utm_medium=bio
+
+Voor Instagram Reels (post-per-post):
+   siviez.com?utm_source=instagram&utm_medium=reel&utm_campaign=lac_cleuson_reel
+
+
+================================================================
+DEEL 6 · TROUBLESHOOTING
+================================================================
+
+Probleem: "npm not recognized" of "node not recognized"
+  → Node.js is niet correct geïnstalleerd of PC niet herstart.
+  → Installeer opnieuw en herstart.
+
+Probleem: npm install faalt met "EACCES" of permission errors
+  → Windows: open PowerShell als administrator
+  → Mac: gebruik: sudo npm install
+
+Probleem: Poort 4321 al in gebruik
+  → Waarschijnlijk draait er nog een oude sessie.
+  → Zoek en sluit die terminal, of gebruik: npm run dev -- --port 3000
+
+Probleem: Foto's laden niet op appartement pagina
+  → De foto's worden gelaad van pupvanh.vercel.app.
+  → Controleer je internet, of check of pupvanh nog online staat.
+
+Probleem: Wijzigingen zichtbaar niet in browser
+  → Harde refresh: Ctrl+Shift+R (Windows) of Cmd+Shift+R (Mac)
+  → Of check terminal voor error messages
+
+Probleem: Iets werkt niet zoals verwacht
+  → Deel screenshot + error message met Claude in chat.
+
+
+================================================================
