@@ -1,6 +1,4 @@
 ---
-// Herbruikbare nav voor alle siviez.com pagina's
-// Hike · Ski · Discover · Stay + Logo
 const pathname = Astro.url.pathname;
 const isHomepage = pathname === '/' || pathname === '';
 const isHike = pathname.startsWith('/hike');
@@ -11,14 +9,25 @@ const isStay = pathname.startsWith('/appartement');
 <nav class="siviez-nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand" aria-label="Siviez.com home">
-      <img src="/logo/SIVIEZ_com.svg" alt="SIVIEZ.com" class="nav-logo" width="140" height="41" />
+      <svg class="brand-mountain" width="42" height="20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path
+          d="M 4 34 L 22 22 L 32 32 L 44 8 L 56 30 L 68 18 L 82 32 L 96 34"
+          stroke="currentColor"
+          stroke-width="2.4"
+          fill="none"
+          stroke-linejoin="miter"
+          stroke-linecap="square"/>
+      </svg>
+      <span class="brand-text">SIVIEZ<em>.com</em></span>
     </a>
+
     <ul class="nav-links">
       <li><a href="/hike" class={isHike ? 'active' : ''}>Hike</a></li>
       <li><a href="/ski" class={isSki ? 'active' : ''}>Ski</a></li>
       <li><a href="/" class={isHomepage ? 'active' : ''}>Discover</a></li>
       <li><a href="/appartement" class={isStay ? 'active' : ''}>Stay</a></li>
     </ul>
+
     <div class="nav-lang">
       <button data-lang="nl" class="active">NL</button>
       <button data-lang="en">EN</button>
@@ -29,95 +38,67 @@ const isStay = pathname.startsWith('/appartement');
 
 <style>
   .siviez-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(15, 38, 34, 0.65);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
     border-bottom: 1px solid rgba(200, 163, 95, 0.15);
   }
   .nav-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 32px;
-    gap: 20px;
+    max-width: 1400px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 32px; gap: 20px;
   }
   .nav-brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    text-decoration: none;
-    line-height: 0;
+    display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0; text-decoration: none;
+    color: #F4F0E8; line-height: 1;
   }
-  .nav-logo {
-    height: 32px;
-    width: auto;
-    display: block;
+  .brand-mountain { color: #F4F0E8; display: block; }
+  .brand-text {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 20px; font-weight: 400;
+    letter-spacing: -0.01em; line-height: 1;
+  }
+  .brand-text em {
+    font-style: italic; color: #C8A35F; font-weight: 400;
   }
   .nav-links {
-    display: flex;
-    gap: 2px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex: 1;
-    justify-content: center;
+    display: flex; gap: 2px; list-style: none;
+    margin: 0; padding: 0; flex: 1; justify-content: center;
   }
   .nav-links li { list-style: none; }
   .nav-links a {
     display: block;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(244, 240, 232, 0.68);
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 999px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(244, 240, 232, 0.68); text-decoration: none;
+    padding: 8px 14px; border-radius: 999px;
     transition: color 0.2s ease, background 0.2s ease;
     white-space: nowrap;
   }
-  .nav-links a:hover {
-    color: #F4F0E8;
-    background: rgba(200, 163, 95, 0.1);
-  }
+  .nav-links a:hover { color: #F4F0E8; background: rgba(200, 163, 95, 0.1); }
   .nav-links a.active { color: #C8A35F; }
-  .nav-lang {
-    display: flex;
-    gap: 0;
-    flex-shrink: 0;
-  }
+  .nav-lang { display: flex; gap: 0; flex-shrink: 0; }
   .nav-lang button {
-    background: none;
-    border: none;
-    color: rgba(244, 240, 232, 0.45);
-    padding: 6px 6px;
-    cursor: pointer;
+    background: none; border: none;
+    color: rgba(244, 240, 232, 0.45); padding: 6px 6px; cursor: pointer;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 10px; letter-spacing: 1px;
     transition: color 0.2s ease;
   }
   .nav-lang button:hover { color: #F4F0E8; }
-  .nav-lang button.active {
-    color: #C8A35F;
-    font-weight: 500;
-  }
+  .nav-lang button.active { color: #C8A35F; font-weight: 500; }
 
-  /* Mobile */
   @media (max-width: 640px) {
-    .nav-inner { padding: 10px 16px; gap: 8px; }
-    .nav-logo { height: 24px; }
+    .nav-inner { padding: 12px 16px; gap: 8px; }
+    .nav-brand { gap: 8px; }
+    .brand-mountain { width: 30px; height: 14px; }
+    .brand-text { font-size: 16px; }
     .nav-links a { padding: 6px 8px; font-size: 10px; letter-spacing: 1px; }
     .nav-lang button { padding: 4px 4px; font-size: 9px; }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 400px) {
     .nav-lang { display: none; }
   }
 </style>
