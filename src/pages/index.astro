@@ -5,189 +5,392 @@ import SiviezNav from '../components/SiviezNav.astro';
 
 <Layout>
   <SiviezNav />
+
   <section class="hero">
-
-    <div class="center">
-      <div class="eyebrow" data-i18n="eyebrow">Valais · Zwitserse Alpen</div>
-
+    <div class="hero-inner">
+      <div class="kicker" data-i18n="hero.kicker">Valais · Swiss Alps</div>
       <h1>Siviez</h1>
-      <div class="altitude" data-i18n="altitude">1730m in de bergen</div>
-
-      <p class="tagline" data-i18n-html="tagline">
-        Waar de <em>4 Vallées</em> beginnen. Turquoise meren, oude bisses en 400 km pistes voor de deur.
+      <div class="hero-tag" data-i18n="hero.tag">1730m up in the mountains</div>
+      <p class="hero-lede">
+        <span data-i18n="hero.lede.a">Where the</span>
+        <em>4 Vallées</em>
+        <span data-i18n="hero.lede.b">begin. Turquoise lakes, ancient bisses and 400 km of pistes right outside.</span>
       </p>
 
-      <div class="info-strip">
-        <div class="info-item">
-          <div class="info-value">1730</div>
-          <div class="info-label" data-i18n="info.altitude">Altitude</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">1730</div>
+          <div class="stat-label" data-i18n="stat.altitude">Altitude</div>
         </div>
-        <div class="info-item">
-          <div class="info-value">410</div>
-          <div class="info-label" data-i18n="info.slopes">km pistes</div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="stat-value">410</div>
+          <div class="stat-label" data-i18n="stat.slopes">Km slopes</div>
         </div>
-        <div class="info-item">
-          <div class="info-value">8</div>
-          <div class="info-label" data-i18n="info.bisses">Bisses</div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="stat-value">8</div>
+          <div class="stat-label" data-i18n="stat.bisses">Bisses</div>
         </div>
-        <div class="info-item">
-          <div class="info-value">3336</div>
-          <div class="info-label" data-i18n="info.peak">Piek</div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <div class="stat-value">3336</div>
+          <div class="stat-label" data-i18n="stat.peak">Peak</div>
         </div>
       </div>
 
-      <div class="two-cards">
-
-        <div class="card">
-          <div class="card-label" data-i18n="card1.label">Ontdek</div>
-          <div class="card-title" data-i18n-html="card1.title">Siviez <em>gids</em></div>
-          <div class="card-credit" data-i18n-html="card1.credit">
-            Een online reisgids door <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects</a>
-          </div>
-          <p class="card-body" data-i18n="card1.body">
-            Wandelroutes, ski-info, dorp en lokale tips over Siviez, Nendaz en de 4 Vallées. Volg de bouw van de site op Instagram.
+      <div class="cards">
+        <a href="/hike" class="card">
+          <div class="card-label" data-i18n="card.hike.label">Hike</div>
+          <h3 class="card-title">Hike <em>guide</em></h3>
+          <div class="card-credit" data-i18n="card.hike.credit">Trails, bisses & alpine lakes</div>
+          <p class="card-body" data-i18n="card.hike.body">
+            The Combatselina to Cleuson dam classic, the bisses de Nendaz, and every route around Rosablanche.
           </p>
-          <a href="https://www.instagram.com/siviez" class="card-link" target="_blank" rel="noopener">
-            <span data-i18n="card1.cta">Volg @siviez</span>
-            <span class="arrow">↗</span>
-          </a>
-        </div>
+          <div class="card-cta" data-i18n="card.hike.cta">Explore trails →</div>
+        </a>
 
-        <div class="card">
-          <div class="card-label" data-i18n="card2.label">Verblijf</div>
-          <div class="card-title">Rosablanche <em>C34</em></div>
-          <div class="card-credit" data-i18n="card2.credit">Ski-in / ski-out · Slaapt 7</div>
-          <p class="card-body" data-i18n="card2.body">
-            Een ruim berg­appartement in het hart van Siviez. Volwaardige slaapkamer, zuidgericht terras, gratis parking en de piste voor de deur.
+        <a href="/ski" class="card">
+          <div class="card-label" data-i18n="card.ski.label">Ski</div>
+          <h3 class="card-title">Ski <em>the 4 Vallées</em></h3>
+          <div class="card-credit" data-i18n="card.ski.credit">410 km · ski-in/ski-out</div>
+          <p class="card-body" data-i18n="card.ski.body">
+            One of the largest ski areas in the world, straight from the doorstep. Mont Fort at 3330m.
           </p>
-          <a href="/appartement" class="card-link emphasis">
-            <span data-i18n="card2.cta">Meer info →</span>
-            <span class="arrow">→</span>
-          </a>
-        </div>
+          <div class="card-cta" data-i18n="card.ski.cta">See the pistes →</div>
+        </a>
 
-      </div>
-    </div>
+        <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="card">
+          <div class="card-label" data-i18n="card.discover.label">Discover</div>
+          <h3 class="card-title">Siviez <em>guide</em></h3>
+          <div class="card-credit" data-i18n="card.discover.credit">An online travel guide by PUPVANH Projects</div>
+          <p class="card-body" data-i18n="card.discover.body">
+            Hiking routes, ski info, village and local tips. Follow the build on Instagram.
+          </p>
+          <div class="card-cta" data-i18n="card.discover.cta">Follow @siviez ↗</div>
+        </a>
 
-    <div class="bottom">
-      <div class="coming-soon">
-        <div class="pulse"></div>
-        <span data-i18n="coming">Volledige gids komt eraan</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="2" y="2" width="20" height="20" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="18" cy="6" r="1" fill="currentColor" />
-          </svg>
-          <span>@siviez</span>
+        <a href="/appartement" class="card card-emphasis">
+          <div class="card-label" data-i18n="card.stay.label">Stay</div>
+          <h3 class="card-title">Rosablanche <em>C34</em></h3>
+          <div class="card-credit" data-i18n="card.stay.credit">Ski-in / ski-out · sleeps 7</div>
+          <p class="card-body" data-i18n="card.stay.body">
+            A spacious mountain apartment in the heart of Siviez. South-facing terrace, free parking and the slopes at your door.
+          </p>
+          <div class="card-cta" data-i18n="card.stay.cta">Read more →</div>
         </a>
       </div>
     </div>
-
   </section>
-
-  <footer>
-    <div class="footer-line-1">© 2026 · Hosted by Luc</div>
-    <div class="footer-line-2">
-      BUILT AUG 2026<span class="dot">·</span>UPDATED AUG 2026<span class="dot">·</span>Siviez.com<span class="dot">·</span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a>
-    </div>
-  </footer>
-
-  <script is:inline>
-    const i18n = {
-      nl: {
-        "eyebrow": "Valais · Zwitserse Alpen",
-        "altitude": "1730m in de bergen",
-        "tagline": "Waar de <em>4 Vallées</em> beginnen. Turquoise meren, oude bisses en 400 km pistes voor de deur.",
-        "info.altitude": "Altitude",
-        "info.slopes": "km pistes",
-        "info.bisses": "Bisses",
-        "info.peak": "Piek",
-        "card1.label": "Ontdek",
-        "card1.title": "Siviez <em>gids</em>",
-        "card1.credit": "Een online reisgids door <a href='https://pupvanh.vercel.app' target='_blank' rel='noopener'>PUPVANH Projects</a>",
-        "card1.body": "Wandelroutes, ski-info, dorp en lokale tips over Siviez, Nendaz en de 4 Vallées. Volg de bouw van de site op Instagram.",
-        "card1.cta": "Volg @siviez",
-        "card2.label": "Verblijf",
-        "card2.credit": "Ski-in / ski-out · Slaapt 7",
-        "card2.body": "Een ruim berg­appartement in het hart van Siviez. Volwaardige slaapkamer, zuidgericht terras, gratis parking en de piste voor de deur.",
-        "card2.cta": "Meer info →",
-        "coming": "Volledige gids komt eraan"
-      },
-      en: {
-        "eyebrow": "Valais · Swiss Alps",
-        "altitude": "1730m up in the mountains",
-        "tagline": "Where the <em>4 Vallées</em> begin. Turquoise lakes, ancient bisses and 400 km of pistes right outside.",
-        "info.altitude": "Altitude",
-        "info.slopes": "km slopes",
-        "info.bisses": "Bisses",
-        "info.peak": "Peak",
-        "card1.label": "Discover",
-        "card1.title": "Siviez <em>guide</em>",
-        "card1.credit": "An online travel guide by <a href='https://pupvanh.vercel.app' target='_blank' rel='noopener'>PUPVANH Projects</a>",
-        "card1.body": "Hiking routes, ski info, village and local tips about Siviez, Nendaz and the 4 Vallées. Follow the build on Instagram.",
-        "card1.cta": "Follow @siviez",
-        "card2.label": "Stay",
-        "card2.credit": "Ski-in / ski-out · Sleeps 7",
-        "card2.body": "A spacious mountain apartment in the heart of Siviez. A proper bedroom, south-facing terrace, free parking and the slopes at your door.",
-        "card2.cta": "Read more →",
-        "coming": "Full guide coming soon"
-      },
-      fr: {
-        "eyebrow": "Valais · Alpes suisses",
-        "altitude": "1730m en pleine montagne",
-        "tagline": "Là où commencent les <em>4 Vallées</em>. Lacs turquoise, bisses centenaires et 400 km de pistes au pas de la porte.",
-        "info.altitude": "Altitude",
-        "info.slopes": "km de pistes",
-        "info.bisses": "Bisses",
-        "info.peak": "Sommet",
-        "card1.label": "Découvrir",
-        "card1.title": "Guide de <em>Siviez</em>",
-        "card1.credit": "Un guide en ligne par <a href='https://pupvanh.vercel.app' target='_blank' rel='noopener'>PUPVANH Projects</a>",
-        "card1.body": "Randonnées, ski, village et astuces locales sur Siviez, Nendaz et les 4 Vallées. Suivez la construction sur Instagram.",
-        "card1.cta": "Suivre @siviez",
-        "card2.label": "Séjourner",
-        "card2.credit": "Ski aux pieds · Jusqu'à 7 personnes",
-        "card2.body": "Un appartement de montagne spacieux au cœur de Siviez. Une vraie chambre, terrasse plein sud, parking gratuit et la piste devant la porte.",
-        "card2.cta": "En savoir plus →",
-        "coming": "Guide complet en préparation"
-      }
-    };
-
-    function setLang(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (i18n[lang][key]) el.textContent = i18n[lang][key];
-      });
-      document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
-      });
-      document.querySelectorAll('.lang-toggle button').forEach(b => {
-        b.classList.toggle('active', b.dataset.lang === lang);
-      });
-      try { localStorage.setItem('siviez-lang', lang); } catch(e) {}
-    }
-
-    document.querySelectorAll('.lang-toggle button').forEach(b => {
-      b.addEventListener('click', () => setLang(b.dataset.lang));
-    });
-
-    // Luister ook naar taalwissel events uit SiviezNav
-    window.addEventListener('siviez-lang-change', (e) => setLang(e.detail.lang));
-
-    let initial = 'nl';
-    try {
-      const stored = localStorage.getItem('siviez-lang');
-      if (stored && i18n[stored]) initial = stored;
-      else {
-        const nav = (navigator.language || 'nl').slice(0, 2);
-        if (i18n[nav]) initial = nav;
-      }
-    } catch(e) {}
-    setLang(initial);
-  </script>
 </Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 24px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #F4F0E8;
+    background:
+      linear-gradient(180deg, rgba(15,38,34,0.55) 0%, rgba(15,38,34,0.30) 30%, rgba(15,38,34,0.65) 75%, rgba(15,38,34,0.95) 100%),
+      url('/Siviez/hike-hikers.jpg') center 40% / cover no-repeat;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    width: 100%;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C8A35F;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(80px, 14vw, 180px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px 0;
+  }
+  .hero-tag {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: #C8A35F;
+    margin-bottom: 32px;
+  }
+  .hero-lede {
+    max-width: 640px;
+    margin: 0 auto 60px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(244, 240, 232, 0.9);
+    font-family: 'Playfair Display', serif;
+  }
+  .hero-lede em {
+    color: #C8A35F;
+    font-style: italic;
+  }
+
+  /* STATS BADGE */
+  .stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 32px;
+    background: rgba(30, 58, 52, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 163, 95, 0.25);
+    border-radius: 999px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: #C8A35F;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(244, 240, 232, 0.6);
+  }
+  .stat-sep {
+    width: 1px;
+    height: 30px;
+    background: rgba(200, 163, 95, 0.3);
+  }
+
+  /* 4 CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .card {
+    background: rgba(30, 58, 52, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 163, 95, 0.25);
+    padding: 28px 24px;
+    border-radius: 6px;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200, 163, 95, 0.55);
+    background: rgba(30, 58, 52, 0.75);
+  }
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C8A35F;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.1;
+    color: #F4F0E8;
+    margin: 0 0 6px 0;
+  }
+  .card-title em {
+    font-style: italic;
+    color: #C8A35F;
+  }
+  .card-credit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(244, 240, 232, 0.55);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .card-body {
+    font-size: 13px;
+    color: rgba(244, 240, 232, 0.78);
+    line-height: 1.55;
+    margin: 0 0 18px 0;
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+  }
+  .card-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #C8A35F;
+    padding-top: 14px;
+    border-top: 1px solid rgba(200, 163, 95, 0.2);
+    transition: color 0.2s ease;
+  }
+  .card:hover .card-cta { color: #F4F0E8; }
+  .card-emphasis .card-cta { color: #E85D2F; }
+  .card-emphasis:hover .card-cta { color: #F4F0E8; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+  @media (max-width: 640px) {
+    .cards {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .hero { padding: 100px 16px 60px; }
+    .hero-lede { font-size: 17px; }
+    .stats {
+      gap: 14px;
+      padding: 16px 22px;
+    }
+    .stat-value { font-size: 22px; }
+    .stat-sep { height: 24px; }
+    .card { padding: 24px 20px; }
+    .card-title { font-size: 22px; }
+  }
+  @media (max-width: 420px) {
+    .stats { gap: 10px; padding: 14px 18px; }
+    .stat-sep { display: none; }
+    .stat { min-width: 60px; }
+  }
+</style>
+
+<script is:inline>
+  // Simple i18n with fallback to EN
+  const translations = {
+    nl: {
+      "hero.kicker": "Valais · Zwitserse Alpen",
+      "hero.tag": "1730m hoog in de bergen",
+      "hero.lede.a": "Waar de",
+      "hero.lede.b": "beginnen. Turquoise meren, oude bisses en 400 km piste voor de deur.",
+      "stat.altitude": "Hoogte",
+      "stat.slopes": "Km piste",
+      "stat.bisses": "Bisses",
+      "stat.peak": "Piek",
+      "card.hike.label": "Wandelen",
+      "card.hike.credit": "Paden, bisses & alpenmeren",
+      "card.hike.body": "De klassieke Combatselina-Cleuson wandeling, de bisses de Nendaz, en elke route rond Rosablanche.",
+      "card.hike.cta": "Ontdek wandelingen →",
+      "card.ski.label": "Ski",
+      "card.ski.credit": "410 km · ski-in/ski-out",
+      "card.ski.body": "Een van de grootste skigebieden ter wereld, direct vanaf de deur. Mont Fort op 3330m.",
+      "card.ski.cta": "Bekijk de pistes →",
+      "card.discover.label": "Ontdek",
+      "card.discover.credit": "Een online reisgids door PUPVANH Projects",
+      "card.discover.body": "Wandelingen, ski-info, dorp en lokale tips. Volg het project op Instagram.",
+      "card.discover.cta": "Volg @siviez ↗",
+      "card.stay.label": "Verblijf",
+      "card.stay.credit": "Ski-in / ski-out · slaapt 7",
+      "card.stay.body": "Een ruim berg-appartement in het hart van Siviez. Zuidgericht terras, gratis parking, en de piste voor de deur.",
+      "card.stay.cta": "Meer info →"
+    },
+    en: {
+      "hero.kicker": "Valais · Swiss Alps",
+      "hero.tag": "1730m up in the mountains",
+      "hero.lede.a": "Where the",
+      "hero.lede.b": "begin. Turquoise lakes, ancient bisses and 400 km of pistes right outside.",
+      "stat.altitude": "Altitude",
+      "stat.slopes": "Km slopes",
+      "stat.bisses": "Bisses",
+      "stat.peak": "Peak",
+      "card.hike.label": "Hike",
+      "card.hike.credit": "Trails, bisses & alpine lakes",
+      "card.hike.body": "The Combatselina to Cleuson dam classic, the bisses de Nendaz, and every route around Rosablanche.",
+      "card.hike.cta": "Explore trails →",
+      "card.ski.label": "Ski",
+      "card.ski.credit": "410 km · ski-in/ski-out",
+      "card.ski.body": "One of the largest ski areas in the world, straight from the doorstep. Mont Fort at 3330m.",
+      "card.ski.cta": "See the pistes →",
+      "card.discover.label": "Discover",
+      "card.discover.credit": "An online travel guide by PUPVANH Projects",
+      "card.discover.body": "Hiking routes, ski info, village and local tips. Follow the build on Instagram.",
+      "card.discover.cta": "Follow @siviez ↗",
+      "card.stay.label": "Stay",
+      "card.stay.credit": "Ski-in / ski-out · sleeps 7",
+      "card.stay.body": "A spacious mountain apartment in the heart of Siviez. South-facing terrace, free parking and the slopes at your door.",
+      "card.stay.cta": "Read more →"
+    },
+    fr: {
+      "hero.kicker": "Valais · Alpes Suisses",
+      "hero.tag": "1730m en altitude",
+      "hero.lede.a": "Là où les",
+      "hero.lede.b": "commencent. Lacs turquoise, bisses anciennes et 400 km de pistes au pas de la porte.",
+      "stat.altitude": "Altitude",
+      "stat.slopes": "Km de pistes",
+      "stat.bisses": "Bisses",
+      "stat.peak": "Sommet",
+      "card.hike.label": "Randonnée",
+      "card.hike.credit": "Sentiers, bisses & lacs alpins",
+      "card.hike.body": "Le classique Combatselina-barrage de Cleuson, les bisses de Nendaz et chaque itinéraire autour de Rosablanche.",
+      "card.hike.cta": "Découvrir les sentiers →",
+      "card.ski.label": "Ski",
+      "card.ski.credit": "410 km · ski-in/ski-out",
+      "card.ski.body": "L'un des plus grands domaines skiables au monde, directement depuis la porte. Mont Fort à 3330m.",
+      "card.ski.cta": "Voir les pistes →",
+      "card.discover.label": "Découvrir",
+      "card.discover.credit": "Un guide de voyage en ligne par PUPVANH Projects",
+      "card.discover.body": "Sentiers de randonnée, infos ski, village et conseils locaux. Suivez le projet sur Instagram.",
+      "card.discover.cta": "Suivre @siviez ↗",
+      "card.stay.label": "Séjour",
+      "card.stay.credit": "Ski-in / ski-out · dort 7",
+      "card.stay.body": "Un appartement de montagne spacieux au cœur de Siviez. Terrasse plein sud, parking gratuit, et les pistes à la porte.",
+      "card.stay.cta": "En savoir plus →"
+    }
+  };
+
+  function setLang(lang) {
+    const dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    try { localStorage.setItem('siviez-lang', lang); } catch(e){}
+  }
+
+  // Luister naar taalwissel events uit SiviezNav
+  window.addEventListener('siviez-lang-change', (e) => setLang(e.detail.lang));
+
+  // Initial: gebruik opgeslagen taal of browser default
+  let initialLang = 'nl';
+  try {
+    const stored = localStorage.getItem('siviez-lang');
+    if (stored) initialLang = stored;
+    else if (navigator.language) {
+      const brw = navigator.language.slice(0, 2);
+      if (translations[brw]) initialLang = brw;
+    }
+  } catch(e) {}
+  setLang(initialLang);
+</script>
