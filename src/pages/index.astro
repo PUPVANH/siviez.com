@@ -60,14 +60,14 @@ import SiviezNav from '../components/SiviezNav.astro';
           <div class="card-cta" data-i18n="card.ski.cta">See the pistes →</div>
         </a>
 
-        <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="card">
+        <a href="#discover" class="card">
           <div class="card-label" data-i18n="card.discover.label">Discover</div>
-          <h3 class="card-title">Siviez <em>guide</em></h3>
-          <div class="card-credit" data-i18n="card.discover.credit">An online travel guide by PUPVANH Projects</div>
+          <h3 class="card-title">The <em>village</em></h3>
+          <div class="card-credit" data-i18n="card.discover.credit">1730m · Valais · practical info</div>
           <p class="card-body" data-i18n="card.discover.body">
-            Hiking routes, ski info, village and local tips. Follow the build on Instagram.
+            The place, how to get there, what makes Siviez what it is — everything you'd want to know before you come.
           </p>
-          <div class="card-cta" data-i18n="card.discover.cta">Follow @siviez ↗</div>
+          <div class="card-cta" data-i18n="card.discover.cta">More about Siviez →</div>
         </a>
 
         <a href="/appartement" class="card card-emphasis">
@@ -80,15 +80,82 @@ import SiviezNav from '../components/SiviezNav.astro';
           <div class="card-cta" data-i18n="card.stay.cta">Read more →</div>
         </a>
       </div>
+
+      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="insta-cta">
+        <span class="insta-icon">✧</span>
+        <span data-i18n="insta.cta">Follow @siviez on Instagram</span>
+        <span class="insta-arrow">↗</span>
+      </a>
     </div>
   </section>
+
+  <!-- DISCOVER: MEER OVER SIVIEZ -->
+  <section id="discover" class="discover">
+    <div class="discover-inner">
+      <div class="kicker" data-i18n="disc.kicker">Discover</div>
+      <h2>More about <em>Siviez</em>.</h2>
+      <p class="discover-lede" data-i18n="disc.lede">
+        A small alpine village at 1730m, at the end of the Nendaz valley — where four ski valleys meet and endless summer trails begin.
+      </p>
+
+      <div class="disc-grid">
+
+        <div class="disc-block">
+          <div class="disc-num">01</div>
+          <h3 data-i18n="disc.village.title">The village</h3>
+          <p data-i18n="disc.village.body">
+            Siviez sits at 1730m, at the head of the Nendaz valley. A handful of buildings and hotels, one supermarket, one bakery. Quiet in the low seasons, busy but never overwhelming when the lifts are running.
+          </p>
+        </div>
+
+        <div class="disc-block">
+          <div class="disc-num">02</div>
+          <h3 data-i18n="disc.getting.title">Getting there</h3>
+          <p data-i18n="disc.getting.body">
+            40 minutes by car from Sion airport, up winding mountain roads. From Geneva it's a scenic 2 hours. By public transport: train to Sion, bus 361 to Haute-Nendaz, then shuttle up to Siviez.
+          </p>
+        </div>
+
+        <div class="disc-block">
+          <div class="disc-num">03</div>
+          <h3 data-i18n="disc.season.title">Winter & summer</h3>
+          <p data-i18n="disc.season.body">
+            Winter: the 4 Vallées ski area (410 km of pistes) starts at the doorstep. Summer: alpine hiking, the bisses de Nendaz, and the turquoise reservoir of Cleuson a short drive up.
+          </p>
+        </div>
+
+        <div class="disc-block">
+          <div class="disc-num">04</div>
+          <h3 data-i18n="disc.practical.title">Practical</h3>
+          <p data-i18n="disc.practical.body">
+            One small supermarket in the Rosablanche building for essentials. Ski schools and rental at the foot of the lift. Restaurants both in the village and on the slopes. Pharmacy and doctor in Haute-Nendaz, hospital in Sion.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="disc-note">
+        <div class="kicker" data-i18n="disc.next.kicker">Next</div>
+        <p data-i18n="disc.next.body">
+          Ready to visit? <a href="/appartement">Rosablanche C34</a> sleeps 7 and sits at the foot of the Combatselina chairlift.
+          Or check out the <a href="/hike">summer trails</a> and <a href="/ski">winter pistes</a> first.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 · Hosted by Luc</span>
+    <span class="dot">·</span>
+    <span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a></span>
+  </footer>
 </Layout>
 
 <style>
   .hero {
     position: relative;
     min-height: 100vh;
-    padding: 120px 24px 80px;
+    padding: 120px 24px 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,12 +163,10 @@ import SiviezNav from '../components/SiviezNav.astro';
     color: #F4F0E8;
     background:
       linear-gradient(180deg, rgba(15,38,34,0.55) 0%, rgba(15,38,34,0.30) 30%, rgba(15,38,34,0.65) 75%, rgba(15,38,34,0.95) 100%),
-      url('/Siviez/hike-hikers.jpg') center 40% / cover no-repeat;
+      url('/Siviez/view-sion-valley.jpg') center 40% / cover no-repeat;
   }
-  .hero-inner {
-    max-width: 1200px;
-    width: 100%;
-  }
+  .hero-inner { max-width: 1200px; width: 100%; }
+
   .kicker {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -133,12 +198,8 @@ import SiviezNav from '../components/SiviezNav.astro';
     color: rgba(244, 240, 232, 0.9);
     font-family: 'Playfair Display', serif;
   }
-  .hero-lede em {
-    color: #C8A35F;
-    font-style: italic;
-  }
+  .hero-lede em { color: #C8A35F; font-style: italic; }
 
-  /* STATS BADGE */
   .stats {
     display: inline-flex;
     align-items: center;
@@ -149,16 +210,11 @@ import SiviezNav from '../components/SiviezNav.astro';
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(200, 163, 95, 0.25);
     border-radius: 999px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
+  .stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .stat-value {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -173,19 +229,14 @@ import SiviezNav from '../components/SiviezNav.astro';
     text-transform: uppercase;
     color: rgba(244, 240, 232, 0.6);
   }
-  .stat-sep {
-    width: 1px;
-    height: 30px;
-    background: rgba(200, 163, 95, 0.3);
-  }
+  .stat-sep { width: 1px; height: 30px; background: rgba(200, 163, 95, 0.3); }
 
-  /* 4 CARDS */
   .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     width: 100%;
   }
   .card {
@@ -224,10 +275,7 @@ import SiviezNav from '../components/SiviezNav.astro';
     color: #F4F0E8;
     margin: 0 0 6px 0;
   }
-  .card-title em {
-    font-style: italic;
-    color: #C8A35F;
-  }
+  .card-title em { font-style: italic; color: #C8A35F; }
   .card-credit {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -257,28 +305,159 @@ import SiviezNav from '../components/SiviezNav.astro';
   .card-emphasis .card-cta { color: #E85D2F; }
   .card-emphasis:hover .card-cta { color: #F4F0E8; }
 
+  /* INSTAGRAM CTA */
+  .insta-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: rgba(30, 58, 52, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(200, 163, 95, 0.35);
+    border-radius: 999px;
+    color: #F4F0E8;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  .insta-cta:hover {
+    border-color: #C8A35F;
+    background: rgba(200, 163, 95, 0.15);
+    transform: translateY(-2px);
+  }
+  .insta-icon { color: #E85D2F; font-size: 16px; }
+  .insta-arrow { color: #C8A35F; font-size: 14px; }
+
+  /* DISCOVER SECTION */
+  .discover {
+    background: #0F2622;
+    padding: 120px 24px 100px;
+    color: #F4F0E8;
+    border-top: 1px solid rgba(200, 163, 95, 0.15);
+  }
+  .discover-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px 0;
+  }
+  h2 em { font-style: italic; color: #C8A35F; }
+  .discover-lede {
+    max-width: 620px;
+    margin: 0 auto 80px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(244, 240, 232, 0.75);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .disc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    text-align: left;
+    margin-bottom: 60px;
+  }
+  .disc-block {
+    padding: 40px;
+    background: rgba(30, 58, 52, 0.4);
+    border: 1px solid rgba(200, 163, 95, 0.15);
+    border-radius: 6px;
+    position: relative;
+  }
+  .disc-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 42px;
+    color: #C8A35F;
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+  .disc-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #F4F0E8;
+    margin: 0 0 14px 0;
+    line-height: 1.15;
+  }
+  .disc-block p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(244, 240, 232, 0.78);
+    margin: 0;
+  }
+
+  .disc-note {
+    padding: 32px;
+    background: rgba(232, 93, 47, 0.08);
+    border-left: 3px solid #E85D2F;
+    border-radius: 4px;
+    text-align: left;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .disc-note p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(244, 240, 232, 0.9);
+    margin: 8px 0 0 0;
+  }
+  .disc-note a { color: #C8A35F; text-decoration: none; }
+  .disc-note a:hover { color: #F4F0E8; }
+
+  /* FOOTER */
+  footer {
+    background: #0F2622;
+    padding: 40px 24px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(244, 240, 232, 0.5);
+    border-top: 1px solid rgba(200, 163, 95, 0.1);
+  }
+  footer .dot { color: #E85D2F; margin: 0 8px; }
+  footer a { color: #C8A35F; text-decoration: none; }
+
+  /* SMOOTH SCROLL */
+  html { scroll-behavior: smooth; }
+
   /* RESPONSIVE */
   @media (max-width: 1000px) {
-    .cards {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
+    .cards { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .disc-grid { grid-template-columns: 1fr; gap: 20px; }
   }
   @media (max-width: 640px) {
-    .cards {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
+    .cards { grid-template-columns: 1fr; gap: 14px; }
     .hero { padding: 100px 16px 60px; }
     .hero-lede { font-size: 17px; }
-    .stats {
-      gap: 14px;
-      padding: 16px 22px;
-    }
+    .stats { gap: 14px; padding: 16px 22px; }
     .stat-value { font-size: 22px; }
     .stat-sep { height: 24px; }
     .card { padding: 24px 20px; }
     .card-title { font-size: 22px; }
+    .insta-cta { font-size: 15px; padding: 14px 24px; }
+    .discover { padding: 80px 16px 60px; }
+    .disc-block { padding: 28px 24px; }
+    .disc-block h3 { font-size: 22px; }
   }
   @media (max-width: 420px) {
     .stats { gap: 10px; padding: 14px 18px; }
@@ -288,7 +467,6 @@ import SiviezNav from '../components/SiviezNav.astro';
 </style>
 
 <script is:inline>
-  // Simple i18n with fallback to EN
   const translations = {
     nl: {
       "hero.kicker": "Valais · Zwitserse Alpen",
@@ -308,13 +486,26 @@ import SiviezNav from '../components/SiviezNav.astro';
       "card.ski.body": "Een van de grootste skigebieden ter wereld, direct vanaf de deur. Mont Fort op 3330m.",
       "card.ski.cta": "Bekijk de pistes →",
       "card.discover.label": "Ontdek",
-      "card.discover.credit": "Een online reisgids door PUPVANH Projects",
-      "card.discover.body": "Wandelingen, ski-info, dorp en lokale tips. Volg het project op Instagram.",
-      "card.discover.cta": "Volg @siviez ↗",
+      "card.discover.credit": "1730m · Valais · praktische info",
+      "card.discover.body": "De plek, hoe kom je er, wat maakt Siviez zoals het is — alles wat je wilt weten voor je komt.",
+      "card.discover.cta": "Meer over Siviez →",
       "card.stay.label": "Verblijf",
       "card.stay.credit": "Ski-in / ski-out · slaapt 7",
       "card.stay.body": "Een ruim berg-appartement in het hart van Siviez. Zuidgericht terras, gratis parking, en de piste voor de deur.",
-      "card.stay.cta": "Meer info →"
+      "card.stay.cta": "Meer info →",
+      "insta.cta": "Volg @siviez op Instagram",
+      "disc.kicker": "Ontdek",
+      "disc.lede": "Een klein alpendorp op 1730m, aan het einde van de Nendaz vallei — waar vier ski-valleien samenkomen en eindeloze zomerpaden beginnen.",
+      "disc.village.title": "Het dorp",
+      "disc.village.body": "Siviez ligt op 1730m, bovenaan de Nendaz vallei. Een handvol gebouwen en hotels, een supermarkt, een bakker. Rustig in de tussenseizoenen, druk maar nooit overweldigend als de liften draaien.",
+      "disc.getting.title": "Er komen",
+      "disc.getting.body": "40 minuten met de auto vanaf Sion, over kronkelende bergwegen. Vanuit Genève is het een schilderachtige 2 uur. Openbaar vervoer: trein naar Sion, bus 361 tot Haute-Nendaz, dan shuttle naar Siviez.",
+      "disc.season.title": "Winter & zomer",
+      "disc.season.body": "Winter: het 4 Vallées skigebied (410 km piste) begint aan de deur. Zomer: alpine wandelingen, de bisses de Nendaz, en de turquoise Cleuson stuwdam een korte rit hogerop.",
+      "disc.practical.title": "Praktisch",
+      "disc.practical.body": "Een kleine supermarkt in het Rosablanche gebouw voor essentials. Ski scholen en verhuur aan de voet van de lift. Restaurants in het dorp en op de pistes. Apotheek en dokter in Haute-Nendaz, ziekenhuis in Sion.",
+      "disc.next.kicker": "Wat nu",
+      "disc.next.body": "Klaar om te bezoeken? Rosablanche C34 slaapt 7 en ligt aan de voet van de Combatselina stoeltjeslift. Of bekijk eerst de zomerpaden en winterpistes."
     },
     en: {
       "hero.kicker": "Valais · Swiss Alps",
@@ -334,13 +525,26 @@ import SiviezNav from '../components/SiviezNav.astro';
       "card.ski.body": "One of the largest ski areas in the world, straight from the doorstep. Mont Fort at 3330m.",
       "card.ski.cta": "See the pistes →",
       "card.discover.label": "Discover",
-      "card.discover.credit": "An online travel guide by PUPVANH Projects",
-      "card.discover.body": "Hiking routes, ski info, village and local tips. Follow the build on Instagram.",
-      "card.discover.cta": "Follow @siviez ↗",
+      "card.discover.credit": "1730m · Valais · practical info",
+      "card.discover.body": "The place, how to get there, what makes Siviez what it is — everything you'd want to know before you come.",
+      "card.discover.cta": "More about Siviez →",
       "card.stay.label": "Stay",
       "card.stay.credit": "Ski-in / ski-out · sleeps 7",
       "card.stay.body": "A spacious mountain apartment in the heart of Siviez. South-facing terrace, free parking and the slopes at your door.",
-      "card.stay.cta": "Read more →"
+      "card.stay.cta": "Read more →",
+      "insta.cta": "Follow @siviez on Instagram",
+      "disc.kicker": "Discover",
+      "disc.lede": "A small alpine village at 1730m, at the end of the Nendaz valley — where four ski valleys meet and endless summer trails begin.",
+      "disc.village.title": "The village",
+      "disc.village.body": "Siviez sits at 1730m, at the head of the Nendaz valley. A handful of buildings and hotels, one supermarket, one bakery. Quiet in the low seasons, busy but never overwhelming when the lifts are running.",
+      "disc.getting.title": "Getting there",
+      "disc.getting.body": "40 minutes by car from Sion airport, up winding mountain roads. From Geneva it's a scenic 2 hours. By public transport: train to Sion, bus 361 to Haute-Nendaz, then shuttle up to Siviez.",
+      "disc.season.title": "Winter & summer",
+      "disc.season.body": "Winter: the 4 Vallées ski area (410 km of pistes) starts at the doorstep. Summer: alpine hiking, the bisses de Nendaz, and the turquoise reservoir of Cleuson a short drive up.",
+      "disc.practical.title": "Practical",
+      "disc.practical.body": "One small supermarket in the Rosablanche building for essentials. Ski schools and rental at the foot of the lift. Restaurants both in the village and on the slopes. Pharmacy and doctor in Haute-Nendaz, hospital in Sion.",
+      "disc.next.kicker": "Next",
+      "disc.next.body": "Ready to visit? Rosablanche C34 sleeps 7 and sits at the foot of the Combatselina chairlift. Or check out the summer trails and winter pistes first."
     },
     fr: {
       "hero.kicker": "Valais · Alpes Suisses",
@@ -360,13 +564,26 @@ import SiviezNav from '../components/SiviezNav.astro';
       "card.ski.body": "L'un des plus grands domaines skiables au monde, directement depuis la porte. Mont Fort à 3330m.",
       "card.ski.cta": "Voir les pistes →",
       "card.discover.label": "Découvrir",
-      "card.discover.credit": "Un guide de voyage en ligne par PUPVANH Projects",
-      "card.discover.body": "Sentiers de randonnée, infos ski, village et conseils locaux. Suivez le projet sur Instagram.",
-      "card.discover.cta": "Suivre @siviez ↗",
+      "card.discover.credit": "1730m · Valais · infos pratiques",
+      "card.discover.body": "Le lieu, comment y accéder, ce qui fait Siviez — tout ce qu'il faut savoir avant de venir.",
+      "card.discover.cta": "Plus sur Siviez →",
       "card.stay.label": "Séjour",
       "card.stay.credit": "Ski-in / ski-out · dort 7",
       "card.stay.body": "Un appartement de montagne spacieux au cœur de Siviez. Terrasse plein sud, parking gratuit, et les pistes à la porte.",
-      "card.stay.cta": "En savoir plus →"
+      "card.stay.cta": "En savoir plus →",
+      "insta.cta": "Suivre @siviez sur Instagram",
+      "disc.kicker": "Découvrir",
+      "disc.lede": "Un petit village alpin à 1730m, au bout de la vallée de Nendaz — où quatre vallées de ski se rejoignent et où commencent d'infinis sentiers d'été.",
+      "disc.village.title": "Le village",
+      "disc.village.body": "Siviez est situé à 1730m, au bout de la vallée de Nendaz. Quelques bâtiments et hôtels, une supérette, une boulangerie. Calme en basse saison, animé sans être bondé quand les remontées tournent.",
+      "disc.getting.title": "Y accéder",
+      "disc.getting.body": "40 minutes en voiture depuis Sion, par des routes de montagne sinueuses. Depuis Genève, comptez 2h de route pittoresque. En transport public : train jusqu'à Sion, bus 361 jusqu'à Haute-Nendaz, puis navette vers Siviez.",
+      "disc.season.title": "Hiver & été",
+      "disc.season.body": "Hiver : le domaine des 4 Vallées (410 km de pistes) commence à la porte. Été : randonnée alpine, les bisses de Nendaz, et le lac turquoise de Cleuson à quelques minutes en voiture.",
+      "disc.practical.title": "Pratique",
+      "disc.practical.body": "Une petite supérette dans le bâtiment Rosablanche pour l'essentiel. Écoles de ski et location au pied du télésiège. Restaurants au village et sur les pistes. Pharmacie et médecin à Haute-Nendaz, hôpital à Sion.",
+      "disc.next.kicker": "Ensuite",
+      "disc.next.body": "Prêt à venir ? Rosablanche C34 dort 7 personnes et se trouve au pied du télésiège de Combatselina. Ou consultez d'abord les sentiers d'été et les pistes d'hiver."
     }
   };
 
@@ -379,10 +596,8 @@ import SiviezNav from '../components/SiviezNav.astro';
     try { localStorage.setItem('siviez-lang', lang); } catch(e){}
   }
 
-  // Luister naar taalwissel events uit SiviezNav
   window.addEventListener('siviez-lang-change', (e) => setLang(e.detail.lang));
 
-  // Initial: gebruik opgeslagen taal of browser default
   let initialLang = 'nl';
   try {
     const stored = localStorage.getItem('siviez-lang');
