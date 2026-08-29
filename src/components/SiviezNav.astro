@@ -9,15 +9,7 @@ const isStay = pathname.startsWith('/appartement');
 <nav class="siviez-nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand" aria-label="Siviez.com home">
-      <svg class="brand-mountain" width="42" height="20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path
-          d="M 4 34 L 22 22 L 32 32 L 44 8 L 56 30 L 68 18 L 82 32 L 96 34"
-          stroke="currentColor"
-          stroke-width="2.4"
-          fill="none"
-          stroke-linejoin="miter"
-          stroke-linecap="square"/>
-      </svg>
+      <img src="/logo/siviez-bergen.png" alt="" class="brand-mountain" width="72" height="19" aria-hidden="true" />
       <span class="brand-text">SIVIEZ<em>.com</em></span>
     </a>
 
@@ -54,7 +46,9 @@ const isStay = pathname.startsWith('/appartement');
     flex-shrink: 0; text-decoration: none;
     color: #F4F0E8; line-height: 1;
   }
-  .brand-mountain { color: #F4F0E8; display: block; }
+  .brand-mountain {
+    height: 22px; width: auto; display: block;
+  }
   .brand-text {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 20px; font-weight: 400;
@@ -93,7 +87,7 @@ const isStay = pathname.startsWith('/appartement');
   @media (max-width: 640px) {
     .nav-inner { padding: 12px 16px; gap: 8px; }
     .nav-brand { gap: 8px; }
-    .brand-mountain { width: 30px; height: 14px; }
+    .brand-mountain { height: 16px; }
     .brand-text { font-size: 16px; }
     .nav-links a { padding: 6px 8px; font-size: 10px; letter-spacing: 1px; }
     .nav-lang button { padding: 4px 4px; font-size: 9px; }
