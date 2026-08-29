@@ -1,0 +1,174 @@
+---
+// Herbruikbare nav voor alle siviez.com pagina's
+// Hike · Ski · Discover · Stay
+const pathname = Astro.url.pathname;
+const isHomepage = pathname === '/' || pathname === '';
+const isHike = pathname.startsWith('/hike');
+const isSki = pathname.startsWith('/ski');
+const isStay = pathname.startsWith('/appartement');
+---
+
+<nav class="siviez-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="brand-name">SIVIEZ<span class="brand-dot">.com</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/hike" class={isHike ? 'active' : ''}>Hike</a></li>
+      <li><a href="/ski" class={isSki ? 'active' : ''}>Ski</a></li>
+      <li><a href="/" class={isHomepage ? 'active' : ''}>Discover</a></li>
+      <li><a href="/appartement" class={isStay ? 'active' : ''}>Stay</a></li>
+    </ul>
+    <div class="nav-lang">
+      <button data-lang="nl" class="active">NL</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="fr">FR</button>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .siviez-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(15, 38, 34, 0.65);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(200, 163, 95, 0.15);
+  }
+  .nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    gap: 20px;
+  }
+  .nav-brand {
+    text-decoration: none;
+    color: #F4F0E8;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .brand-name {
+    font-weight: 400;
+  }
+  .brand-dot {
+    color: #C8A35F;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+  }
+  .nav-links li {
+    list-style: none;
+  }
+  .nav-links a {
+    display: block;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(244, 240, 232, 0.68);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-links a:hover {
+    color: #F4F0E8;
+    background: rgba(200, 163, 95, 0.1);
+  }
+  .nav-links a.active {
+    color: #C8A35F;
+  }
+  .nav-lang {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .nav-lang button {
+    background: none;
+    border: none;
+    color: rgba(244, 240, 232, 0.45);
+    padding: 6px 6px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+  }
+  .nav-lang button:hover {
+    color: #F4F0E8;
+  }
+  .nav-lang button.active {
+    color: #C8A35F;
+    font-weight: 500;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .nav-inner {
+      padding: 12px 16px;
+      gap: 8px;
+    }
+    .nav-brand {
+      font-size: 14px;
+    }
+    .brand-dot {
+      display: none;
+    }
+    .nav-links a {
+      padding: 6px 8px;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    .nav-lang button {
+      padding: 4px 4px;
+      font-size: 9px;
+    }
+  }
+  @media (max-width: 380px) {
+    .nav-lang {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Taalwissel — synchroniseert met bestaande i18n scripts op elke pagina
+  document.querySelectorAll('.siviez-nav .nav-lang button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      // Fire event zodat elke pagina zijn eigen i18n kan updaten
+      window.dispatchEvent(new CustomEvent('siviez-lang-change', { detail: { lang } }));
+      // Local highlight
+      document.querySelectorAll('.siviez-nav .nav-lang button').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+      try { localStorage.setItem('siviez-lang', lang); } catch(e){}
+    });
+  });
+  // Bij load: sync active state
+  try {
+    const stored = localStorage.getItem('siviez-lang') || 'nl';
+    document.querySelectorAll('.siviez-nav .nav-lang button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === stored);
+    });
+  } catch(e) {}
+</script>

@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro';
+import SiviezNav from '../components/SiviezNav.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -73,14 +74,7 @@ import Analytics from '@vercel/analytics/astro';
 <body>
   <div class="siviez-page">
 
-    <div class="sv-topbar" id="svTopbar">
-      <a href="/" class="sv-brand">SIVIEZ.COM</a>
-      <div class="sv-lang">
-        <button class="sv-lang-btn active" data-lang="en">EN</button>
-        <button class="sv-lang-btn" data-lang="nl">NL</button>
-        <button class="sv-lang-btn" data-lang="fr">FR</button>
-      </div>
-    </div>
+    <SiviezNav />
 
     <a href="https://www.airbnb.com/rooms/10012437?utm_source=siviez.com&utm_medium=web&utm_campaign=floating_widget" target="_blank" rel="noopener" data-track="airbnb_float" class="sv-float" id="svFloat">
       <span data-i18n="cta.short">Book on Airbnb</span>
@@ -1073,6 +1067,9 @@ import Analytics from '@vercel/analytics/astro';
     document.querySelectorAll('.sv-lang-btn').forEach(function(btn) {
       btn.addEventListener('click', function() { setLanguage(btn.dataset.lang); });
     });
+
+    // Luister ook naar taalwissel events uit SiviezNav
+    window.addEventListener('siviez-lang-change', function(e) { setLanguage(e.detail.lang); });
 
     var savedLang = null;
     try { savedLang = localStorage.getItem('siviez-lang'); } catch(e) {}
