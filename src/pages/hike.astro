@@ -7,20 +7,20 @@ import SiviezNav from '../components/SiviezNav.astro';
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hikes in Siviez · Bisses & alpine trails · siviez.com</title>
-<meta name="description" content="A hand-drawn guide to the best hikes in Siviez and the 4 Vallées — bisses, alpine lakes, high mountain trails. Coming autumn 2026.">
+<title>Hikes in Siviez · Combatselina to Lac de Cleuson · siviez.com</title>
+<meta name="description" content="Discover the best hikes around Siviez and the 4 Vallées. Start with the classic Combatselina to Lac de Cleuson trail — alpine streams, wildflowers, and turquoise water at 2186m.">
 <link rel="canonical" href="https://siviez.com/hike">
 <link rel="icon" type="image/svg+xml" href="/favicons/siviez.svg">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hikes in Siviez · Bisses & alpine trails">
-<meta property="og:description" content="A hand-drawn guide to the best hikes in Siviez and the 4 Vallées. Coming soon.">
-<meta property="og:image" content="https://siviez.com/siviez/IMG_1797.jpg">
+<meta property="og:description" content="A hand-drawn guide to the best hikes in Siviez and the 4 Vallées. Streams, bisses, and alpine lakes.">
+<meta property="og:image" content="https://siviez.com/siviez/hike-hikers.jpg">
 <meta property="og:url" content="https://siviez.com/hike">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -30,71 +30,189 @@ import SiviezNav from '../components/SiviezNav.astro';
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
     font-family:'Inter', sans-serif; font-weight:300; line-height:1.65;
-    color:var(--ivory); -webkit-font-smoothing:antialiased;
+    color:var(--ivory); background:var(--forest);
+    -webkit-font-smoothing:antialiased;
   }
-  .page {
-    min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-    padding:120px 32px 60px; text-align:center;
+
+  .hero {
+    position:relative; min-height:100vh; overflow:hidden;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:120px 40px 80px;
     background:
-      linear-gradient(180deg, rgba(15,38,34,0.4) 0%, rgba(15,38,34,0.15) 40%, rgba(15,38,34,0.7) 100%),
-      url('/siviez/IMG_1797.jpg') center center/cover no-repeat;
+      linear-gradient(180deg, rgba(15,38,34,0.35) 0%, rgba(15,38,34,0.15) 30%, rgba(15,38,34,0.55) 70%, rgba(15,38,34,0.92) 100%),
+      url('/siviez/hike-hikers.jpg') center 40%/cover no-repeat;
   }
-  .kicker {
+  .hero-inner { max-width:1200px; margin:0 auto; width:100%; }
+  .hero-kicker {
     font-family:'JetBrains Mono',monospace; font-size:11px;
     letter-spacing:3px; text-transform:uppercase; color:var(--gold);
     margin-bottom:24px;
   }
   h1 {
     font-family:'Playfair Display',serif; font-weight:400;
-    font-size:clamp(72px,12vw,160px); line-height:0.95; letter-spacing:-0.02em;
-    margin-bottom:24px;
+    font-size:clamp(64px,10vw,140px); line-height:0.95; letter-spacing:-0.02em;
+    margin-bottom:32px;
   }
   h1 em { font-style:italic; color:var(--gold); }
-  .lede {
-    max-width:620px; margin:0 auto 60px; font-size:18px; line-height:1.6;
-    color:rgba(244,240,232,.85);
+  .hero-lede {
+    max-width:640px; font-size:19px; line-height:1.6;
+    color:rgba(244,240,232,.88); margin-bottom:40px;
   }
-  .lede em { color:var(--gold); font-style:italic; }
-
-  .roadmap {
-    max-width:520px; margin:0 auto 60px;
-    background:rgba(30,58,52,0.5); backdrop-filter:blur(20px);
-    border:1px solid rgba(200,163,95,0.25);
-    padding:32px; border-radius:6px; text-align:left;
-  }
-  .roadmap-title {
+  .hero-lede em { color:var(--gold); font-style:italic; }
+  .scroll-hint {
     font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:2px; text-transform:uppercase; color:var(--gold);
+    letter-spacing:3px; text-transform:uppercase; color:rgba(244,240,232,0.55);
+  }
+
+  section { padding:120px 40px; position:relative; }
+  .container { max-width:1200px; margin:0 auto; }
+
+  .kicker {
+    font-family:'JetBrains Mono',monospace; font-size:11px;
+    letter-spacing:3px; text-transform:uppercase; color:var(--gold);
     margin-bottom:20px;
   }
+  h2 {
+    font-family:'Playfair Display',serif; font-weight:400;
+    font-size:clamp(38px,5.5vw,64px); line-height:1.05; letter-spacing:-0.015em;
+    margin-bottom:24px;
+  }
+  h2 em { font-style:italic; color:var(--gold); }
+  h3 {
+    font-family:'Playfair Display',serif; font-weight:400;
+    font-size:clamp(24px,3vw,32px); line-height:1.15;
+    margin-bottom:16px;
+  }
+  h3 em { font-style:italic; color:var(--gold); }
+  p { font-size:17px; line-height:1.7; color:rgba(244,240,232,0.82); margin-bottom:16px; max-width:680px; }
+  p em { color:var(--gold); font-style:italic; }
+
+  .featured {
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+    padding:120px 40px;
+    max-width:1400px; margin:0 auto;
+  }
+  .featured-image {
+    position:relative; height:600px; overflow:hidden; border-radius:4px;
+  }
+  .featured-image img {
+    width:100%; height:100%; object-fit:cover;
+    transition:transform 1.2s ease;
+  }
+  .featured:hover .featured-image img { transform:scale(1.04); }
+  .featured-tag {
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace; font-size:10px;
+    letter-spacing:2px; text-transform:uppercase; color:var(--forest);
+    background:var(--gold); padding:6px 12px; border-radius:2px;
+    margin-bottom:20px;
+  }
+  .featured-meta {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin:32px 0; padding:24px 0;
+    border-top:1px solid rgba(200,163,95,0.25);
+    border-bottom:1px solid rgba(200,163,95,0.25);
+  }
+  .meta-item .meta-value {
+    font-family:'Playfair Display',serif; font-size:26px; color:var(--gold);
+    line-height:1;
+  }
+  .meta-item .meta-label {
+    font-family:'JetBrains Mono',monospace; font-size:9px;
+    letter-spacing:2px; text-transform:uppercase; color:rgba(244,240,232,0.55);
+    margin-top:6px;
+  }
+
+  .gallery-section {
+    background:rgba(30,58,52,0.5);
+    padding:120px 40px;
+  }
+  .gallery-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin-top:60px;
+  }
+  .gallery-item {
+    position:relative; overflow:hidden;
+    aspect-ratio:3/4; border-radius:4px;
+    cursor:pointer;
+  }
+  .gallery-item.wide { grid-column:span 2; aspect-ratio:3/2; }
+  .gallery-item img {
+    width:100%; height:100%; object-fit:cover;
+    transition:transform 1.2s ease;
+  }
+  .gallery-item:hover img { transform:scale(1.06); }
+  .gallery-caption {
+    position:absolute; bottom:16px; left:16px; right:16px;
+    font-family:'JetBrains Mono',monospace; font-size:10px;
+    letter-spacing:2px; text-transform:uppercase;
+    color:var(--ivory);
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);
+  }
+
+  .tips {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+    margin-top:60px;
+  }
+  .tip {
+    padding:32px;
+    background:rgba(15,38,34,0.5);
+    border:1px solid rgba(200,163,95,0.2);
+    border-radius:4px;
+  }
+  .tip-num {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:38px; color:var(--gold); line-height:1;
+    margin-bottom:16px;
+  }
+  .tip h4 {
+    font-family:'Playfair Display',serif; font-size:20px;
+    margin-bottom:12px; color:var(--ivory); font-weight:400;
+  }
+  .tip p {
+    font-size:14px; line-height:1.6; color:rgba(244,240,232,0.72);
+    margin-bottom:0; max-width:none;
+  }
+
+  .roadmap {
+    background:var(--forest);
+    padding:120px 40px 80px;
+    border-top:1px solid rgba(200,163,95,0.15);
+  }
   .roadmap ul {
-    list-style:none; padding:0; margin:0;
-    display:flex; flex-direction:column; gap:14px;
+    list-style:none; padding:0; margin:40px 0 0;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:16px;
+    max-width:900px;
   }
   .roadmap li {
-    display:flex; gap:14px; align-items:baseline;
-    font-family:'Playfair Display',serif; font-size:17px;
-    color:var(--ivory); font-style:italic;
+    display:flex; gap:16px; align-items:baseline;
+    padding:20px 24px;
+    background:rgba(30,58,52,0.5);
+    border-left:2px solid var(--ember);
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:17px; color:var(--ivory);
   }
   .roadmap li::before {
-    content:"➜"; color:var(--ember); font-family:'JetBrains Mono',monospace;
+    content:"→"; color:var(--ember); font-family:'JetBrains Mono',monospace;
     font-size:13px; font-style:normal; flex-shrink:0;
   }
   .roadmap li strong { font-weight:500; color:var(--gold); font-style:normal; }
 
   .signature {
-    font-family:'Caveat', cursive; font-size:24px; color:var(--gold);
-    margin-bottom:40px;
+    font-family:'Caveat', cursive; font-size:32px; color:var(--gold);
+    margin:60px 0 40px;
+    display:block;
   }
 
   .cta-row {
-    display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
+    display:flex; gap:16px; flex-wrap:wrap;
+    margin-top:40px;
   }
   .btn {
     display:inline-flex; align-items:center; gap:8px;
     font-family:'JetBrains Mono',monospace; font-size:11px;
     letter-spacing:1.5px; text-transform:uppercase;
-    padding:14px 24px; border-radius:999px; text-decoration:none;
+    padding:16px 28px; border-radius:999px; text-decoration:none;
     transition:all 0.2s ease;
   }
   .btn-primary { background:var(--ember); color:var(--ivory); }
@@ -103,18 +221,23 @@ import SiviezNav from '../components/SiviezNav.astro';
   .btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
 
   footer {
-    background:var(--forest); padding:40px 32px; text-align:center;
+    background:#0F2622; padding:60px 32px; text-align:center;
     font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:1.5px; text-transform:uppercase; color:rgba(244,240,232,0.6);
+    letter-spacing:1.5px; text-transform:uppercase; color:rgba(244,240,232,0.5);
+    border-top:1px solid rgba(200,163,95,0.1);
   }
   footer .dot { color:var(--ember); margin:0 6px; }
   footer a { color:var(--gold); text-decoration:none; }
+  footer a:hover { color:var(--ivory); }
 
-  @media (max-width:640px) {
-    .page { padding:100px 20px 40px; }
-    h1 { font-size:64px; }
-    .roadmap { padding:24px; }
-    .roadmap li { font-size:15px; }
+  @media (max-width:900px) {
+    .featured { grid-template-columns:1fr; gap:40px; padding:80px 20px; }
+    .featured-image { height:400px; order:-1; }
+    .gallery-grid { grid-template-columns:repeat(2,1fr); gap:16px; }
+    .tips { grid-template-columns:1fr; }
+    .roadmap ul { grid-template-columns:1fr; }
+    section, .gallery-section, .roadmap { padding:80px 20px; }
+    .hero { padding:100px 20px 60px; }
   }
 </style>
 <Analytics />
@@ -123,39 +246,171 @@ import SiviezNav from '../components/SiviezNav.astro';
 
 <SiviezNav />
 
-<section class="page">
-  <div class="kicker">Coming autumn 2026</div>
-  <h1>Hike <em>guide</em></h1>
-  <p class="lede">
-    A hand-drawn guide to the best <em>hikes in Siviez</em> and the 4 Vallées.
-    Bisses, alpine lakes, high mountain trails — each with its own map, GPX, and Puppy's tip.
-  </p>
-
-  <div class="roadmap">
-    <div class="roadmap-title">— Trails opening one by one</div>
-    <ul>
-      <li><strong>Lac de Cleuson</strong> — turquoise reservoir, 45 min drive up</li>
-      <li><strong>Bisse du Milieu</strong> — easy shaded loop from Haute-Nendaz</li>
-      <li><strong>Col des Gentianes</strong> — cable car to 2950m, panoramic</li>
-      <li><strong>Bisses de Nendaz</strong> — eight of them, one per week</li>
-    </ul>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Valais · Swiss Alps · 1730m</div>
+    <h1>Hike <em>Siviez</em>.</h1>
+    <p class="hero-lede">
+      Turquoise reservoirs, alpine streams, and the famous <em>bisses de Nendaz</em>. From gentle valley walks
+      to high mountain passes — all starting a few minutes from Rosablanche C34.
+    </p>
+    <div class="scroll-hint">Scroll ↓</div>
   </div>
+</section>
 
-  <div class="signature">Watch this space.</div>
+<section style="padding:0;">
+  <div class="featured">
+    <div class="featured-image">
+      <img src="/siviez/hike-hikers.jpg" alt="Hikers in the alpine valley on the way to Lac de Cleuson, Siviez" loading="lazy">
+    </div>
+    <div>
+      <span class="featured-tag">Puppy's pick</span>
+      <div class="kicker">The classic walk</div>
+      <h2>Combatselina to <em>Lac de Cleuson</em></h2>
+      <p>
+        A wide-open alpine valley climb through wildflower meadows, along a cascading mountain stream,
+        finishing at the turquoise waters of the <em>Cleuson reservoir</em> at 2186m.
+        Doable in an afternoon, unforgettable at any age.
+      </p>
 
-  <div class="cta-row">
-    <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="btn btn-primary">
-      <span>Follow @siviez ↗</span>
-    </a>
-    <a href="/" class="btn btn-ghost">
-      <span>← Back home</span>
-    </a>
+      <div class="featured-meta">
+        <div class="meta-item">
+          <div class="meta-value">± 3h</div>
+          <div class="meta-label">Round trip</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-value">450m</div>
+          <div class="meta-label">Elevation</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-value">Easy+</div>
+          <div class="meta-label">Difficulty</div>
+        </div>
+      </div>
+
+      <p>
+        Start at the <em>Combatselina</em> chairlift (a 10-min walk from Rosablanche C34).
+        Take the well-marked trail through the valley — you'll follow a mountain stream almost the whole way.
+        The dam wall of Cleuson appears suddenly around a bend. Bring lunch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0;">
+  <div class="featured">
+    <div>
+      <div class="kicker">On the way</div>
+      <h2>Water, wildflowers, <em>silence</em>.</h2>
+      <p>
+        The trail follows a small alpine stream almost the entire way up — perfect for a lunch break with
+        cold feet in the water, or an early-morning coffee stop. In late July, the meadows around it are
+        full of wildflowers and the occasional marmot.
+      </p>
+      <p>
+        Halfway up, look back: you'll see the whole <em>Nendaz valley</em> stretching down toward Sion.
+        On a clear day, the Mont-Blanc massif is visible on the horizon.
+      </p>
+    </div>
+    <div class="featured-image">
+      <img src="/siviez/hike-stream.jpg" alt="Alpine stream and wildflower meadows near Siviez" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="container">
+    <div class="kicker">Around Siviez</div>
+    <h2>The <em>views</em>.</h2>
+    <p>Photos from summer hikes — Nendaz valley, alpine lakes, and the panoramas that make this corner of Valais unique.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item wide">
+        <img src="/siviez/view-sion-valley.jpg" alt="View down the Nendaz valley toward Sion" loading="lazy">
+        <div class="gallery-caption">Nendaz valley — down to Sion</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/siviez/view-from-cleuson.jpg" alt="Panorama from near Lac de Cleuson" loading="lazy">
+        <div class="gallery-caption">Above Cleuson</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/siviez/hike-stream.jpg" alt="Alpine stream near Siviez" loading="lazy">
+        <div class="gallery-caption">Wild stream</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/siviez/hike-hikers.jpg" alt="Hikers on trail near Cleuson dam" loading="lazy">
+        <div class="gallery-caption">On the way up</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/siviez/rosablanche-1.jpg" alt="Rosablanche complex seen from above with mountains" loading="lazy">
+        <div class="gallery-caption">Toward Rosablanche</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="kicker">Before you go</div>
+    <h2>Small things that <em>matter</em>.</h2>
+
+    <div class="tips">
+      <div class="tip">
+        <div class="tip-num">01</div>
+        <h4>Start early</h4>
+        <p>Leave Rosablanche C34 by 9:00 AM. The Cleuson valley faces west and gets hot after 1 PM in July/August. Pack sunscreen and a hat.</p>
+      </div>
+      <div class="tip">
+        <div class="tip-num">02</div>
+        <h4>Bring water & snacks</h4>
+        <p>The stream water is clean but not tested — bring 1L per person. Grab pastries from Chez Caroline (in Rosablanche building) the day before.</p>
+      </div>
+      <div class="tip">
+        <div class="tip-num">03</div>
+        <h4>No cable car needed</h4>
+        <p>The trailhead is a 10-min walk from the apartment. In winter this same path is a ski route — check the trail map at reception in summer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap">
+  <div class="container">
+    <div class="kicker">More coming</div>
+    <h2>Trails <em>opening one by one</em>.</h2>
+    <p>Full guides — with hand-drawn maps, GPX files, and Puppy's tips — being added throughout autumn 2026.</p>
+
+    <ul>
+      <li><strong>Bisse du Milieu</strong> — easy 2h shaded loop from Haute-Nendaz</li>
+      <li><strong>Col des Gentianes</strong> — cable car to 2950m, panoramic ridge walk</li>
+      <li><strong>Bisses de Nendaz</strong> — the full 8-bisses tour</li>
+      <li><strong>Mont Fort viewpoint</strong> — 3330m, Mont-Blanc on the horizon</li>
+      <li><strong>Lac du Grand Désert</strong> — advanced full-day alpine hike</li>
+      <li><strong>Combatselina to Cleuson</strong> — the classic (this page)</li>
+    </ul>
+
+    <div class="signature">Follow along on Instagram — new trail each week.</div>
+
+    <div class="cta-row">
+      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="btn btn-primary">
+        <span>Follow @siviez ↗</span>
+      </a>
+      <a href="/appartement" class="btn btn-ghost">
+        <span>Stay at Rosablanche C34 →</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <footer>
   © 2026 · Hosted by Luc<span class="dot">·</span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a>
 </footer>
+
+<script is:inline>
+  window.addEventListener('siviez-lang-change', function(e) {
+    // Placeholder for future NL/EN/FR content
+  });
+</script>
 
 </body>
 </html>
