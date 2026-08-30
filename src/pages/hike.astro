@@ -392,7 +392,7 @@ import SiviezNav from '../components/SiviezNav.astro';
     <div class="signature">Follow along on Instagram — new trail each week.</div>
 
     <div class="cta-row">
-      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="btn btn-primary">
+      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" data-track="instagram_click_hike" class="btn btn-primary">
         <span>Follow @siviez ↗</span>
       </a>
       <a href="/appartement" class="btn btn-ghost">
@@ -407,6 +407,16 @@ import SiviezNav from '../components/SiviezNav.astro';
 </footer>
 
 <script is:inline>
+  // Vercel Analytics event tracking
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var eventName = this.getAttribute('data-track');
+      if (window.va && typeof window.va === 'function') {
+        window.va('event', { name: eventName });
+      }
+    });
+  });
+
   window.addEventListener('siviez-lang-change', function(e) {
     // Placeholder for future NL/EN/FR content
   });

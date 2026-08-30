@@ -40,7 +40,7 @@ import SiviezNav from '../components/SiviezNav.astro';
       </div>
 
       <div class="cards">
-        <a href="/hike" class="card">
+        <a href="/hike" data-track="card_click_hike" class="card">
           <div class="card-label" data-i18n="card.hike.label">Hike</div>
           <h3 class="card-title">Hike <em>guide</em></h3>
           <div class="card-credit" data-i18n="card.hike.credit">Trails, bisses & alpine lakes</div>
@@ -50,7 +50,7 @@ import SiviezNav from '../components/SiviezNav.astro';
           <div class="card-cta" data-i18n="card.hike.cta">Explore trails →</div>
         </a>
 
-        <a href="/ski" class="card">
+        <a href="/ski" data-track="card_click_ski" class="card">
           <div class="card-label" data-i18n="card.ski.label">Ski</div>
           <h3 class="card-title">Ski <em>the 4 Vallées</em></h3>
           <div class="card-credit" data-i18n="card.ski.credit">410 km · ski-in/ski-out</div>
@@ -60,7 +60,7 @@ import SiviezNav from '../components/SiviezNav.astro';
           <div class="card-cta" data-i18n="card.ski.cta">See the pistes →</div>
         </a>
 
-        <a href="#discover" class="card">
+        <a href="#discover" data-track="card_click_discover" class="card">
           <div class="card-label" data-i18n="card.discover.label">Discover</div>
           <h3 class="card-title">The <em>village</em></h3>
           <div class="card-credit" data-i18n="card.discover.credit">1730m · Valais · practical info</div>
@@ -70,7 +70,7 @@ import SiviezNav from '../components/SiviezNav.astro';
           <div class="card-cta" data-i18n="card.discover.cta">More about Siviez →</div>
         </a>
 
-        <a href="/appartement" class="card card-emphasis">
+        <a href="/appartement" data-track="card_click_stay" class="card card-emphasis">
           <div class="card-label" data-i18n="card.stay.label">Stay</div>
           <h3 class="card-title">Rosablanche <em>C34</em></h3>
           <div class="card-credit" data-i18n="card.stay.credit">Ski-in / ski-out · sleeps 7</div>
@@ -81,7 +81,7 @@ import SiviezNav from '../components/SiviezNav.astro';
         </a>
       </div>
 
-      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" class="insta-cta">
+      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" data-track="instagram_click_home" class="insta-cta">
         <span class="insta-icon">✧</span>
         <span data-i18n="insta.cta">Follow @siviez on Instagram</span>
         <span class="insta-arrow">↗</span>
@@ -465,6 +465,18 @@ import SiviezNav from '../components/SiviezNav.astro';
     .stat { min-width: 60px; }
   }
 </style>
+
+<script is:inline>
+  // Vercel Analytics event tracking
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var eventName = this.getAttribute('data-track');
+      if (window.va && typeof window.va === 'function') {
+        window.va('event', { name: eventName });
+      }
+    });
+  });
+</script>
 
 <script is:inline>
   const translations = {
