@@ -51,8 +51,10 @@ siviez.com/
 │   │   ├── hike.astro          # /hike  — hiking guide
 │   │   ├── ski.astro           # /ski   — winter & ski area
 │   │   └── appartement.astro   # /appartement — the apartment (Airbnb)
-│   └── styles/
-│       └── global.css          # Global styles & CSS variables
+│   ├── styles/
+│   │   └── global.css          # Global styles & CSS variables
+│   └── data/
+│       └── siviez-places.json  # Local knowledge base (restaurants, lifts, landmarks)
 │
 ├── astro.config.mjs            # Astro config (site URL, sitemap integration)
 ├── vercel.json                 # Redirects (www → apex)
@@ -99,6 +101,15 @@ every page. The **`<head>`** (meta tags, Open Graph, fonts, analytics) lives in
 `src/layouts/Layout.astro`.
 
 ---
+
+## Local content data
+
+`src/data/siviez-places.json` holds the structured local knowledge base for
+Siviez — restaurants, the ski school, the lifts from the village, landmarks
+(Lac de Cleuson, the Cleuson dam, Chapelle Saint-Barthélémy, the Printse, and
+the hiking refuges), and parking. It mixes the owner's first-hand knowledge
+with verified public facts, and feeds the Discover / Eat & drink / Practical
+pages as they get built.
 
 ## Languages
 

@@ -1,160 +1,124 @@
 ================================================================
-siviez.com — OPSCHONING & HERSTRUCTURERING (sept 2026)
-Wat er veranderd is + hoe je het plaatst
+siviez.com — UPDATE: accurate foto-namen + local content
+September 2026
 ================================================================
 
-Dit is een GROTE, propere herstructurering. De hele repo is
-opgeschoond zodat andere websitebouwers (en jijzelf later)
-meteen snappen hoe alles in elkaar zit.
+Deze update bouwt voort op de vorige herstructurering en voegt
+jouw local kennis toe: correcte fotonamen, accurate alt-teksten,
+de Combatseline-correctie, en een gestructureerd databestand met
+alle plekken/info van Siviez.
 
-BELANGRIJK: dit vervangt je HELE siviez.com map. Het makkelijkst
-is: oude map vervangen door deze (zie stappenplan onderaan).
+Net als vorige keer: dit vervangt de HELE map (behalve .git).
 
 
 ================================================================
 WAT ER VERANDERD IS
 ================================================================
 
-1. FOTO'S HERNOEMD (IMG_XXXX -> beschrijvend)
-   Alle 9 IMG_-foto's kregen een beschrijvende Engelse naam.
-   Voorbeeld:
-     IMG_7645.jpg  ->  mountain-chapel-siviez.jpg
-     IMG_1791.jpg  ->  cleuson-reservoir-dam-view.jpg
-   Waarom: leesbaar voor bouwers + beter voor Google + AI-crawlers.
+1. FOTO'S DEFINITIEF BENOEMD (op basis van jouw kennis)
+   De foto's kregen nu accurate namen met de echte plekken:
 
-2. FOTO'S IN THEMA-MAPPEN
-   Alles zat in 1 map (public/siviez/). Nu opgesplitst:
-     public/photos/hike/       (wandelfoto's)
-     public/photos/ski/        (winterfoto's)
-     public/photos/apartment/  (appartement)
-     public/photos/village/    (dorp, meer, natuur)
-     public/photos/hero/       (homepage hero-varianten)
+   HIKE:
+     -> printse-bridge-towards-refuge-saint-laurent.jpg
+     -> trail-combatseline-lac-de-cleuson-stream.jpg
+     -> view-siviez-from-chapelle-saint-barthelemy.jpg
+     -> view-sion-from-combatseline.jpg
+     -> printse-valley-towards-grand-desert.jpg
+     -> waterfall-climb-siviez-combatseline.jpg
 
-3. GEBROKEN FOTO GEREPAREERD
-   IMG_7608.jpg werd getoond op /appartement maar bestond NIET
-   (kapot beeld). Vervangen door de luchtfoto van Rosablanche.
+   VILLAGE (allemaal Lac de Cleuson):
+     -> lac-de-cleuson-dam-view.jpg
+     -> lac-de-cleuson-panorama.jpg
+     -> lac-de-cleuson-mountain-basin.jpg
+     -> lac-de-cleuson-snowy-peaks.jpg
+     -> cows-lac-de-cleuson-pasture.jpg
+     -> chapelle-saint-barthelemy-nendaz.jpg
 
-4. HOOFDLETTER-PROBLEEM OPGELOST
-   De code verwees naar /Siviez/ (hoofdletter), de map was
-   /siviez/ (klein). Dit werkte toevallig maar was fragiel.
-   Nu alles consistent lowercase: /photos/
+   VERHUISD naar apartment/ (het is jullie uitzicht!):
+     village/valley-forest-snow-peak.jpg
+       -> apartment/rosablanche-c34-view-printse-valley.jpg
 
-5. LEGE ALT-TEKSTEN INGEVULD
-   7 foto's op /appartement hadden alt="" (leeg). Nu allemaal
-   beschrijvende Engelse alt-teksten. Beter voor SEO + blinden.
+2. ACCURATE ALT-TEKSTEN
+   Elke foto heeft nu een correcte, beschrijvende alt-tekst met
+   de echte plaatsnamen (Cleuson, Saint-Barthélémy, Printse,
+   Refuge Saint-Laurent, Grand Désert, Combatseline, Sion).
+   Goed voor SEO én blinden.
 
-6. TAAL-CONSISTENTIE
-   /hike en /ski stonden nog op lang="nl" met Engelse content.
-   Nu overal lang="en" - consistent.
+3. COMBATSELINA -> COMBATSELINE (15 correcties)
+   Je site schreef "Combatselina" (met -a-). De officiële
+   spelling is "Combatseline" (met -e-) - bevestigd door
+   nendaz.ch, AllTrails, skiresort.com. Overal gecorrigeerd.
 
-7. PROFESSIONELE README.md
-   Volledig herschreven in het Engels: legt de hele structuur,
-   naamgeving, routes en conventies uit. Dit is wat andere
-   bouwers als eerste lezen.
+4. NIEUW: LOCAL KENNIS-DATABESTAND
+   src/data/siviez-places.json bevat nu ALLE info die je gaf:
+   - Chez Caroline (café/bakkerij/Yeti Bar - in Rosablanche)
+   - Restaurant Les Bergers (ingang Siviez)
+   - Restaurant Combatseline (bovenaan lift)
+   - Auberge de Siviez / Les Gentianes (100 bedden)
+   - ESS Nendaz skischool (bureau in Rosablanche + uren)
+   - De 3 liften vanuit Siviez (Combatseline/Tortin/Plan du Fou)
+   - Landmarks: Lac de Cleuson, dam, kapel, Printse, refuges
+   - Parkeren (gegarandeerde plaats appartement)
 
-8. CODE-COMMENTS IN ENGELS
-   Elk hoofdbestand kreeg bovenaan een korte Engelse uitleg
-   van wat het doet.
+   Dit bestand voedt straks de Discover/Eat & drink/Practical
+   pagina's. Nu al netjes bewaard zodat niks verloren gaat.
 
-9. SITEMAP-VERSIE VASTGEZET
-   @astrojs/sitemap gepind op 3.6.0 (de kapotte 3.7.1 wordt
-   nu vermeden - dit was de build-fix).
+5. README bijgewerkt
+   De nieuwe data-map + het databestand staan nu gedocumenteerd.
 
 
 ================================================================
-STAPPENPLAN - HELE MAP VERVANGEN
+STAPPENPLAN - HELE MAP VERVANGEN (behalve .git)
 ================================================================
 
-Omdat er zoveel verandert (foto's verplaatst, hernoemd), is de
-schoonste aanpak: je oude map vervangen door deze.
+STAP 1 - Backup
+   Kopieer je huidige siviez.com map als backup.
 
-STAP 1 - Backup maken (voor de zekerheid)
-   Kopieer je huidige Documenten\PUPVANH\siviez.com map ergens
-   naartoe als backup (bv. siviez.com-BACKUP). Voor als er iets
-   misloopt.
+STAP 2 - Alles weg BEHALVE .git
+   In siviez.com: verwijder alles behalve de (verborgen) .git map.
+   (Zet "verborgen items" aan in Verkenner zodat je .git ziet.)
 
-STAP 2 - node_modules bewaren (scheelt herinstallatie)
-   Als je huidige map een node_modules map heeft: laat die staan,
-   of kopieer hem straks terug. Zit NIET in deze zip (te groot).
+STAP 3 - Zip erin
+   Pak deze zip uit, kopieer alle bestanden in siviez.com.
+   .git blijft staan, mijn bestanden komen ernaast.
 
-STAP 3 - Oude map leegmaken, nieuwe erin
-   a) Open Documenten\PUPVANH\siviez.com
-   b) Verwijder ALLES BEHALVE node_modules (als die er is)
-      -> dus weg: public, src, README, package.json, config, enz.
-   c) Pak deze zip uit
-   d) Kopieer ALLE bestanden uit de zip in je siviez.com map
-
-STAP 4 - Package opnieuw installeren
-   Omdat de sitemap-versie veranderde:
-   - Als je package-lock.json hebt: verwijder die
-   - Vercel installeert bij de push automatisch opnieuw (OK)
-   - Of lokaal: open terminal in de map, typ: npm install
-
-STAP 5 - GitHub Desktop -> Commit -> Push
-   Je zult VEEL wijzigingen zien (alle foto's verplaatst +
-   code aangepast). Dat is normaal en verwacht.
-
-   Summary: "Restructure: descriptive photo names, themed folders, README, SEO fixes"
-   Commit to main -> Push origin
-
-   Wacht ~1 minuut voor de deploy.
+STAP 4 - GitHub Desktop -> Commit -> Push
+   Je ziet veel wijzigingen (foto's hernoemd + code). Normaal.
+   Summary: "Accurate photo names, alt text, Combatseline fix, local data"
+   Commit to main -> Push origin. Wacht ~1 min.
 
 
 ================================================================
 CONTROLEREN NA DEPLOY
 ================================================================
 
-1. Open siviez.com en klik alle 4 pagina's af:
-   - Homepage: hero-foto laadt?
-   - /hike: alle foto's + gallery laden?
-   - /ski: winter hero + complex foto laden?
-   - /appartement: hero + galerij laden? (let op: de vroeger
-     kapotte foto toont nu de Rosablanche luchtfoto)
+Klik alle 4 pagina's af - alle foto's moeten laden:
+   siviez.com            (hero + kaarten)
+   siviez.com/hike       (hero + galerij)
+   siviez.com/ski        (hero + complex)
+   siviez.com/appartement (hero + galerij, geen kapotte foto meer)
 
-2. Als een foto NIET laadt:
-   Rechtermuisklik -> afbeelding openen in nieuw tabblad ->
-   kijk welk pad 404 geeft, stuur mij dat pad.
-
-3. Sitemap check:
-   https://siviez.com/sitemap-index.xml  -> moet XML tonen
+Als een foto niet laadt: rechtermuisklik -> openen in nieuw
+tabblad -> stuur mij het pad dat 404 geeft.
 
 
 ================================================================
-VOLLEDIGE FOTO-HERNOEMING (referentie)
+WAT ER NIET VERANDERD IS
 ================================================================
 
-hike/
-  hike-hikers.jpg          -> hikers-alpine-valley-cleuson.jpg
-  hike-stream.jpg          -> mountain-stream-wildflowers.jpg
-  view-from-cleuson.jpg    -> view-from-cleuson-dam.jpg
-  view-sion-valley.jpg     -> nendaz-valley-towards-sion.jpg
-  IMG_1797.jpg             -> alpine-valley-hiking-path.jpg
-  IMG_7647.jpg             -> forest-waterfall-stream.jpg
+De zichtbare teksten, kleuren en layout blijven hetzelfde
+(behalve de Combatseline-spelling). De plekken-info uit het
+databestand is nog NIET zichtbaar op de site - dat komt wanneer
+we de Discover-pagina's bouwen. Nu staat het klaar.
 
-ski/
-  siviez-winter.avif       -> siviez-village-winter-snow.avif
-  ski-montfort-view.avif   -> mont-fort-panorama-4-vallees.avif
-  rosablanche-2.jpg        -> rosablanche-c34-aerial-summer.jpg
 
-apartment/
-  app-balcony.jpg          -> rosablanche-c34-balcony-view.jpg
-  rosablanche-1.jpg        -> rosablanche-c34-from-above.jpg
+================================================================
+VOLGENDE STAP
+================================================================
 
-village/
-  IMG_1625.jpg             -> valley-forest-snow-peak.jpg
-  IMG_1791.jpg             -> cleuson-reservoir-dam-view.jpg
-  IMG_1819.jpg             -> turquoise-lake-panorama.jpg
-  IMG_1888.jpg             -> cows-alpine-lake-pasture.jpg
-  IMG_7613.jpg             -> cleuson-lake-mountain-basin.jpg
-  IMG_7645.jpg             -> mountain-chapel-siviez.jpg
-  IMG_7646.jpg             -> snowy-peaks-alpine-lake.jpg
-
-hero/ (waren in root)
-  lac-de-cleuson-hero.jpg  -> cleuson-hero.jpg
-  lac-de-cleuson-med.jpg   -> cleuson-hero-medium.jpg
-  lac-de-cleuson-wide.jpg  -> cleuson-hero-wide.jpg
-
-VERWIJDERD (gebroken link):
-  IMG_7608.jpg (bestond niet) -> verwijst nu naar rosablanche-c34-aerial-summer.jpg
+Nu de foto's + data perfect zijn, is de logische volgende stap:
+de eerste echte content-pagina bouwen (bv. Eat & drink of het
+dorp), zodat bezoekers iets krijgen om te lezen en te plannen.
+Alle info staat al klaar in siviez-places.json.
 
 ================================================================

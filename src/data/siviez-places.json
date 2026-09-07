@@ -1,0 +1,133 @@
+{
+  "_comment": "Local knowledge base for Siviez — collected from Pepijn (resident) + official sources. Used to build the Discover / Eat & drink / Practical pages. All facts verified where possible.",
+  "_updated": "2026-09",
+
+  "eat_and_drink": [
+    {
+      "name": "Chez Caroline",
+      "type": "cafe-restaurant-bakery",
+      "location": "Rosablanche building (same block as apartment C34)",
+      "highlight": "In the very building of Rosablanche C34 — coffee, meals and fresh bread a lift ride from the apartment.",
+      "summer": "Sunny terrace at the foot of the slopes, relaxed lunches to the sound of cowbells.",
+      "winter": "Terrace at the foot of the ski slopes, plus the Yeti Bar.",
+      "menu": "Seasonal — burgers, salads, soups, grilled meats, breakfast, sandwiches to go.",
+      "bakery": "Bread and croissants to order (order the day before, pick up next morning).",
+      "extras": ["Pétanque tournaments", "Playground", "Free parking", "Card payment", "Terrace", "Family-friendly"],
+      "address": "Route de Siviez 55, 1997 Siviez",
+      "phone": "+41 27 288 13 03",
+      "web": "https://www.chezcaroline.ch/",
+      "facebook": "https://www.facebook.com/chezcarolinesiviez/",
+      "seasons": ["summer", "autumn", "winter", "spring"]
+    },
+    {
+      "name": "Restaurant Les Bergers",
+      "alt_name": "Chez Benzine",
+      "type": "restaurant",
+      "location": "Entrance of Siviez",
+      "highlight": "Alpine-atmosphere restaurant with traditional Valais dishes and open-hearth grills.",
+      "menu": "Open-hearth grills, cheese dishes, local Valais specialities.",
+      "extras": ["Sun-drenched terrace (summer & winter)", "Free parking", "Card payment", "WC", "Family-friendly"],
+      "web": "https://www.restaurant-les-bergers.ch/",
+      "seasons": ["summer", "autumn", "winter", "spring"]
+    },
+    {
+      "name": "Restaurant de Combatseline",
+      "type": "mountain-restaurant",
+      "location": "Top of the Combatseline chairlift (2238m)",
+      "highlight": "Panoramic terrace at 2238m — reachable by chairlift or on foot, on the Bisse de Chervé hike.",
+      "menu": "Traditional local dishes; kids' Cheesy menu; house liqueur 'le penché'.",
+      "seasons": ["summer", "winter"]
+    }
+  ],
+
+  "stay_other": [
+    {
+      "name": "Auberge de Siviez",
+      "alt_name": "Les Gentianes / (locally: Chalet Les Raffles)",
+      "type": "group-lodge",
+      "location": "Next to the Rosablanche residence",
+      "capacity": 100,
+      "highlight": "100-bed mountain lodge for groups — youth & sports camps, seminars, family celebrations, weddings.",
+      "extras": ["Free parking", "Booking required", "Groups", "WC", "Family-friendly", "Wifi", "At the ski slope", "Showers"],
+      "address": "Route de Siviez, 1997 Siviez",
+      "phone": "+41 79 613 73 34",
+      "email": "info@lesgentianes.ch",
+      "seasons": ["summer", "autumn", "winter", "spring"]
+    }
+  ],
+
+  "ski_school": {
+    "name": "École Suisse de Ski Nendaz (ESS Nendaz)",
+    "type": "swiss-ski-school",
+    "location": "Sales office / bureau in the Rosablanche building (same block as apartment C34)",
+    "highlight": "The official Swiss Ski School — its Siviez desk is in the Rosablanche building, so lessons are booked a floor away from the apartment.",
+    "history": "Over 50 years active.",
+    "offer": ["Group, private & semi-private lessons", "Ski, snowboard, télémark, cross-country", "Kids from age 3", "Ski touring, handi-ski", "Summer camps, bike/e-bike"],
+    "office_siviez_hours_winter": "Daily 09:00–13:00 & 14:00–17:00; high season daily 09:00–17:00",
+    "phone_siviez": "+41 27 288 12 92",
+    "phone_main": "+41 27 288 29 75",
+    "web": "https://skinendaz.ch/",
+    "instagram": "https://www.instagram.com/ess_nendaz/"
+  },
+
+  "lifts_from_siviez": {
+    "_note": "Three lifts leave from the Siviez station (Les 4 Vallées), right by Rosablanche C34 — ski-in/ski-out in three directions.",
+    "lifts": [
+      {
+        "name": "Combatseline",
+        "type": "4-seater chairlift (2005)",
+        "goes_to": "Combatseline (2238m)",
+        "opens_up": "Veysonnaz / Thyon; in summer the Bisse de Chervé & Mont-Rouge hikes; mountain restaurant on top."
+      },
+      {
+        "name": "Tortin",
+        "type": "4-seater chairlift",
+        "goes_to": "Tortin",
+        "opens_up": "Col des Gentianes → Mont-Fort (3330m) and Verbier."
+      },
+      {
+        "name": "Siviez–Plan du Fou",
+        "type": "8-seater gondola",
+        "goes_to": "Plan du Fou",
+        "opens_up": "Nendaz / Tracouet / Prarion — shares cabins with Prarion–Plan du Fou, so no change needed towards Nendaz."
+      }
+    ]
+  },
+
+  "landmarks": [
+    {
+      "name": "Lac de Cleuson",
+      "type": "reservoir",
+      "facts": "Turquoise reservoir at ~2179m behind the Cleuson dam. Holds the water of the Printse river.",
+      "dam": "Cleuson dam built 1947–1950, 87m high, 420m long, holds 20 million m³. Part of the Grande Dixence hydroelectric scheme.",
+      "access": "About 1h15 walk up from Siviez along the Printse; guided tours inside the dam wall in season."
+    },
+    {
+      "name": "Chapelle Saint-Barthélémy",
+      "type": "chapel",
+      "facts": "The oldest chapel in Nendaz — a 1447 document already mentions it, so it predates that. Originally stood in the Cleuson valley; the current stone chapel was built in 1951 by the dam workers after the dam was built. It sits just behind the Cleuson dam.",
+      "tradition": "Cheeses from the mountain pastures are blessed here every year on 24 August."
+    },
+    {
+      "name": "La Printse",
+      "type": "river",
+      "facts": "The river that runs down the Nendaz valley (Vallée de la Printze). Feeds Lac de Cleuson. A barefoot path (2.4 km, ~45 min) and a family picnic area with BBQ follow it near Siviez."
+    },
+    {
+      "name": "Refuge de Saint-Laurent",
+      "type": "mountain-refuge",
+      "facts": "Refuge at 2522m by Lac de Cleuson, on the Combatseline → Bisse de Chervé → Cleuson loop.",
+      "hike": "Combatseline chairlift → along the old Bisse de Chervé → Refuge de Saint-Laurent → Lac de Cleuson → down the east bank via the dam back to Siviez (~16.6 km loop)."
+    },
+    {
+      "name": "Lac du Grand Désert",
+      "type": "high-alpine-lake",
+      "facts": "High-alpine lake reached from the Printse valley above Siviez; visible on the H5 view."
+    }
+  ],
+
+  "parking": {
+    "village": "Large parking capacity in Siviez.",
+    "apartment": "Rosablanche C34 has a guaranteed reserved space on a barrier-controlled car park (parking card provided)."
+  }
+}
