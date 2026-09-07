@@ -1,427 +1,571 @@
 ---
-// /hike — hiking guide: Combatseline → Lac de Cleuson, bisses de Nendaz, and more.
-import Analytics from '@vercel/analytics/astro';
+// /hike — The Grand Lac loop (Siviez–Combatseline–Lac de Cleuson–Lac du Grand Désert)
+// with full segment breakdown, 5 route variants, the Saint-Laurent refuge, and
+// four more trails from Siviez. Trilingual NL/EN/FR via the shared siviez-lang switch.
+import Layout from '../layouts/Layout.astro';
 import SiviezNav from '../components/SiviezNav.astro';
+
+const pageTitle = 'Hiking Siviez · Siviez–Cleuson–Grand Désert loop & more trails';
+const pageDescription = 'The Grand Lac loop from Siviez: Combatseline, Lac de Cleuson, Refuge Saint-Laurent and Lac du Grand Désert — 21 km, 1204 m, with five shorter variants. Plus four more trails from Siviez.';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ExercisePlan",
+  "name": "Siviez – Combatseline – Lac de Cleuson – Lac du Grand Désert loop",
+  "description": "A 21 km alpine loop from Siviez (Valais) via the Combatseline, Lac de Cleuson, the Saint-Laurent refuge and Lac du Grand Désert, returning over the Cleuson dam. 1204 m of ascent, 8-9 hours.",
+  "url": "https://siviez.com/hike"
+};
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hikes in Siviez · Combatseline to Lac de Cleuson · siviez.com</title>
-<meta name="description" content="Discover the best hikes around Siviez and the 4 Vallées. Start with the classic Combatseline to Lac de Cleuson trail — alpine streams, wildflowers, and turquoise water at 2186m.">
-<link rel="canonical" href="https://siviez.com/hike">
-<link rel="icon" type="image/svg+xml" href="/favicons/siviez.svg">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hikes in Siviez · Bisses & alpine trails">
-<meta property="og:description" content="A hand-drawn guide to the best hikes in Siviez and the 4 Vallées. Streams, bisses, and alpine lakes.">
-<meta property="og:image" content="https://siviez.com/photos/hike/printse-bridge-towards-refuge-saint-laurent.jpg">
-<meta property="og:url" content="https://siviez.com/hike">
+<Layout title={pageTitle} description={pageDescription} ogImage="https://siviez.com/photos/hike/printse-valley-towards-grand-desert.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <SiviezNav />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker" data-i18n="h.kicker">Hike · Valais · The Grand Lac loop</div>
+      <h1>Lac du <em data-i18n="h.title.em">Grand Désert</em></h1>
+      <p class="hero-tag" data-i18n="h.tag">Our favourite day out: Siviez, the Cleuson lake, and the desert of stone above it.</p>
+    </div>
+  </section>
+
+  <div class="page">
+
+    <section class="stats-strip">
+      <div class="stat"><div class="sv">21 km</div><div class="sl" data-i18n="h.stat.dist">Distance</div></div>
+      <div class="stat"><div class="sv">1204 m</div><div class="sl" data-i18n="h.stat.up">Ascent</div></div>
+      <div class="stat"><div class="sv">8-9 h</div><div class="sl" data-i18n="h.stat.time">Time</div></div>
+      <div class="stat"><div class="sv">2746 m</div><div class="sl" data-i18n="h.stat.high">High point</div></div>
+      <div class="stat"><div class="sv" data-i18n="h.stat.looptype">Loop</div><div class="sl" data-i18n="h.stat.type">Type</div></div>
+    </section>
+
+    <section class="intro">
+      <p class="lead" data-i18n="h.intro.lead">
+        This is the one. The full loop from the village up to the two lakes and back — turquoise water,
+        an old high bisse, a mountain refuge, and a moon-like desert of stone at nearly 2750 metres.
+      </p>
+      <p data-i18n="h.intro.body">
+        The whole loop is 21 kilometres with 1204 metres of climbing, and takes a solid 8 to 9 hours.
+        It's a real day in the mountains — but with good legs it's within reach of most keen walkers, and
+        there are plenty of shorter ways to do it. For me the finest moment is the first sight of the
+        Lac de Cleuson: that impossible turquoise, held in the grey rock.
+      </p>
+    </section>
+
+    <section class="segments">
+      <div class="section-kicker" data-i18n="h.seg.kicker">The full route</div>
+      <h2 data-i18n="h.seg.title">Seven segments, one loop</h2>
+      <p class="seg-intro" data-i18n="h.seg.intro">
+        The full route on foot, broken into its natural stages. Every shorter variant is just this list,
+        cut off earlier and looped back to the chapel.
+      </p>
+
+      <div class="seg-table">
+        <div class="seg-row seg-head">
+          <span data-i18n="h.seg.col.stage">Stage</span>
+          <span class="num">km</span>
+          <span class="num">↑ m</span>
+          <span class="num">↓ m</span>
+          <span class="num cum" data-i18n="h.seg.col.cum">Cumul.</span>
+        </div>
+        <div class="seg-row"><span data-i18n="h.seg.1">Siviez → Combatseline</span><span class="num">4.9</span><span class="num up">523</span><span class="num dn">22</span><span class="num cum">4.9</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.2">Combatseline → flank of Lac de Cleuson</span><span class="num">3.6</span><span class="num up">162</span><span class="num dn">70</span><span class="num cum">8.5</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.3">Flank → bridge over the Printse</span><span class="num">2.2</span><span class="num up">128</span><span class="num dn">137</span><span class="num cum">10.7</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.4">Bridge → Refuge Saint-Laurent</span><span class="num">1.2</span><span class="num up">158</span><span class="num dn">4</span><span class="num cum">11.9</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.5">Saint-Laurent → Lac du Grand Désert</span><span class="num">1.0</span><span class="num up">165</span><span class="num dn">4</span><span class="num cum">12.9</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.6">Grand Désert → Chapelle Saint-Barthélémy</span><span class="num">4.7</span><span class="num up">57</span><span class="num dn">513</span><span class="num cum">17.6</span></div>
+        <div class="seg-row"><span data-i18n="h.seg.7">Chapelle → Siviez</span><span class="num">3.4</span><span class="num up">11</span><span class="num dn">462</span><span class="num cum">21.0</span></div>
+        <div class="seg-row seg-total"><span data-i18n="h.seg.total">Full loop</span><span class="num">21.0</span><span class="num up">1204</span><span class="num dn">1212</span><span class="num cum">—</span></div>
+      </div>
+    </section>
+
+    <section class="variants">
+      <div class="section-kicker" data-i18n="h.var.kicker">Choose your day</div>
+      <h2 data-i18n="h.var.title">Five ways to walk it</h2>
+      <p class="var-intro" data-i18n="h.var.intro">
+        From a half-day out to the lake, to the full loop to the desert of stone. All variants start on foot
+        from Siviez and return over the Cleuson dam past the chapel — except where you take the lift up.
+      </p>
+
+      <div class="var-grid">
+        <article class="var-card full">
+          <div class="var-badge gold" data-i18n="h.var.full.badge">The full loop</div>
+          <h3 data-i18n="h.var.full.name">To Lac du Grand Désert</h3>
+          <div class="var-nums"><span>21 km</span><span>↑1204 m</span><span>8-9 h</span></div>
+          <p data-i18n="h.var.full.body">The complete Grand Lac loop, all seven segments — Combatseline, the lake, the refuge, and the desert at 2746 m. A big, rewarding day.</p>
+          <span class="var-level hard" data-i18n="h.level.hard">Demanding</span>
+        </article>
+
+        <article class="var-card">
+          <div class="var-badge" data-i18n="h.var.stl.badge">Without the desert</div>
+          <h3 data-i18n="h.var.stl.name">To Refuge Saint-Laurent</h3>
+          <div class="var-nums"><span>19 km</span><span>↑1035 m</span><span>~6 h</span></div>
+          <p data-i18n="h.var.stl.body">Turn back at the refuge instead of climbing on to the Grand Désert. Still the lake, the bridge and lunch at 2500 m.</p>
+          <span class="var-level medhard" data-i18n="h.level.medhard">Medium-hard</span>
+        </article>
+
+        <article class="var-card">
+          <div class="var-badge" data-i18n="h.var.bridge.badge">Without the refuge</div>
+          <h3 data-i18n="h.var.bridge.name">To the Printse bridge</h3>
+          <div class="var-nums"><span>18.6 km</span><span>↑997 m</span><span>~5 h</span></div>
+          <p data-i18n="h.var.bridge.body">Follow the lake to the dry-stone bridge over the Printse, then cut back to the chapel. A long but gentler day.</p>
+          <span class="var-level medium" data-i18n="h.level.medium">Medium</span>
+        </article>
+
+        <article class="var-card">
+          <div class="var-badge" data-i18n="h.var.lake.badge">Shortest on foot</div>
+          <h3 data-i18n="h.var.lake.name">To Lac de Cleuson</h3>
+          <div class="var-nums"><span>13 km</span><span>↑699 m</span><span>3-4 h</span></div>
+          <p data-i18n="h.var.lake.body">Up to the flank of the lake — my favourite view — then straight back down to the chapel. The most accessible way to see the turquoise water.</p>
+          <span class="var-level easy" data-i18n="h.level.easy">Accessible</span>
+        </article>
+
+        <article class="var-card lift">
+          <div class="var-badge ember" data-i18n="h.var.lift.badge">Save the first climb</div>
+          <h3 data-i18n="h.var.lift.name">Full loop, lift up</h3>
+          <div class="var-nums"><span>16 km</span><span>↑681 m</span><span>6-7 h</span></div>
+          <p data-i18n="h.var.lift.body">Take the Combatseline chairlift from Siviez and skip the first 523 m of climbing. The full high loop, with far less effort to start.</p>
+          <span class="var-level medium" data-i18n="h.level.medium">Medium</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="feature-text">
+        <div class="section-kicker" data-i18n="h.up.kicker">The climb</div>
+        <h2 data-i18n="h.up.title">Up to the lake</h2>
+        <p data-i18n="h.up.p1">
+          On foot, the route leaves Siviez past the Auberge car park, picks up a footpath to Chalet Novelly,
+          then joins the (mostly gravel) road up to the Combatseline lifts and its café. That first stretch
+          is the steepest of the whole day — 523 metres of climb — which is exactly why the chairlift makes
+          such a good shortcut.
+        </p>
+        <p data-i18n="h.up.p2">
+          From the top station the path softens, traversing the flank above the Lac de Cleuson. This is the
+          stretch I'd walk for the view alone: the whole turquoise lake below, the dam wall, and the peaks
+          of the Grand Désert ahead.
+        </p>
+      </div>
+      <div class="feature-img">
+        <img src="/photos/hike/trail-combatseline-lac-de-cleuson-stream.jpg" alt="Mountain stream along the Combatseline to Lac de Cleuson hiking trail, Siviez" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="feature reverse">
+      <div class="feature-text">
+        <div class="section-kicker" data-i18n="h.bridge.kicker">Deeper in</div>
+        <h2 data-i18n="h.bridge.title">The Printse bridge</h2>
+        <p data-i18n="h.bridge.p1">
+          Past the lake, the trail drops to a dry-stone bridge over the young Printse river, then climbs
+          again — steeper now — towards the refuge. This is where the big loop earns its name: the crowds
+          thin out, and the landscape turns wild and mineral.
+        </p>
+        <p data-i18n="h.bridge.p2">
+          If you're shortening the day, this is a natural turning point: cross back and follow the signs
+          down to the chapel.
+        </p>
+      </div>
+      <div class="feature-img">
+        <img src="/photos/hike/printse-bridge-towards-refuge-saint-laurent.jpg" alt="Dry-stone bridge over the Printse river beyond Lac de Cleuson, towards Refuge de Saint-Laurent" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="refuge">
+      <div class="section-kicker" data-i18n="h.ref.kicker">Halfway · lunch</div>
+      <h2 data-i18n="h.ref.title">Refuge de <em>Saint-Laurent</em></h2>
+      <div class="refuge-body">
+        <p data-i18n="h.ref.p1">
+          At 2500 metres, above the Cleuson dam, sits the Cabane Saint-Laurent — a mountain hut run by the
+          local Ski-Club Arpettaz, and a genuinely lovely place to stop. Red parasols, deckchairs on the
+          grass, and a terrace looking straight out over the lake.
+        </p>
+        <p data-i18n="h.ref.p2">
+          It's the best spot on the route to eat properly, at a table: fondue, croûte, salads, soups and
+          tarts, with running water, a WC and even a shower. It's usually staffed from the end of June to
+          early September (in 2026: 3 July to 13 September).
+        </p>
+        <div class="tip">
+          <span class="tip-label" data-i18n="h.tip.label">Puppy's tip</span>
+          <p data-i18n="h.ref.tip">
+            The refuge is seasonal, so don't count on it: carry enough water and a backup lunch anyway.
+            When it's open, it's the highlight of the middle of the day. To be sure, reserve ahead by email
+            at cabane@arpettaz.ch (there's no phone up there — lightning took out the mast).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="before">
+      <div class="section-kicker" data-i18n="h.before.kicker">Before you go</div>
+      <h2 data-i18n="h.before.title">Come prepared</h2>
+      <div class="before-grid">
+        <div class="before-card">
+          <div class="bc-icon">☀</div>
+          <h3 data-i18n="h.before.early.t">Start early</h3>
+          <p data-i18n="h.before.early.b">It's an 8-9 hour day. Leave Siviez in the morning so you're off the high, exposed sections well before any afternoon weather.</p>
+        </div>
+        <div class="before-card">
+          <div class="bc-icon">💧</div>
+          <h3 data-i18n="h.before.water.t">Carry water</h3>
+          <p data-i18n="h.before.water.b">Bring plenty — it's a long route and the refuge is seasonal. Don't rely on it being open; pack a backup lunch too.</p>
+        </div>
+        <div class="before-card">
+          <div class="bc-icon">🥾</div>
+          <h3 data-i18n="h.before.shoes.t">Proper shoes</h3>
+          <p data-i18n="h.before.shoes.b">The upper sections are rocky and steep in places. Sturdy hiking boots with grip, not trainers.</p>
+        </div>
+        <div class="before-card">
+          <div class="bc-icon">⛅</div>
+          <h3 data-i18n="h.before.weather.t">Check the weather</h3>
+          <p data-i18n="h.before.weather.b">This is high mountain terrain and it can turn quickly. Check the forecast the evening before and again in the morning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="others">
+      <div class="section-kicker" data-i18n="h.other.kicker">More from Siviez</div>
+      <h2 data-i18n="h.other.title">Other trails</h2>
+      <p class="others-intro" data-i18n="h.other.intro">
+        A few more walks that start from or near Siviez, from an easy family stroll to full alpine days.
+        Distances and times are indicative — check current conditions before you set out.
+      </p>
+
+      <div class="others-grid">
+        <article class="other-card">
+          <h3 data-i18n="h.other.jp.name">Japanese Garden via Siviez</h3>
+          <div class="other-nums"><span>9.5 km</span><span>↑562 m</span><span>4-4.5 h</span><span class="lvl med" data-i18n="h.level.medium">Medium</span></div>
+          <p data-i18n="h.other.jp.body">A circular hike to the "Japanese Garden", a natural setting on the glacier moraine towards Col des Gentianes.</p>
+        </article>
+        <article class="other-card">
+          <h3 data-i18n="h.other.saxon.name">Bisse de Saxon via Siviez</h3>
+          <div class="other-nums"><span>18 km</span><span>↑821 m</span><span>6.5-7 h</span><span class="lvl hard" data-i18n="h.level.hard">Hard</span></div>
+          <p data-i18n="h.other.saxon.body">A long out-and-back along one of the region's historic bisses, with wide views over the Rhône valley.</p>
+        </article>
+        <article class="other-card">
+          <h3 data-i18n="h.other.dent.name">Dent de Nendaz – Tracouet – Balavaux</h3>
+          <div class="other-nums"><span>17.1 km</span><span>↑1213 m</span><span>7.5-8 h</span><span class="lvl hard" data-i18n="h.level.hard">Hard</span></div>
+          <p data-i18n="h.other.dent.body">A demanding loop over the Dent de Nendaz ridge, past Tracouet and the Balavaux hut, through forest and lakes.</p>
+        </article>
+        <article class="other-card">
+          <h3 data-i18n="h.other.vieux.name">Tortin – Haute-Nendaz via Bisse Vieux</h3>
+          <div class="other-nums"><span>6.9 km</span><span>↑109 m</span><span>2-2.5 h</span><span class="lvl easy" data-i18n="h.level.easy">Easy</span></div>
+          <p data-i18n="h.other.vieux.body">An easy, mostly downhill walk along the Bisse Vieux beside the Printse — kid-friendly and shaded.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2 data-i18n="h.cta.title">Stay at the trailhead</h2>
+      <p data-i18n="h.cta.body">Every one of these walks starts a few minutes from Rosablanche C34 — dry your boots, rest your legs, and go again tomorrow.</p>
+      <div class="cta-buttons">
+        <a href="/appartement" class="btn btn-primary" data-track="hike_to_apartment" data-i18n="h.cta.stay">See the apartment →</a>
+        <a href="/discover/village" class="btn btn-ghost" data-i18n="h.cta.village">Discover the village</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 · Hosted by Luc</span>
+      <span class="dot">·</span>
+      <span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a></span>
+    </footer>
+
+  </div>
+</Layout>
 
 <style>
-  :root {
-    --teal:#0E6B6F; --gold:#C8A35F; --ember:#E85D2F;
-    --ivory:#F4F0E8; --forest:#1E3A34; --paper:#FAF7F0;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family:'Inter', sans-serif; font-weight:300; line-height:1.65;
-    color:var(--ivory); background:var(--forest);
-    -webkit-font-smoothing:antialiased;
-  }
-
   .hero {
-    position:relative; min-height:100vh; overflow:hidden;
-    display:flex; flex-direction:column; justify-content:flex-end;
-    padding:120px 40px 80px;
+    position: relative; min-height: 70vh; display: flex; align-items: flex-end;
+    padding: 120px 24px 60px; color: #F4F0E8;
     background:
-      linear-gradient(180deg, rgba(15,38,34,0.35) 0%, rgba(15,38,34,0.15) 30%, rgba(15,38,34,0.55) 70%, rgba(15,38,34,0.92) 100%),
-      url('/photos/hike/printse-bridge-towards-refuge-saint-laurent.jpg') center 40%/cover no-repeat;
+      linear-gradient(180deg, rgba(15,38,34,0.35) 0%, rgba(15,38,34,0.2) 35%, rgba(15,38,34,0.8) 100%),
+      url('/photos/hike/printse-valley-towards-grand-desert.jpg') center 50% / cover no-repeat;
   }
-  .hero-inner { max-width:1200px; margin:0 auto; width:100%; }
-  .hero-kicker {
-    font-family:'JetBrains Mono',monospace; font-size:11px;
-    letter-spacing:3px; text-transform:uppercase; color:var(--gold);
-    margin-bottom:24px;
-  }
-  h1 {
-    font-family:'Playfair Display',serif; font-weight:400;
-    font-size:clamp(64px,10vw,140px); line-height:0.95; letter-spacing:-0.02em;
-    margin-bottom:32px;
-  }
-  h1 em { font-style:italic; color:var(--gold); }
-  .hero-lede {
-    max-width:640px; font-size:19px; line-height:1.6;
-    color:rgba(244,240,232,.88); margin-bottom:40px;
-  }
-  .hero-lede em { color:var(--gold); font-style:italic; }
-  .scroll-hint {
-    font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:3px; text-transform:uppercase; color:rgba(244,240,232,0.55);
-  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .kicker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #C8A35F; margin-bottom: 18px; }
+  h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(48px, 8vw, 104px); line-height: 0.98; letter-spacing: -0.02em; margin: 0 0 18px 0; }
+  h1 em { font-style: italic; color: #C8A35F; }
+  .hero-tag { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px, 2.6vw, 24px); color: rgba(244,240,232,0.92); max-width: 640px; }
 
-  section { padding:120px 40px; position:relative; }
-  .container { max-width:1200px; margin:0 auto; }
+  .page { background: #0F2622; color: #F4F0E8; }
+  section { max-width: 1100px; margin: 0 auto; padding: 72px 24px; }
 
-  .kicker {
-    font-family:'JetBrains Mono',monospace; font-size:11px;
-    letter-spacing:3px; text-transform:uppercase; color:var(--gold);
-    margin-bottom:20px;
-  }
-  h2 {
-    font-family:'Playfair Display',serif; font-weight:400;
-    font-size:clamp(38px,5.5vw,64px); line-height:1.05; letter-spacing:-0.015em;
-    margin-bottom:24px;
-  }
-  h2 em { font-style:italic; color:var(--gold); }
-  h3 {
-    font-family:'Playfair Display',serif; font-weight:400;
-    font-size:clamp(24px,3vw,32px); line-height:1.15;
-    margin-bottom:16px;
-  }
-  h3 em { font-style:italic; color:var(--gold); }
-  p { font-size:17px; line-height:1.7; color:rgba(244,240,232,0.82); margin-bottom:16px; max-width:680px; }
-  p em { color:var(--gold); font-style:italic; }
+  .section-kicker { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #C8A35F; margin-bottom: 16px; }
+  h2 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(30px, 4.5vw, 52px); line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 22px; }
+  h2 em { font-style: italic; color: #C8A35F; }
+  p { font-size: 17px; line-height: 1.75; color: rgba(244,240,232,0.82); margin-bottom: 18px; }
 
-  .featured {
-    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
-    padding:120px 40px;
-    max-width:1400px; margin:0 auto;
+  .stats-strip {
+    display: flex; flex-wrap: wrap; gap: 0; justify-content: space-between;
+    background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2);
+    border-radius: 10px; padding: 28px 20px; margin-top: -40px; position: relative; z-index: 2;
   }
-  .featured-image {
-    position:relative; height:600px; overflow:hidden; border-radius:4px;
-  }
-  .featured-image img {
-    width:100%; height:100%; object-fit:cover;
-    transition:transform 1.2s ease;
-  }
-  .featured:hover .featured-image img { transform:scale(1.04); }
-  .featured-tag {
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:2px; text-transform:uppercase; color:var(--forest);
-    background:var(--gold); padding:6px 12px; border-radius:2px;
-    margin-bottom:20px;
-  }
-  .featured-meta {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    margin:32px 0; padding:24px 0;
-    border-top:1px solid rgba(200,163,95,0.25);
-    border-bottom:1px solid rgba(200,163,95,0.25);
-  }
-  .meta-item .meta-value {
-    font-family:'Playfair Display',serif; font-size:26px; color:var(--gold);
-    line-height:1;
-  }
-  .meta-item .meta-label {
-    font-family:'JetBrains Mono',monospace; font-size:9px;
-    letter-spacing:2px; text-transform:uppercase; color:rgba(244,240,232,0.55);
-    margin-top:6px;
-  }
+  .stats-strip .stat { flex: 1; min-width: 90px; text-align: center; padding: 4px 8px; }
+  .stats-strip .sv { font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 32px); color: #C8A35F; line-height: 1; }
+  .stats-strip .sl { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,240,232,0.6); margin-top: 8px; }
 
-  .gallery-section {
-    background:rgba(30,58,52,0.5);
-    padding:120px 40px;
-  }
-  .gallery-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    margin-top:60px;
-  }
-  .gallery-item {
-    position:relative; overflow:hidden;
-    aspect-ratio:3/4; border-radius:4px;
-    cursor:pointer;
-  }
-  .gallery-item.wide { grid-column:span 2; aspect-ratio:3/2; }
-  .gallery-item img {
-    width:100%; height:100%; object-fit:cover;
-    transition:transform 1.2s ease;
-  }
-  .gallery-item:hover img { transform:scale(1.06); }
-  .gallery-caption {
-    position:absolute; bottom:16px; left:16px; right:16px;
-    font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:2px; text-transform:uppercase;
-    color:var(--ivory);
-    text-shadow:0 2px 8px rgba(0,0,0,0.6);
-  }
+  .intro .lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(20px, 3vw, 28px); line-height: 1.5; color: #C8A35F; margin-bottom: 26px; }
+  .intro { border-bottom: 1px solid rgba(200,163,95,0.15); }
 
-  .tips {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
-    margin-top:60px;
-  }
-  .tip {
-    padding:32px;
-    background:rgba(15,38,34,0.5);
-    border:1px solid rgba(200,163,95,0.2);
-    border-radius:4px;
-  }
-  .tip-num {
-    font-family:'Playfair Display',serif; font-style:italic;
-    font-size:38px; color:var(--gold); line-height:1;
-    margin-bottom:16px;
-  }
-  .tip h4 {
-    font-family:'Playfair Display',serif; font-size:20px;
-    margin-bottom:12px; color:var(--ivory); font-weight:400;
-  }
-  .tip p {
-    font-size:14px; line-height:1.6; color:rgba(244,240,232,0.72);
-    margin-bottom:0; max-width:none;
-  }
+  .segments { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .seg-intro { max-width: 640px; margin-bottom: 32px; }
+  .seg-table { border: 1px solid rgba(200,163,95,0.2); border-radius: 8px; overflow: hidden; }
+  .seg-row { display: grid; grid-template-columns: 1fr 56px 56px 56px 64px; align-items: center; padding: 14px 18px; font-size: 14px; border-bottom: 1px solid rgba(200,163,95,0.1); }
+  .seg-row:last-child { border-bottom: none; }
+  .seg-row .num { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .seg-head { background: rgba(200,163,95,0.12); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #C8A35F; }
+  .seg-row .up { color: #E8A05D; }
+  .seg-row .dn { color: rgba(244,240,232,0.5); }
+  .seg-row .cum { color: rgba(244,240,232,0.6); }
+  .seg-row span:first-child { color: rgba(244,240,232,0.88); padding-right: 8px; }
+  .seg-total { background: rgba(30,58,52,0.6); font-family: 'Playfair Display', serif; }
+  .seg-total span:first-child { color: #F4F0E8; font-size: 16px; }
+  .seg-total .num { color: #C8A35F; font-weight: 500; }
 
-  .roadmap {
-    background:var(--forest);
-    padding:120px 40px 80px;
-    border-top:1px solid rgba(200,163,95,0.15);
-  }
-  .roadmap ul {
-    list-style:none; padding:0; margin:40px 0 0;
-    display:grid; grid-template-columns:repeat(2,1fr); gap:16px;
-    max-width:900px;
-  }
-  .roadmap li {
-    display:flex; gap:16px; align-items:baseline;
-    padding:20px 24px;
-    background:rgba(30,58,52,0.5);
-    border-left:2px solid var(--ember);
-    font-family:'Playfair Display',serif; font-style:italic;
-    font-size:17px; color:var(--ivory);
-  }
-  .roadmap li::before {
-    content:"→"; color:var(--ember); font-family:'JetBrains Mono',monospace;
-    font-size:13px; font-style:normal; flex-shrink:0;
-  }
-  .roadmap li strong { font-weight:500; color:var(--gold); font-style:normal; }
+  .variants { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .var-intro { max-width: 640px; margin-bottom: 36px; }
+  .var-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .var-card { background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2); border-radius: 8px; padding: 26px 24px; display: flex; flex-direction: column; }
+  .var-card.full { border-color: rgba(200,163,95,0.5); background: rgba(30,58,52,0.7); }
+  .var-card.lift { border-color: rgba(232,93,47,0.4); }
+  .var-badge { align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(244,240,232,0.7); background: rgba(244,240,232,0.08); padding: 4px 10px; border-radius: 2px; margin-bottom: 16px; }
+  .var-badge.gold { background: #C8A35F; color: #1E3A34; }
+  .var-badge.ember { background: #E85D2F; color: #F4F0E8; }
+  .var-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; color: #F4F0E8; margin-bottom: 12px; }
+  .var-nums { display: flex; gap: 14px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C8A35F; margin-bottom: 14px; }
+  .var-card p { font-size: 14px; line-height: 1.6; margin-bottom: 16px; flex: 1; }
+  .var-level { align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
+  .var-level.hard { background: rgba(198,74,42,0.2); color: #E8895D; border: 1px solid rgba(198,74,42,0.4); }
+  .var-level.medhard { background: rgba(200,140,80,0.18); color: #D8A868; border: 1px solid rgba(200,140,80,0.35); }
+  .var-level.medium { background: rgba(200,163,95,0.15); color: #C8A35F; border: 1px solid rgba(200,163,95,0.3); }
+  .var-level.easy { background: rgba(90,150,90,0.18); color: #86C086; border: 1px solid rgba(90,150,90,0.35); }
 
-  .signature {
-    font-family:'Caveat', cursive; font-size:32px; color:var(--gold);
-    margin:60px 0 40px;
-    display:block;
-  }
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .feature.reverse .feature-text { order: 2; }
+  .feature.reverse .feature-img { order: 1; }
+  .feature-img { height: 440px; border-radius: 8px; overflow: hidden; }
+  .feature-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
+  .feature:hover .feature-img img { transform: scale(1.04); }
+  .feature-text p:last-of-type { margin-bottom: 0; }
 
-  .cta-row {
-    display:flex; gap:16px; flex-wrap:wrap;
-    margin-top:40px;
-  }
-  .btn {
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono',monospace; font-size:11px;
-    letter-spacing:1.5px; text-transform:uppercase;
-    padding:16px 28px; border-radius:999px; text-decoration:none;
-    transition:all 0.2s ease;
-  }
-  .btn-primary { background:var(--ember); color:var(--ivory); }
-  .btn-primary:hover { background:var(--gold); color:var(--forest); transform:translateY(-2px); }
-  .btn-ghost { background:transparent; color:var(--ivory); border:1px solid rgba(244,240,232,0.3); }
-  .btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+  .tip { background: rgba(232,93,47,0.10); border-left: 3px solid #E85D2F; border-radius: 4px; padding: 16px 20px; margin-top: 22px; }
+  .tip-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #E85D2F; }
+  .tip p { font-size: 15px; margin: 6px 0 0 0; color: rgba(244,240,232,0.9); }
 
-  footer {
-    background:#0F2622; padding:60px 32px; text-align:center;
-    font-family:'JetBrains Mono',monospace; font-size:10px;
-    letter-spacing:1.5px; text-transform:uppercase; color:rgba(244,240,232,0.5);
-    border-top:1px solid rgba(200,163,95,0.1);
-  }
-  footer .dot { color:var(--ember); margin:0 6px; }
-  footer a { color:var(--gold); text-decoration:none; }
-  footer a:hover { color:var(--ivory); }
+  .refuge { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .refuge-body { max-width: 760px; }
 
-  @media (max-width:900px) {
-    .featured { grid-template-columns:1fr; gap:40px; padding:80px 20px; }
-    .featured-image { height:400px; order:-1; }
-    .gallery-grid { grid-template-columns:repeat(2,1fr); gap:16px; }
-    .tips { grid-template-columns:1fr; }
-    .roadmap ul { grid-template-columns:1fr; }
-    section, .gallery-section, .roadmap { padding:80px 20px; }
-    .hero { padding:100px 20px 60px; }
+  .before { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .before-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 12px; }
+  .before-card { background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2); border-radius: 8px; padding: 24px 20px; }
+  .bc-icon { font-size: 24px; margin-bottom: 10px; }
+  .before-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #F4F0E8; margin-bottom: 8px; }
+  .before-card p { font-size: 13px; line-height: 1.6; margin: 0; }
+
+  .others { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .others-intro { max-width: 640px; margin-bottom: 32px; }
+  .others-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .other-card { background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2); border-radius: 8px; padding: 24px 24px; }
+  .other-card h3 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px; color: #F4F0E8; margin-bottom: 12px; }
+  .other-nums { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C8A35F; margin-bottom: 12px; }
+  .other-nums .lvl { padding: 3px 10px; border-radius: 999px; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .other-nums .lvl.easy { background: rgba(90,150,90,0.18); color: #86C086; }
+  .other-nums .lvl.med { background: rgba(200,163,95,0.15); color: #C8A35F; }
+  .other-nums .lvl.hard { background: rgba(198,74,42,0.2); color: #E8895D; }
+  .other-card p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+  .cta { text-align: center; }
+  .cta p { max-width: 600px; margin: 0 auto 32px; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 28px; border-radius: 999px; text-decoration: none; transition: all 0.25s ease; }
+  .btn-primary { background: #E85D2F; color: #F4F0E8; }
+  .btn-primary:hover { background: #C8A35F; color: #1E3A34; transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid rgba(244,240,232,0.3); color: #F4F0E8; }
+  .btn-ghost:hover { border-color: #C8A35F; color: #C8A35F; }
+
+  footer { max-width: 100%; text-align: center; padding: 40px 24px; border-top: 1px solid rgba(200,163,95,0.1); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(244,240,232,0.5); }
+  footer .dot { color: #E85D2F; margin: 0 8px; }
+  footer a { color: #C8A35F; text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .var-grid { grid-template-columns: repeat(2, 1fr); }
+    .before-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 820px) {
+    .feature { grid-template-columns: 1fr; gap: 32px; }
+    .feature.reverse .feature-text { order: 2; }
+    .feature.reverse .feature-img { order: 1; }
+    .feature-img { height: 300px; }
+    section { padding: 56px 20px; }
+    .hero { min-height: 58vh; }
+    .stats-strip { margin-top: -30px; }
+  }
+  @media (max-width: 560px) {
+    .var-grid { grid-template-columns: 1fr; }
+    .others-grid { grid-template-columns: 1fr; }
+    .before-grid { grid-template-columns: 1fr; }
+    .seg-row { grid-template-columns: 1fr 44px 44px 52px; }
+    .seg-row .cum { display: none; }
+    .stats-strip .stat { min-width: 33%; flex: 0 0 33%; margin-bottom: 12px; }
   }
 </style>
-<Analytics />
-</head>
-<body>
-
-<SiviezNav />
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-kicker">Valais · Swiss Alps · 1730m</div>
-    <h1>Hike <em>Siviez</em>.</h1>
-    <p class="hero-lede">
-      Turquoise reservoirs, alpine streams, and the famous <em>bisses de Nendaz</em>. From gentle valley walks
-      to high mountain passes — all starting a few minutes from Rosablanche C34.
-    </p>
-    <div class="scroll-hint">Scroll ↓</div>
-  </div>
-</section>
-
-<section style="padding:0;">
-  <div class="featured">
-    <div class="featured-image">
-      <img src="/photos/hike/printse-bridge-towards-refuge-saint-laurent.jpg" alt="Bridge over the Printse river beyond Lac de Cleuson, on the way to Refuge de Saint-Laurent near Siviez" loading="lazy">
-    </div>
-    <div>
-      <span class="featured-tag">Puppy's pick</span>
-      <div class="kicker">The classic walk</div>
-      <h2>Combatseline to <em>Lac de Cleuson</em></h2>
-      <p>
-        A wide-open alpine valley climb through wildflower meadows, along a cascading mountain stream,
-        finishing at the turquoise waters of the <em>Cleuson reservoir</em> at 2186m.
-        Doable in an afternoon, unforgettable at any age.
-      </p>
-
-      <div class="featured-meta">
-        <div class="meta-item">
-          <div class="meta-value">± 3h</div>
-          <div class="meta-label">Round trip</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-value">450m</div>
-          <div class="meta-label">Elevation</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-value">Easy+</div>
-          <div class="meta-label">Difficulty</div>
-        </div>
-      </div>
-
-      <p>
-        Start at the <em>Combatseline</em> chairlift (a 10-min walk from Rosablanche C34).
-        Take the well-marked trail through the valley — you'll follow a mountain stream almost the whole way.
-        The dam wall of Cleuson appears suddenly around a bend. Bring lunch.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section style="padding:0;">
-  <div class="featured">
-    <div>
-      <div class="kicker">On the way</div>
-      <h2>Water, wildflowers, <em>silence</em>.</h2>
-      <p>
-        The trail follows a small alpine stream almost the entire way up — perfect for a lunch break with
-        cold feet in the water, or an early-morning coffee stop. In late July, the meadows around it are
-        full of wildflowers and the occasional marmot.
-      </p>
-      <p>
-        Halfway up, look back: you'll see the whole <em>Nendaz valley</em> stretching down toward Sion.
-        On a clear day, the Mont-Blanc massif is visible on the horizon.
-      </p>
-    </div>
-    <div class="featured-image">
-      <img src="/photos/hike/trail-combatseline-lac-de-cleuson-stream.jpg" alt="Mountain stream along the Combatseline to Lac de Cleuson hiking trail, Siviez" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="gallery-section">
-  <div class="container">
-    <div class="kicker">Around Siviez</div>
-    <h2>The <em>views</em>.</h2>
-    <p>Photos from summer hikes — Nendaz valley, alpine lakes, and the panoramas that make this corner of Valais unique.</p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item wide">
-        <img src="/photos/hike/view-sion-from-combatseline.jpg" alt="View towards Sion and the Rhône valley from Combatseline (2238m) above Siviez" loading="lazy">
-        <div class="gallery-caption">Nendaz valley — down to Sion</div>
-      </div>
-      <div class="gallery-item">
-        <img src="/photos/hike/view-siviez-from-chapelle-saint-barthelemy.jpg" alt="View over Siviez from the Chapelle Saint-Barthélémy, Nendaz valley" loading="lazy">
-        <div class="gallery-caption">Above Cleuson</div>
-      </div>
-      <div class="gallery-item">
-        <img src="/photos/hike/trail-combatseline-lac-de-cleuson-stream.jpg" alt="Mountain stream along the Combatseline to Lac de Cleuson hiking trail, Siviez" loading="lazy">
-        <div class="gallery-caption">Wild stream</div>
-      </div>
-      <div class="gallery-item">
-        <img src="/photos/hike/printse-bridge-towards-refuge-saint-laurent.jpg" alt="Bridge over the Printse river beyond Lac de Cleuson, on the way to Refuge de Saint-Laurent near Siviez" loading="lazy">
-        <div class="gallery-caption">On the way up</div>
-      </div>
-      <div class="gallery-item">
-        <img src="/photos/apartment/rosablanche-c34-from-above.jpg" alt="Rosablanche complex seen from above with mountains" loading="lazy">
-        <div class="gallery-caption">Toward Rosablanche</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="kicker">Before you go</div>
-    <h2>Small things that <em>matter</em>.</h2>
-
-    <div class="tips">
-      <div class="tip">
-        <div class="tip-num">01</div>
-        <h4>Start early</h4>
-        <p>Leave Rosablanche C34 by 9:00 AM. The Cleuson valley faces west and gets hot after 1 PM in July/August. Pack sunscreen and a hat.</p>
-      </div>
-      <div class="tip">
-        <div class="tip-num">02</div>
-        <h4>Bring water & snacks</h4>
-        <p>The stream water is clean but not tested — bring 1L per person. Grab pastries from Chez Caroline (in Rosablanche building) the day before.</p>
-      </div>
-      <div class="tip">
-        <div class="tip-num">03</div>
-        <h4>No cable car needed</h4>
-        <p>The trailhead is a 10-min walk from the apartment. In winter this same path is a ski route — check the trail map at reception in summer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="roadmap">
-  <div class="container">
-    <div class="kicker">More coming</div>
-    <h2>Trails <em>opening one by one</em>.</h2>
-    <p>Full guides — with hand-drawn maps, GPX files, and Puppy's tips — being added throughout autumn 2026.</p>
-
-    <ul>
-      <li><strong>Bisse du Milieu</strong> — easy 2h shaded loop from Haute-Nendaz</li>
-      <li><strong>Col des Gentianes</strong> — cable car to 2950m, panoramic ridge walk</li>
-      <li><strong>Bisses de Nendaz</strong> — the full 8-bisses tour</li>
-      <li><strong>Mont Fort viewpoint</strong> — 3330m, Mont-Blanc on the horizon</li>
-      <li><strong>Lac du Grand Désert</strong> — advanced full-day alpine hike</li>
-      <li><strong>Combatseline to Cleuson</strong> — the classic (this page)</li>
-    </ul>
-
-    <div class="signature">Follow along on Instagram — new trail each week.</div>
-
-    <div class="cta-row">
-      <a href="https://www.instagram.com/siviez" target="_blank" rel="noopener" data-track="instagram_click_hike" class="btn btn-primary">
-        <span>Follow @siviez ↗</span>
-      </a>
-      <a href="/appartement" class="btn btn-ghost">
-        <span>Stay at Rosablanche C34 →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 · Hosted by Luc<span class="dot">·</span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a>
-</footer>
 
 <script is:inline>
-  // Vercel Analytics event tracking
   document.querySelectorAll('[data-track]').forEach(function(el) {
     el.addEventListener('click', function() {
-      var eventName = this.getAttribute('data-track');
-      if (window.va && typeof window.va === 'function') {
-        window.va('event', { name: eventName });
-      }
+      var name = this.getAttribute('data-track');
+      if (window.va && typeof window.va === 'function') window.va('event', { name: name });
     });
   });
 
-  window.addEventListener('siviez-lang-change', function(e) {
-    // Placeholder for future NL/EN/FR content
-  });
-</script>
+  const translations = {
+    en: {
+      "h.kicker": "Hike · Valais · The Grand Lac loop",
+      "h.title.em": "Grand Désert",
+      "h.tag": "Our favourite day out: Siviez, the Cleuson lake, and the desert of stone above it.",
+      "h.stat.dist": "Distance", "h.stat.up": "Ascent", "h.stat.time": "Time", "h.stat.high": "High point", "h.stat.type": "Type", "h.stat.looptype": "Loop",
+      "h.intro.lead": "This is the one. The full loop from the village up to the two lakes and back — turquoise water, an old high bisse, a mountain refuge, and a moon-like desert of stone at nearly 2750 metres.",
+      "h.intro.body": "The whole loop is 21 kilometres with 1204 metres of climbing, and takes a solid 8 to 9 hours. It's a real day in the mountains — but with good legs it's within reach of most keen walkers, and there are plenty of shorter ways to do it. For me the finest moment is the first sight of the Lac de Cleuson: that impossible turquoise, held in the grey rock.",
+      "h.seg.kicker": "The full route", "h.seg.title": "Seven segments, one loop",
+      "h.seg.intro": "The full route on foot, broken into its natural stages. Every shorter variant is just this list, cut off earlier and looped back to the chapel.",
+      "h.seg.col.stage": "Stage", "h.seg.col.cum": "Cumul.",
+      "h.seg.1": "Siviez → Combatseline", "h.seg.2": "Combatseline → flank of Lac de Cleuson", "h.seg.3": "Flank → bridge over the Printse", "h.seg.4": "Bridge → Refuge Saint-Laurent", "h.seg.5": "Saint-Laurent → Lac du Grand Désert", "h.seg.6": "Grand Désert → Chapelle Saint-Barthélémy", "h.seg.7": "Chapelle → Siviez", "h.seg.total": "Full loop",
+      "h.var.kicker": "Choose your day", "h.var.title": "Five ways to walk it",
+      "h.var.intro": "From a half-day out to the lake, to the full loop to the desert of stone. All variants start on foot from Siviez and return over the Cleuson dam past the chapel — except where you take the lift up.",
+      "h.var.full.badge": "The full loop", "h.var.full.name": "To Lac du Grand Désert", "h.var.full.body": "The complete Grand Lac loop, all seven segments — Combatseline, the lake, the refuge, and the desert at 2746 m. A big, rewarding day.",
+      "h.var.stl.badge": "Without the desert", "h.var.stl.name": "To Refuge Saint-Laurent", "h.var.stl.body": "Turn back at the refuge instead of climbing on to the Grand Désert. Still the lake, the bridge and lunch at 2500 m.",
+      "h.var.bridge.badge": "Without the refuge", "h.var.bridge.name": "To the Printse bridge", "h.var.bridge.body": "Follow the lake to the dry-stone bridge over the Printse, then cut back to the chapel. A long but gentler day.",
+      "h.var.lake.badge": "Shortest on foot", "h.var.lake.name": "To Lac de Cleuson", "h.var.lake.body": "Up to the flank of the lake — my favourite view — then straight back down to the chapel. The most accessible way to see the turquoise water.",
+      "h.var.lift.badge": "Save the first climb", "h.var.lift.name": "Full loop, lift up", "h.var.lift.body": "Take the Combatseline chairlift from Siviez and skip the first 523 m of climbing. The full high loop, with far less effort to start.",
+      "h.level.hard": "Demanding", "h.level.medhard": "Medium-hard", "h.level.medium": "Medium", "h.level.easy": "Accessible",
+      "h.up.kicker": "The climb", "h.up.title": "Up to the lake",
+      "h.up.p1": "On foot, the route leaves Siviez past the Auberge car park, picks up a footpath to Chalet Novelly, then joins the (mostly gravel) road up to the Combatseline lifts and its café. That first stretch is the steepest of the whole day — 523 metres of climb — which is exactly why the chairlift makes such a good shortcut.",
+      "h.up.p2": "From the top station the path softens, traversing the flank above the Lac de Cleuson. This is the stretch I'd walk for the view alone: the whole turquoise lake below, the dam wall, and the peaks of the Grand Désert ahead.",
+      "h.bridge.kicker": "Deeper in", "h.bridge.title": "The Printse bridge",
+      "h.bridge.p1": "Past the lake, the trail drops to a dry-stone bridge over the young Printse river, then climbs again — steeper now — towards the refuge. This is where the big loop earns its name: the crowds thin out, and the landscape turns wild and mineral.",
+      "h.bridge.p2": "If you're shortening the day, this is a natural turning point: cross back and follow the signs down to the chapel.",
+      "h.ref.kicker": "Halfway · lunch", "h.ref.title": "Saint-Laurent",
+      "h.ref.p1": "At 2500 metres, above the Cleuson dam, sits the Cabane Saint-Laurent — a mountain hut run by the local Ski-Club Arpettaz, and a genuinely lovely place to stop. Red parasols, deckchairs on the grass, and a terrace looking straight out over the lake.",
+      "h.ref.p2": "It's the best spot on the route to eat properly, at a table: fondue, croûte, salads, soups and tarts, with running water, a WC and even a shower. It's usually staffed from the end of June to early September (in 2026: 3 July to 13 September).",
+      "h.tip.label": "Puppy's tip",
+      "h.ref.tip": "The refuge is seasonal, so don't count on it: carry enough water and a backup lunch anyway. When it's open, it's the highlight of the middle of the day. To be sure, reserve ahead by email at cabane@arpettaz.ch (there's no phone up there — lightning took out the mast).",
+      "h.before.kicker": "Before you go", "h.before.title": "Come prepared",
+      "h.before.early.t": "Start early", "h.before.early.b": "It's an 8-9 hour day. Leave Siviez in the morning so you're off the high, exposed sections well before any afternoon weather.",
+      "h.before.water.t": "Carry water", "h.before.water.b": "Bring plenty — it's a long route and the refuge is seasonal. Don't rely on it being open; pack a backup lunch too.",
+      "h.before.shoes.t": "Proper shoes", "h.before.shoes.b": "The upper sections are rocky and steep in places. Sturdy hiking boots with grip, not trainers.",
+      "h.before.weather.t": "Check the weather", "h.before.weather.b": "This is high mountain terrain and it can turn quickly. Check the forecast the evening before and again in the morning.",
+      "h.other.kicker": "More from Siviez", "h.other.title": "Other trails",
+      "h.other.intro": "A few more walks that start from or near Siviez, from an easy family stroll to full alpine days. Distances and times are indicative — check current conditions before you set out.",
+      "h.other.jp.name": "Japanese Garden via Siviez", "h.other.jp.body": "A circular hike to the \"Japanese Garden\", a natural setting on the glacier moraine towards Col des Gentianes.",
+      "h.other.saxon.name": "Bisse de Saxon via Siviez", "h.other.saxon.body": "A long out-and-back along one of the region's historic bisses, with wide views over the Rhône valley.",
+      "h.other.dent.name": "Dent de Nendaz – Tracouet – Balavaux", "h.other.dent.body": "A demanding loop over the Dent de Nendaz ridge, past Tracouet and the Balavaux hut, through forest and lakes.",
+      "h.other.vieux.name": "Tortin – Haute-Nendaz via Bisse Vieux", "h.other.vieux.body": "An easy, mostly downhill walk along the Bisse Vieux beside the Printse — kid-friendly and shaded.",
+      "h.cta.title": "Stay at the trailhead", "h.cta.body": "Every one of these walks starts a few minutes from Rosablanche C34 — dry your boots, rest your legs, and go again tomorrow.",
+      "h.cta.stay": "See the apartment →", "h.cta.village": "Discover the village"
+    },
+    nl: {
+      "h.kicker": "Wandelen · Valais · The Grand Lac loop",
+      "h.title.em": "Grand Désert",
+      "h.tag": "Onze favoriete dagtocht: Siviez, het Cleuson-meer, en de steenwoestijn erboven.",
+      "h.stat.dist": "Afstand", "h.stat.up": "Stijging", "h.stat.time": "Tijd", "h.stat.high": "Hoogste punt", "h.stat.type": "Type", "h.stat.looptype": "Lus",
+      "h.intro.lead": "Dit is 'm. De volledige lus van het dorp omhoog naar de twee meren en terug — turquoise water, een oude hoge bisse, een berghut, en een maanachtige steenwoestijn op bijna 2750 meter.",
+      "h.intro.body": "De volledige lus is 21 kilometer met 1204 hoogtemeters, en duurt een stevige 8 à 9 uur. Het is een echte dag in de bergen — maar met goede benen haalbaar voor de meeste geoefende wandelaars, en er zijn genoeg kortere manieren om het te doen. Voor mij is het mooiste moment het eerste zicht op het Lac de Cleuson: dat onmogelijke turquoise, gevat in de grijze rots.",
+      "h.seg.kicker": "De volledige route", "h.seg.title": "Zeven segmenten, één lus",
+      "h.seg.intro": "De volledige route te voet, opgedeeld in natuurlijke etappes. Elke kortere variant is gewoon deze lijst, vroeger afgebroken en terug naar de kapel.",
+      "h.seg.col.stage": "Etappe", "h.seg.col.cum": "Cumul.",
+      "h.seg.1": "Siviez → Combatseline", "h.seg.2": "Combatseline → flank Lac de Cleuson", "h.seg.3": "Flank → brugje over de Printse", "h.seg.4": "Brugje → Refuge Saint-Laurent", "h.seg.5": "Saint-Laurent → Lac du Grand Désert", "h.seg.6": "Grand Désert → Chapelle Saint-Barthélémy", "h.seg.7": "Kapel → Siviez", "h.seg.total": "Volledige lus",
+      "h.var.kicker": "Kies je dag", "h.var.title": "Vijf manieren om het te doen",
+      "h.var.intro": "Van een halve dag naar het meer, tot de volledige lus naar de steenwoestijn. Alle varianten starten te voet vanuit Siviez en keren terug over de Cleuson-dam langs de kapel — behalve waar je de lift omhoog neemt.",
+      "h.var.full.badge": "De volledige lus", "h.var.full.name": "Naar Lac du Grand Désert", "h.var.full.body": "De complete Grand Lac loop, alle zeven segmenten — Combatseline, het meer, de refuge, en de woestijn op 2746 m. Een grote, lonende dag.",
+      "h.var.stl.badge": "Zonder de woestijn", "h.var.stl.name": "Naar Refuge Saint-Laurent", "h.var.stl.body": "Keer terug bij de refuge in plaats van door te klimmen naar de Grand Désert. Nog steeds het meer, de brug en lunch op 2500 m.",
+      "h.var.bridge.badge": "Zonder de refuge", "h.var.bridge.name": "Naar de Printse-brug", "h.var.bridge.body": "Volg het meer tot de droogstenen brug over de Printse, en snij dan terug naar de kapel. Een lange maar zachtere dag.",
+      "h.var.lake.badge": "Kortste te voet", "h.var.lake.name": "Naar Lac de Cleuson", "h.var.lake.body": "Tot de flank van het meer — mijn favoriete uitzicht — en dan meteen terug naar de kapel. De meest toegankelijke manier om het turquoise water te zien.",
+      "h.var.lift.badge": "Spaar de eerste klim", "h.var.lift.name": "Volledige lus, lift omhoog", "h.var.lift.body": "Neem de Combatseline stoeltjeslift vanuit Siviez en sla de eerste 523 m klim over. De volledige hoge lus, met veel minder moeite om te beginnen.",
+      "h.level.hard": "Zwaar", "h.level.medhard": "Medium-zwaar", "h.level.medium": "Medium", "h.level.easy": "Toegankelijk",
+      "h.up.kicker": "De klim", "h.up.title": "Omhoog naar het meer",
+      "h.up.p1": "Te voet verlaat de route Siviez langs de parking van de Auberge, pikt een wandelpad op tot Chalet Novelly, en sluit dan aan op de (meestal onverharde) weg omhoog naar de Combatseline-liften en het café. Dat eerste stuk is het steilste van de hele dag — 523 hoogtemeters — en net daarom is de stoeltjeslift zo'n goede shortcut.",
+      "h.up.p2": "Vanaf het bergstation wordt het pad zachter, dwars over de flank boven het Lac de Cleuson. Dit is het stuk dat ik voor het uitzicht alleen al zou lopen: het hele turquoise meer beneden, de dammuur, en de toppen van de Grand Désert vooruit.",
+      "h.bridge.kicker": "Dieper de bergen in", "h.bridge.title": "De Printse-brug",
+      "h.bridge.p1": "Voorbij het meer daalt het pad naar een droogstenen brug over de jonge Printse-rivier, en klimt dan weer — steiler nu — richting de refuge. Hier verdient de grote lus zijn naam: het volk dunt uit, en het landschap wordt wild en mineraal.",
+      "h.bridge.p2": "Als je de dag inkort, is dit een natuurlijk keerpunt: steek terug over en volg de borden naar beneden richting de kapel.",
+      "h.ref.kicker": "Halverwege · lunch", "h.ref.title": "Saint-Laurent",
+      "h.ref.p1": "Op 2500 meter, boven de Cleuson-dam, ligt de Cabane Saint-Laurent — een berghut beheerd door de lokale Ski-Club Arpettaz, en een echt heerlijke plek om te stoppen. Rode parasols, ligstoelen op het gras, en een terras met recht zicht over het meer.",
+      "h.ref.p2": "Het is de beste plek op de route om deftig te eten, aan tafel: fondue, croûte, salades, soepen en taarten, met stromend water, een WC en zelfs een douche. Meestal bemand van eind juni tot begin september (in 2026: 3 juli tot 13 september).",
+      "h.tip.label": "Tip van Puppy",
+      "h.ref.tip": "De refuge is seizoensgebonden, dus reken er niet op: neem sowieso genoeg water en een reservelunch mee. Als ze open is, is het het hoogtepunt van het midden van de dag. Voor de zekerheid reserveer je vooraf via mail op cabane@arpettaz.ch (er is geen telefoon daarboven — de bliksem sloeg de mast eruit).",
+      "h.before.kicker": "Voor je vertrekt", "h.before.title": "Kom voorbereid",
+      "h.before.early.t": "Vertrek vroeg", "h.before.early.b": "Het is een dag van 8 à 9 uur. Vertrek 's morgens uit Siviez zodat je van de hoge, blootgestelde stukken af bent ruim voor eventueel namiddagweer.",
+      "h.before.water.t": "Neem water mee", "h.before.water.b": "Neem ruim mee — het is een lange route en de refuge is seizoensgebonden. Reken er niet op dat ze open is; pak ook een reservelunch.",
+      "h.before.shoes.t": "Stevige schoenen", "h.before.shoes.b": "De hoge stukken zijn steenachtig en plaatselijk steil. Stevige wandelschoenen met grip, geen sneakers.",
+      "h.before.weather.t": "Check het weer", "h.before.weather.b": "Dit is hooggebergte en het kan snel omslaan. Check de voorspelling de avond ervoor en opnieuw 's morgens.",
+      "h.other.kicker": "Meer vanuit Siviez", "h.other.title": "Andere wandelingen",
+      "h.other.intro": "Nog enkele wandelingen die vanuit of nabij Siviez starten, van een makkelijke gezinswandeling tot volledige alpiene dagen. Afstanden en tijden zijn indicatief — check de actuele omstandigheden voor je vertrekt.",
+      "h.other.jp.name": "Japanese Garden via Siviez", "h.other.jp.body": "Een lus-wandeling naar de \"Japanese Garden\", een natuurlijk landschap op de gletsjermorene richting Col des Gentianes.",
+      "h.other.saxon.name": "Bisse de Saxon via Siviez", "h.other.saxon.body": "Een lange heen-en-terug langs een van de historische bisses van de streek, met weids zicht over de Rhône-vallei.",
+      "h.other.dent.name": "Dent de Nendaz – Tracouet – Balavaux", "h.other.dent.body": "Een zware lus over de Dent de Nendaz-graat, langs Tracouet en de Balavaux-hut, door bos en meren.",
+      "h.other.vieux.name": "Tortin – Haute-Nendaz via Bisse Vieux", "h.other.vieux.body": "Een makkelijke, grotendeels dalende wandeling langs de Bisse Vieux naast de Printse — kindvriendelijk en schaduwrijk.",
+      "h.cta.title": "Verblijf aan het vertrekpunt", "h.cta.body": "Elk van deze wandelingen start op een paar minuten van Rosablanche C34 — droog je schoenen, rust je benen, en ga morgen weer.",
+      "h.cta.stay": "Bekijk het appartement →", "h.cta.village": "Ontdek het dorp"
+    },
+    fr: {
+      "h.kicker": "Randonnée · Valais · The Grand Lac loop",
+      "h.title.em": "Grand Désert",
+      "h.tag": "Notre sortie préférée : Siviez, le lac de Cleuson, et le désert de pierre au-dessus.",
+      "h.stat.dist": "Distance", "h.stat.up": "Dénivelé", "h.stat.time": "Durée", "h.stat.high": "Point haut", "h.stat.type": "Type", "h.stat.looptype": "Boucle",
+      "h.intro.lead": "C'est LA sortie. La boucle complète depuis le village jusqu'aux deux lacs et retour — eau turquoise, un ancien bisse d'altitude, un refuge de montagne, et un désert de pierre lunaire à près de 2750 mètres.",
+      "h.intro.body": "La boucle complète fait 21 kilomètres avec 1204 mètres de montée, et demande de bonnes 8 à 9 heures. C'est une vraie journée en montagne — mais avec de bonnes jambes, elle est à la portée de la plupart des marcheurs motivés, et il existe plein de façons plus courtes de la faire. Pour moi, le plus beau moment est la première vue sur le Lac de Cleuson : ce turquoise impossible, serti dans la roche grise.",
+      "h.seg.kicker": "L'itinéraire complet", "h.seg.title": "Sept segments, une boucle",
+      "h.seg.intro": "L'itinéraire complet à pied, découpé en étapes naturelles. Chaque variante plus courte n'est que cette liste, interrompue plus tôt et bouclée vers la chapelle.",
+      "h.seg.col.stage": "Étape", "h.seg.col.cum": "Cumul.",
+      "h.seg.1": "Siviez → Combatseline", "h.seg.2": "Combatseline → flanc du Lac de Cleuson", "h.seg.3": "Flanc → pont sur la Printse", "h.seg.4": "Pont → Refuge Saint-Laurent", "h.seg.5": "Saint-Laurent → Lac du Grand Désert", "h.seg.6": "Grand Désert → Chapelle Saint-Barthélémy", "h.seg.7": "Chapelle → Siviez", "h.seg.total": "Boucle complète",
+      "h.var.kicker": "Choisissez votre journée", "h.var.title": "Cinq façons de la parcourir",
+      "h.var.intro": "D'une demi-journée jusqu'au lac, à la boucle complète jusqu'au désert de pierre. Toutes les variantes partent à pied de Siviez et reviennent par le barrage de Cleuson en passant par la chapelle — sauf quand vous prenez le télésiège.",
+      "h.var.full.badge": "La boucle complète", "h.var.full.name": "Jusqu'au Lac du Grand Désert", "h.var.full.body": "La boucle Grand Lac complète, les sept segments — Combatseline, le lac, le refuge et le désert à 2746 m. Une grande journée, gratifiante.",
+      "h.var.stl.badge": "Sans le désert", "h.var.stl.name": "Jusqu'au Refuge Saint-Laurent", "h.var.stl.body": "Faites demi-tour au refuge au lieu de monter jusqu'au Grand Désert. Toujours le lac, le pont et le déjeuner à 2500 m.",
+      "h.var.bridge.badge": "Sans le refuge", "h.var.bridge.name": "Jusqu'au pont de la Printse", "h.var.bridge.body": "Suivez le lac jusqu'au pont de pierres sèches sur la Printse, puis coupez vers la chapelle. Une journée longue mais plus douce.",
+      "h.var.lake.badge": "Le plus court à pied", "h.var.lake.name": "Jusqu'au Lac de Cleuson", "h.var.lake.body": "Jusqu'au flanc du lac — ma vue préférée — puis directement en bas vers la chapelle. La façon la plus accessible de voir l'eau turquoise.",
+      "h.var.lift.badge": "Épargnez la première montée", "h.var.lift.name": "Boucle complète, télésiège", "h.var.lift.body": "Prenez le télésiège de Combatseline depuis Siviez et sautez les premiers 523 m de montée. La boucle d'altitude complète, avec bien moins d'effort au départ.",
+      "h.level.hard": "Exigeant", "h.level.medhard": "Moyen-difficile", "h.level.medium": "Moyen", "h.level.easy": "Accessible",
+      "h.up.kicker": "La montée", "h.up.title": "Jusqu'au lac",
+      "h.up.p1": "À pied, l'itinéraire quitte Siviez en passant devant le parking de l'Auberge, emprunte un sentier jusqu'au Chalet Novelly, puis rejoint la route (surtout en gravier) jusqu'aux remontées de Combatseline et son café. Ce premier tronçon est le plus raide de la journée — 523 mètres de montée — et c'est précisément pourquoi le télésiège fait un si bon raccourci.",
+      "h.up.p2": "Depuis la station supérieure, le sentier s'adoucit, traversant le flanc au-dessus du Lac de Cleuson. C'est le tronçon que je ferais rien que pour la vue : tout le lac turquoise en contrebas, le barrage, et les sommets du Grand Désert devant.",
+      "h.bridge.kicker": "Plus loin", "h.bridge.title": "Le pont de la Printse",
+      "h.bridge.p1": "Après le lac, le sentier descend vers un pont de pierres sèches sur la jeune Printse, puis remonte — plus raide maintenant — vers le refuge. C'est là que la grande boucle mérite son nom : la foule s'éclaircit, et le paysage devient sauvage et minéral.",
+      "h.bridge.p2": "Si vous raccourcissez la journée, c'est un point de demi-tour naturel : retraversez et suivez les panneaux vers la chapelle.",
+      "h.ref.kicker": "À mi-parcours · déjeuner", "h.ref.title": "Saint-Laurent",
+      "h.ref.p1": "À 2500 mètres, au-dessus du barrage de Cleuson, se trouve la Cabane Saint-Laurent — un refuge géré par le Ski-Club Arpettaz local, et un endroit vraiment charmant pour s'arrêter. Parasols rouges, chaises longues sur l'herbe, et une terrasse qui donne droit sur le lac.",
+      "h.ref.p2": "C'est le meilleur endroit de l'itinéraire pour manger correctement, à table : fondue, croûte, salades, soupes et tartes, avec eau courante, WC et même une douche. Généralement gardé de fin juin à début septembre (en 2026 : du 3 juillet au 13 septembre).",
+      "h.tip.label": "Le conseil de Puppy",
+      "h.ref.tip": "Le refuge est saisonnier, alors n'y comptez pas : emportez de toute façon assez d'eau et un déjeuner de secours. Quand il est ouvert, c'est le point fort du milieu de journée. Pour être sûr, réservez à l'avance par e-mail à cabane@arpettaz.ch (il n'y a plus de téléphone là-haut — la foudre a détruit l'antenne).",
+      "h.before.kicker": "Avant de partir", "h.before.title": "Venez préparé",
+      "h.before.early.t": "Partez tôt", "h.before.early.b": "C'est une journée de 8 à 9 heures. Quittez Siviez le matin pour être hors des sections hautes et exposées bien avant tout orage de l'après-midi.",
+      "h.before.water.t": "Emportez de l'eau", "h.before.water.b": "Prenez-en beaucoup — c'est un long itinéraire et le refuge est saisonnier. Ne comptez pas sur son ouverture ; emportez aussi un déjeuner de secours.",
+      "h.before.shoes.t": "Bonnes chaussures", "h.before.shoes.b": "Les sections hautes sont rocheuses et raides par endroits. Des chaussures de randonnée solides avec de l'accroche, pas des baskets.",
+      "h.before.weather.t": "Vérifiez la météo", "h.before.weather.b": "C'est de la haute montagne et le temps peut vite tourner. Vérifiez les prévisions la veille au soir et à nouveau le matin.",
+      "h.other.kicker": "Plus depuis Siviez", "h.other.title": "Autres sentiers",
+      "h.other.intro": "Quelques autres marches qui partent de Siviez ou à proximité, d'une balade familiale facile à de vraies journées alpines. Distances et durées indicatives — vérifiez les conditions actuelles avant de partir.",
+      "h.other.jp.name": "Japanese Garden via Siviez", "h.other.jp.body": "Une randonnée en boucle vers le « Japanese Garden », un cadre naturel sur la moraine glaciaire vers le Col des Gentianes.",
+      "h.other.saxon.name": "Bisse de Saxon via Siviez", "h.other.saxon.body": "Un long aller-retour le long d'un des bisses historiques de la région, avec de larges vues sur la vallée du Rhône.",
+      "h.other.dent.name": "Dent de Nendaz – Tracouet – Balavaux", "h.other.dent.body": "Une boucle exigeante par la crête de la Dent de Nendaz, en passant par Tracouet et la cabane de Balavaux, à travers forêts et lacs.",
+      "h.other.vieux.name": "Tortin – Haute-Nendaz via Bisse Vieux", "h.other.vieux.body": "Une marche facile, surtout en descente, le long du Bisse Vieux au bord de la Printse — adaptée aux enfants et ombragée.",
+      "h.cta.title": "Logez au départ du sentier", "h.cta.body": "Chacune de ces marches part à quelques minutes de Rosablanche C34 — séchez vos chaussures, reposez vos jambes, et repartez demain.",
+      "h.cta.stay": "Voir l'appartement →", "h.cta.village": "Découvrir le village"
+    }
+  };
 
-</body>
-</html>
+  function setLang(lang) {
+    const dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    try { localStorage.setItem('siviez-lang', lang); } catch(e){}
+  }
+  window.addEventListener('siviez-lang-change', function(e) { setLang(e.detail.lang); });
+  let initial = 'en';
+  try {
+    const stored = localStorage.getItem('siviez-lang');
+    if (stored) initial = stored;
+    else if (navigator.language) { const b = navigator.language.slice(0,2); if (translations[b]) initial = b; }
+  } catch(e) {}
+  setLang(initial);
+</script>
