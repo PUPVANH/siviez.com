@@ -23,13 +23,33 @@ const schema = {
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="kicker" data-i18n="h.kicker">Hike · Valais · The Grand Lac loop</div>
-      <h1>Lac du <em data-i18n="h.title.em">Grand Désert</em></h1>
-      <p class="hero-tag" data-i18n="h.tag">Our favourite day out: Siviez, the Cleuson lake, and the desert of stone above it.</p>
+      <div class="kicker" data-i18n="h.kicker">Hike · Valais · Swiss Alps</div>
+      <h1>Hike <em data-i18n="h.title.em">Siviez</em></h1>
+      <p class="hero-tag" data-i18n="h.tag">Turquoise reservoirs, an old high bisse, and alpine trails straight from the village door.</p>
     </div>
   </section>
 
   <div class="page">
+
+    <section class="intro">
+      <p class="lead" data-i18n="h.intro.lead">
+        Siviez sits at the end of the valley, right at the foot of the trails — so there's no drive to a
+        trailhead, you just start walking. Below is our favourite day out, in full detail, plus a handful of
+        other walks from the village.
+      </p>
+      <p data-i18n="h.intro.body">
+        The star of the show is the big loop up to the two lakes: the Lac de Cleuson and, higher still, the
+        Lac du Grand Désert — turquoise water, a mountain refuge, and a moon-like desert of stone at nearly
+        2750 metres. Here's everything you need to plan it, at any length.
+      </p>
+    </section>
+
+    <!-- THE ROUTE -->
+    <section class="route-head">
+      <div class="section-kicker" data-i18n="h.route.kicker">Our favourite · The Grand Lac loop</div>
+      <h2 class="route-title" data-i18n="h.route.title">Siviez – Combatseline – Lac de Cleuson – Lac du Grand Désert – Siviez</h2>
+      <p class="route-sub" data-i18n="h.route.sub">The full loop, out and back to the village. All figures below are for the complete round trip.</p>
+    </section>
 
     <section class="stats-strip">
       <div class="stat"><div class="sv">21 km</div><div class="sl" data-i18n="h.stat.dist">Distance</div></div>
@@ -37,19 +57,6 @@ const schema = {
       <div class="stat"><div class="sv">8-9 h</div><div class="sl" data-i18n="h.stat.time">Time</div></div>
       <div class="stat"><div class="sv">2746 m</div><div class="sl" data-i18n="h.stat.high">High point</div></div>
       <div class="stat"><div class="sv" data-i18n="h.stat.looptype">Loop</div><div class="sl" data-i18n="h.stat.type">Type</div></div>
-    </section>
-
-    <section class="intro">
-      <p class="lead" data-i18n="h.intro.lead">
-        This is the one. The full loop from the village up to the two lakes and back — turquoise water,
-        an old high bisse, a mountain refuge, and a moon-like desert of stone at nearly 2750 metres.
-      </p>
-      <p data-i18n="h.intro.body">
-        The whole loop is 21 kilometres with 1204 metres of climbing, and takes a solid 8 to 9 hours.
-        It's a real day in the mountains — but with good legs it's within reach of most keen walkers, and
-        there are plenty of shorter ways to do it. For me the finest moment is the first sight of the
-        Lac de Cleuson: that impossible turquoise, held in the grey rock.
-      </p>
     </section>
 
     <section class="segments">
@@ -306,6 +313,18 @@ const schema = {
   .intro .lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(20px, 3vw, 28px); line-height: 1.5; color: #C8A35F; margin-bottom: 26px; }
   .intro { border-bottom: 1px solid rgba(200,163,95,0.15); }
 
+  /* ROUTE HEAD */
+  .route-head { padding-bottom: 0; }
+  .route-title {
+    font-family: 'Playfair Display', serif; font-weight: 400;
+    font-size: clamp(24px, 3.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em;
+    color: #F4F0E8; margin-bottom: 14px;
+  }
+  .route-sub {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.5px;
+    color: rgba(244,240,232,0.6); max-width: 640px; margin-bottom: 0;
+  }
+
   .segments { border-bottom: 1px solid rgba(200,163,95,0.15); }
   .seg-intro { max-width: 640px; margin-bottom: 32px; }
   .seg-table { border: 1px solid rgba(200,163,95,0.2); border-radius: 8px; overflow: hidden; }
@@ -419,12 +438,15 @@ const schema = {
 
   const translations = {
     en: {
-      "h.kicker": "Hike · Valais · The Grand Lac loop",
-      "h.title.em": "Grand Désert",
-      "h.tag": "Our favourite day out: Siviez, the Cleuson lake, and the desert of stone above it.",
+      "h.kicker": "Hike · Valais · Swiss Alps",
+      "h.title.em": "Siviez",
+      "h.tag": "Turquoise reservoirs, an old high bisse, and alpine trails straight from the village door.",
       "h.stat.dist": "Distance", "h.stat.up": "Ascent", "h.stat.time": "Time", "h.stat.high": "High point", "h.stat.type": "Type", "h.stat.looptype": "Loop",
-      "h.intro.lead": "This is the one. The full loop from the village up to the two lakes and back — turquoise water, an old high bisse, a mountain refuge, and a moon-like desert of stone at nearly 2750 metres.",
-      "h.intro.body": "The whole loop is 21 kilometres with 1204 metres of climbing, and takes a solid 8 to 9 hours. It's a real day in the mountains — but with good legs it's within reach of most keen walkers, and there are plenty of shorter ways to do it. For me the finest moment is the first sight of the Lac de Cleuson: that impossible turquoise, held in the grey rock.",
+      "h.intro.lead": "Siviez sits at the end of the valley, right at the foot of the trails — so there's no drive to a trailhead, you just start walking. Below is our favourite day out, in full detail, plus a handful of other walks from the village.",
+      "h.intro.body": "The star of the show is the big loop up to the two lakes: the Lac de Cleuson and, higher still, the Lac du Grand Désert — turquoise water, a mountain refuge, and a moon-like desert of stone at nearly 2750 metres. Here's everything you need to plan it, at any length.",
+      "h.route.kicker": "Our favourite · The Grand Lac loop",
+      "h.route.title": "Siviez – Combatseline – Lac de Cleuson – Lac du Grand Désert – Siviez",
+      "h.route.sub": "The full loop, out and back to the village. All figures below are for the complete round trip.",
       "h.seg.kicker": "The full route", "h.seg.title": "Seven segments, one loop",
       "h.seg.intro": "The full route on foot, broken into its natural stages. Every shorter variant is just this list, cut off earlier and looped back to the chapel.",
       "h.seg.col.stage": "Stage", "h.seg.col.cum": "Cumul.",
@@ -463,12 +485,15 @@ const schema = {
       "h.cta.stay": "See the apartment →", "h.cta.village": "Discover the village"
     },
     nl: {
-      "h.kicker": "Wandelen · Valais · The Grand Lac loop",
-      "h.title.em": "Grand Désert",
-      "h.tag": "Onze favoriete dagtocht: Siviez, het Cleuson-meer, en de steenwoestijn erboven.",
+      "h.kicker": "Wandelen · Valais · Zwitserse Alpen",
+      "h.title.em": "Siviez",
+      "h.tag": "Turquoise stuwmeren, een oude hoge bisse, en alpiene paden recht vanaf de dorpsdeur.",
       "h.stat.dist": "Afstand", "h.stat.up": "Stijging", "h.stat.time": "Tijd", "h.stat.high": "Hoogste punt", "h.stat.type": "Type", "h.stat.looptype": "Lus",
-      "h.intro.lead": "Dit is 'm. De volledige lus van het dorp omhoog naar de twee meren en terug — turquoise water, een oude hoge bisse, een berghut, en een maanachtige steenwoestijn op bijna 2750 meter.",
-      "h.intro.body": "De volledige lus is 21 kilometer met 1204 hoogtemeters, en duurt een stevige 8 à 9 uur. Het is een echte dag in de bergen — maar met goede benen haalbaar voor de meeste geoefende wandelaars, en er zijn genoeg kortere manieren om het te doen. Voor mij is het mooiste moment het eerste zicht op het Lac de Cleuson: dat onmogelijke turquoise, gevat in de grijze rots.",
+      "h.intro.lead": "Siviez ligt aan het einde van de vallei, recht aan de voet van de paden — dus geen rit naar een vertrekpunt, je begint gewoon te wandelen. Hieronder onze favoriete dagtocht, volledig uitgewerkt, plus een handvol andere wandelingen vanuit het dorp.",
+      "h.intro.body": "De ster van de show is de grote lus omhoog naar de twee meren: het Lac de Cleuson en, nog hoger, het Lac du Grand Désert — turquoise water, een berghut, en een maanachtige steenwoestijn op bijna 2750 meter. Hier is alles wat je nodig hebt om het te plannen, op elke lengte.",
+      "h.route.kicker": "Onze favoriet · The Grand Lac loop",
+      "h.route.title": "Siviez – Combatseline – Lac de Cleuson – Lac du Grand Désert – Siviez",
+      "h.route.sub": "De volledige lus, heen en terug naar het dorp. Alle cijfers hieronder gelden voor de complete rondwandeling.",
       "h.seg.kicker": "De volledige route", "h.seg.title": "Zeven segmenten, één lus",
       "h.seg.intro": "De volledige route te voet, opgedeeld in natuurlijke etappes. Elke kortere variant is gewoon deze lijst, vroeger afgebroken en terug naar de kapel.",
       "h.seg.col.stage": "Etappe", "h.seg.col.cum": "Cumul.",
@@ -507,12 +532,15 @@ const schema = {
       "h.cta.stay": "Bekijk het appartement →", "h.cta.village": "Ontdek het dorp"
     },
     fr: {
-      "h.kicker": "Randonnée · Valais · The Grand Lac loop",
-      "h.title.em": "Grand Désert",
-      "h.tag": "Notre sortie préférée : Siviez, le lac de Cleuson, et le désert de pierre au-dessus.",
+      "h.kicker": "Randonnée · Valais · Alpes Suisses",
+      "h.title.em": "Siviez",
+      "h.tag": "Réservoirs turquoise, un ancien bisse d'altitude, et des sentiers alpins au pas de la porte du village.",
       "h.stat.dist": "Distance", "h.stat.up": "Dénivelé", "h.stat.time": "Durée", "h.stat.high": "Point haut", "h.stat.type": "Type", "h.stat.looptype": "Boucle",
-      "h.intro.lead": "C'est LA sortie. La boucle complète depuis le village jusqu'aux deux lacs et retour — eau turquoise, un ancien bisse d'altitude, un refuge de montagne, et un désert de pierre lunaire à près de 2750 mètres.",
-      "h.intro.body": "La boucle complète fait 21 kilomètres avec 1204 mètres de montée, et demande de bonnes 8 à 9 heures. C'est une vraie journée en montagne — mais avec de bonnes jambes, elle est à la portée de la plupart des marcheurs motivés, et il existe plein de façons plus courtes de la faire. Pour moi, le plus beau moment est la première vue sur le Lac de Cleuson : ce turquoise impossible, serti dans la roche grise.",
+      "h.intro.lead": "Siviez se trouve au bout de la vallée, juste au pied des sentiers — donc pas de route jusqu'à un départ, on se met simplement à marcher. Ci-dessous, notre sortie préférée, en détail complet, plus quelques autres marches depuis le village.",
+      "h.intro.body": "La vedette, c'est la grande boucle jusqu'aux deux lacs : le Lac de Cleuson et, plus haut encore, le Lac du Grand Désert — eau turquoise, un refuge de montagne, et un désert de pierre lunaire à près de 2750 mètres. Voici tout ce qu'il faut pour la planifier, à n'importe quelle longueur.",
+      "h.route.kicker": "Notre préférée · The Grand Lac loop",
+      "h.route.title": "Siviez – Combatseline – Lac de Cleuson – Lac du Grand Désert – Siviez",
+      "h.route.sub": "La boucle complète, aller-retour au village. Tous les chiffres ci-dessous concernent la boucle entière.",
       "h.seg.kicker": "L'itinéraire complet", "h.seg.title": "Sept segments, une boucle",
       "h.seg.intro": "L'itinéraire complet à pied, découpé en étapes naturelles. Chaque variante plus courte n'est que cette liste, interrompue plus tôt et bouclée vers la chapelle.",
       "h.seg.col.stage": "Étape", "h.seg.col.cum": "Cumul.",
