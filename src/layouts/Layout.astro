@@ -18,7 +18,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,8 +32,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:locale" content="nl_BE" />
-  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="siviez.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="nl_BE" />
   <meta property="og:locale:alternate" content="fr_FR" />
 
   <!-- Twitter -->

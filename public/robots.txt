@@ -1,0 +1,8 @@
+# siviez.com — robots.txt
+# Alle zoekmachines mogen de hele site bekijken.
+
+User-agent: *
+Allow: /
+
+# Verwijzing naar de sitemap (automatisch gegenereerd door Astro)
+Sitemap: https://siviez.com/sitemap-index.xml

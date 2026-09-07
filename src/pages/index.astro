@@ -1,9 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SiviezNav from '../components/SiviezNav.astro';
+
+// SEO — eigen, zoekwoord-rijke title + description voor de homepage
+const pageTitle = 'Siviez, Switzerland · Local guide to the 4 Vallées village';
+const pageDescription = 'Your local guide to Siviez (1730m) in Valais, Switzerland — the quiet gateway to the 4 Vallées. Hikes, bisses de Nendaz, ski-in/ski-out, and Rosablanche C34, an apartment for 7.';
+
+// Structured data — vertelt Google wat de site is (WebSite + Organization)
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://siviez.com/#website",
+      "url": "https://siviez.com/",
+      "name": "siviez.com",
+      "description": pageDescription,
+      "inLanguage": "en"
+    },
+    {
+      "@type": "TouristDestination",
+      "@id": "https://siviez.com/#destination",
+      "name": "Siviez",
+      "description": "Alpine hamlet at 1730m in the Nendaz valley, Valais — gateway to the 4 Vallées ski area.",
+      "url": "https://siviez.com/",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.13471,
+        "longitude": 7.31674
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Valais, Switzerland"
+      }
+    }
+  ]
+};
 ---
 
-<Layout>
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <SiviezNav />
 
   <section class="hero">
