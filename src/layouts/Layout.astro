@@ -1,4 +1,5 @@
 ---
+// Layout — the HTML shell for every page: <head>, meta tags, Open Graph, fonts, analytics.
 import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 
@@ -11,7 +12,7 @@ interface Props {
 const {
   title = 'Siviez · The gateway to the 4 Vallées · Swiss Alps',
   description = 'Discover Siviez — hidden alpine hamlet at 1730m in Valais, Switzerland. Gateway to the 4 Vallées ski area (410 km slopes), 8 bisses de Nendaz, and Lac de Cleuson. Home to Rosablanche C34, a ski-in apartment for 7.',
-  ogImage = 'https://siviez.com/lac-de-cleuson-hero.jpg',
+  ogImage = 'https://siviez.com/photos/hero/cleuson-hero.jpg',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
@@ -55,9 +56,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
   />
 
   <!-- Preload hero image for LCP - different image per viewport -->
-  <link rel="preload" as="image" href="/lac-de-cleuson-wide.jpg" media="(min-width: 901px)" />
-  <link rel="preload" as="image" href="/lac-de-cleuson-hero.jpg" media="(min-width: 701px) and (max-width: 900px)" />
-  <link rel="preload" as="image" href="/lac-de-cleuson-med.jpg" media="(max-width: 700px)" />
+  <link rel="preload" as="image" href="/photos/hero/cleuson-hero-wide.jpg" media="(min-width: 901px)" />
+  <link rel="preload" as="image" href="/photos/hero/cleuson-hero.jpg" media="(min-width: 701px) and (max-width: 900px)" />
+  <link rel="preload" as="image" href="/photos/hero/cleuson-hero-medium.jpg" media="(max-width: 700px)" />
 
   <Analytics />
 </head>

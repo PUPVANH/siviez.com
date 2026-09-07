@@ -1,0 +1,160 @@
+================================================================
+siviez.com — OPSCHONING & HERSTRUCTURERING (sept 2026)
+Wat er veranderd is + hoe je het plaatst
+================================================================
+
+Dit is een GROTE, propere herstructurering. De hele repo is
+opgeschoond zodat andere websitebouwers (en jijzelf later)
+meteen snappen hoe alles in elkaar zit.
+
+BELANGRIJK: dit vervangt je HELE siviez.com map. Het makkelijkst
+is: oude map vervangen door deze (zie stappenplan onderaan).
+
+
+================================================================
+WAT ER VERANDERD IS
+================================================================
+
+1. FOTO'S HERNOEMD (IMG_XXXX -> beschrijvend)
+   Alle 9 IMG_-foto's kregen een beschrijvende Engelse naam.
+   Voorbeeld:
+     IMG_7645.jpg  ->  mountain-chapel-siviez.jpg
+     IMG_1791.jpg  ->  cleuson-reservoir-dam-view.jpg
+   Waarom: leesbaar voor bouwers + beter voor Google + AI-crawlers.
+
+2. FOTO'S IN THEMA-MAPPEN
+   Alles zat in 1 map (public/siviez/). Nu opgesplitst:
+     public/photos/hike/       (wandelfoto's)
+     public/photos/ski/        (winterfoto's)
+     public/photos/apartment/  (appartement)
+     public/photos/village/    (dorp, meer, natuur)
+     public/photos/hero/       (homepage hero-varianten)
+
+3. GEBROKEN FOTO GEREPAREERD
+   IMG_7608.jpg werd getoond op /appartement maar bestond NIET
+   (kapot beeld). Vervangen door de luchtfoto van Rosablanche.
+
+4. HOOFDLETTER-PROBLEEM OPGELOST
+   De code verwees naar /Siviez/ (hoofdletter), de map was
+   /siviez/ (klein). Dit werkte toevallig maar was fragiel.
+   Nu alles consistent lowercase: /photos/
+
+5. LEGE ALT-TEKSTEN INGEVULD
+   7 foto's op /appartement hadden alt="" (leeg). Nu allemaal
+   beschrijvende Engelse alt-teksten. Beter voor SEO + blinden.
+
+6. TAAL-CONSISTENTIE
+   /hike en /ski stonden nog op lang="nl" met Engelse content.
+   Nu overal lang="en" - consistent.
+
+7. PROFESSIONELE README.md
+   Volledig herschreven in het Engels: legt de hele structuur,
+   naamgeving, routes en conventies uit. Dit is wat andere
+   bouwers als eerste lezen.
+
+8. CODE-COMMENTS IN ENGELS
+   Elk hoofdbestand kreeg bovenaan een korte Engelse uitleg
+   van wat het doet.
+
+9. SITEMAP-VERSIE VASTGEZET
+   @astrojs/sitemap gepind op 3.6.0 (de kapotte 3.7.1 wordt
+   nu vermeden - dit was de build-fix).
+
+
+================================================================
+STAPPENPLAN - HELE MAP VERVANGEN
+================================================================
+
+Omdat er zoveel verandert (foto's verplaatst, hernoemd), is de
+schoonste aanpak: je oude map vervangen door deze.
+
+STAP 1 - Backup maken (voor de zekerheid)
+   Kopieer je huidige Documenten\PUPVANH\siviez.com map ergens
+   naartoe als backup (bv. siviez.com-BACKUP). Voor als er iets
+   misloopt.
+
+STAP 2 - node_modules bewaren (scheelt herinstallatie)
+   Als je huidige map een node_modules map heeft: laat die staan,
+   of kopieer hem straks terug. Zit NIET in deze zip (te groot).
+
+STAP 3 - Oude map leegmaken, nieuwe erin
+   a) Open Documenten\PUPVANH\siviez.com
+   b) Verwijder ALLES BEHALVE node_modules (als die er is)
+      -> dus weg: public, src, README, package.json, config, enz.
+   c) Pak deze zip uit
+   d) Kopieer ALLE bestanden uit de zip in je siviez.com map
+
+STAP 4 - Package opnieuw installeren
+   Omdat de sitemap-versie veranderde:
+   - Als je package-lock.json hebt: verwijder die
+   - Vercel installeert bij de push automatisch opnieuw (OK)
+   - Of lokaal: open terminal in de map, typ: npm install
+
+STAP 5 - GitHub Desktop -> Commit -> Push
+   Je zult VEEL wijzigingen zien (alle foto's verplaatst +
+   code aangepast). Dat is normaal en verwacht.
+
+   Summary: "Restructure: descriptive photo names, themed folders, README, SEO fixes"
+   Commit to main -> Push origin
+
+   Wacht ~1 minuut voor de deploy.
+
+
+================================================================
+CONTROLEREN NA DEPLOY
+================================================================
+
+1. Open siviez.com en klik alle 4 pagina's af:
+   - Homepage: hero-foto laadt?
+   - /hike: alle foto's + gallery laden?
+   - /ski: winter hero + complex foto laden?
+   - /appartement: hero + galerij laden? (let op: de vroeger
+     kapotte foto toont nu de Rosablanche luchtfoto)
+
+2. Als een foto NIET laadt:
+   Rechtermuisklik -> afbeelding openen in nieuw tabblad ->
+   kijk welk pad 404 geeft, stuur mij dat pad.
+
+3. Sitemap check:
+   https://siviez.com/sitemap-index.xml  -> moet XML tonen
+
+
+================================================================
+VOLLEDIGE FOTO-HERNOEMING (referentie)
+================================================================
+
+hike/
+  hike-hikers.jpg          -> hikers-alpine-valley-cleuson.jpg
+  hike-stream.jpg          -> mountain-stream-wildflowers.jpg
+  view-from-cleuson.jpg    -> view-from-cleuson-dam.jpg
+  view-sion-valley.jpg     -> nendaz-valley-towards-sion.jpg
+  IMG_1797.jpg             -> alpine-valley-hiking-path.jpg
+  IMG_7647.jpg             -> forest-waterfall-stream.jpg
+
+ski/
+  siviez-winter.avif       -> siviez-village-winter-snow.avif
+  ski-montfort-view.avif   -> mont-fort-panorama-4-vallees.avif
+  rosablanche-2.jpg        -> rosablanche-c34-aerial-summer.jpg
+
+apartment/
+  app-balcony.jpg          -> rosablanche-c34-balcony-view.jpg
+  rosablanche-1.jpg        -> rosablanche-c34-from-above.jpg
+
+village/
+  IMG_1625.jpg             -> valley-forest-snow-peak.jpg
+  IMG_1791.jpg             -> cleuson-reservoir-dam-view.jpg
+  IMG_1819.jpg             -> turquoise-lake-panorama.jpg
+  IMG_1888.jpg             -> cows-alpine-lake-pasture.jpg
+  IMG_7613.jpg             -> cleuson-lake-mountain-basin.jpg
+  IMG_7645.jpg             -> mountain-chapel-siviez.jpg
+  IMG_7646.jpg             -> snowy-peaks-alpine-lake.jpg
+
+hero/ (waren in root)
+  lac-de-cleuson-hero.jpg  -> cleuson-hero.jpg
+  lac-de-cleuson-med.jpg   -> cleuson-hero-medium.jpg
+  lac-de-cleuson-wide.jpg  -> cleuson-hero-wide.jpg
+
+VERWIJDERD (gebroken link):
+  IMG_7608.jpg (bestond niet) -> verwijst nu naar rosablanche-c34-aerial-summer.jpg
+
+================================================================

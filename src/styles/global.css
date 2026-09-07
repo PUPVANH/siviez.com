@@ -34,14 +34,14 @@ body {
       rgba(15, 38, 34, 0.6) 75%,
       rgba(15, 38, 34, 0.95) 100%
     ),
-    url('/lac-de-cleuson-wide.jpg') center center/cover no-repeat;
+    url('/photos/hero/cleuson-hero-wide.jpg') center center/cover no-repeat;
 }
 /* Portrait screens (mobile) get the portrait crop */
 @media (max-width: 900px) {
   .hero {
     background-image:
       linear-gradient(180deg, rgba(15, 38, 34, 0.25) 0%, rgba(15, 38, 34, 0.15) 30%, rgba(15, 38, 34, 0.6) 75%, rgba(15, 38, 34, 0.95) 100%),
-      url('/lac-de-cleuson-hero.jpg');
+      url('/photos/hero/cleuson-hero.jpg');
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ body {
   .hero {
     background-image:
       linear-gradient(180deg, rgba(15, 38, 34, 0.25) 0%, rgba(15, 38, 34, 0.15) 30%, rgba(15, 38, 34, 0.6) 75%, rgba(15, 38, 34, 0.95) 100%),
-      url('/lac-de-cleuson-med.jpg');
+      url('/photos/hero/cleuson-hero-medium.jpg');
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
