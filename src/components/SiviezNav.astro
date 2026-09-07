@@ -17,7 +17,7 @@ const isStay = pathname.startsWith('/appartement');
     <ul class="nav-links">
       <li><a href="/hike" class={isHike ? 'active' : ''}>Hike</a></li>
       <li><a href="/ski" class={isSki ? 'active' : ''}>Ski</a></li>
-      <li><a href="/" class={isHomepage ? 'active' : ''}>Discover</a></li>
+      <li><a href="/discover/village" class={pathname.startsWith('/discover') ? 'active' : ''}>Discover</a></li>
       <li><a href="/appartement" class={isStay ? 'active' : ''}>Stay</a></li>
     </ul>
 

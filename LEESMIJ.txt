@@ -1,22 +1,129 @@
 ================================================================
-siviez.com — korte notitie (NL)
+siviez.com — NIEUWE PAGINA: The village (Discover)
+September 2026
 ================================================================
 
-De volledige, up-to-date documentatie staat nu in README.md
-(in het Engels — internationale standaard voor code-projecten).
+De eerste echte content-pagina! "The village" — een rijke gids
+over Siviez met het dorp, Lac de Cleuson, de kapel, de Printse,
+waar te eten (Chez Caroline + Les Bergers), en hoe je er komt.
+Volledig NL/EN/FR.
 
-Snelstart:
-  npm install      -> pakketten installeren (eerste keer)
-  npm run dev      -> lokaal draaien op http://localhost:4321
-  npm run build    -> productie-build
+Deze update is ADDITIEF: 1 nieuw bestand + 2 kleine wijzigingen.
+Je hoeft NIET de hele map te vervangen deze keer.
 
-Deployen:
-  Elke push naar 'main' zet automatisch live op Vercel (~30-60s).
 
-Foto's toevoegen:
-  1. Plaats de foto in public/photos/<thema>/  (hike/ski/apartment/village)
-  2. Geef een beschrijvende naam: thema-onderwerp-detail.jpg
-  3. Verwijs ernaar met een duidelijke alt-tekst
+================================================================
+INHOUD VAN DEZE ZIP
+================================================================
 
-Zie README.md voor alle details over de structuur.
+siviez-com/src/
+  pages/
+    discover/
+      village.astro        <- NIEUW (de hele pagina)
+    index.astro            <- gewijzigd (Discover-kaart wijst nu
+                              naar /discover/village)
+  components/
+    SiviezNav.astro        <- gewijzigd (nav "Discover" wijst nu
+                              naar /discover/village)
+
+
+================================================================
+WAAR PLAATSEN
+================================================================
+
+BELANGRIJK: er is een NIEUWE submap "discover" nodig.
+
+1. village.astro
+   -> Documenten\PUPVANH\siviez.com\src\pages\discover\village.astro
+
+   De map "discover" bestaat nog niet in src\pages\.
+   Maak die aan:
+   a) Ga naar Documenten\PUPVANH\siviez.com\src\pages\
+   b) Maak een nieuwe map: discover
+   c) Kopieer village.astro daarin
+
+2. index.astro
+   -> Documenten\PUPVANH\siviez.com\src\pages\index.astro
+      (overschrijf bestaande)
+
+3. SiviezNav.astro
+   -> Documenten\PUPVANH\siviez.com\src\components\SiviezNav.astro
+      (overschrijf bestaande)
+
+
+================================================================
+STAPPENPLAN
+================================================================
+
+1. Pak zip uit
+2. Maak de map src\pages\discover\ aan
+3. Plaats de 3 bestanden zoals hierboven
+4. GitHub Desktop -> je zou moeten zien:
+   Nieuw:      src/pages/discover/village.astro
+   Gewijzigd:  src/pages/index.astro
+   Gewijzigd:  src/components/SiviezNav.astro
+5. Summary: "Add The village page (Discover) with eat & drink"
+6. Commit to main -> Push origin
+7. Wacht ~1 min
+
+
+================================================================
+TESTEN NA DEPLOY
+================================================================
+
+Nieuwe pagina:
+   https://siviez.com/discover/village
+
+Check:
+   - Hero met Cleuson-panorama + "The village"
+   - Secties: intro, Lac de Cleuson, kapel, Printse
+   - Eat & drink: 2 blokjes (Chez Caroline + Les Bergers)
+   - Getting there + CTA naar appartement
+   - Taalknoppen NL/EN/FR wisselen alles
+   - Alle foto's laden
+
+Navigatie:
+   - Klik "Discover" in de nav -> gaat naar /discover/village
+   - Op homepage: klik de Discover-kaart -> zelfde pagina
+
+
+================================================================
+WAT ER OP DE HOMEPAGE VERANDERT
+================================================================
+
+De "Discover" kaart op de homepage wees vroeger naar een
+sectie op de homepage zelf (#discover). Nu wijst hij naar de
+echte nieuwe pagina /discover/village.
+
+De oude #discover sectie op de homepage blijft voorlopig staan
+(onderaan) - die kunnen we later opruimen of aanpassen. Hij
+stoort niet.
+
+
+================================================================
+INHOUD - WAT STAAT ER OP DE PAGINA
+================================================================
+
+The village vertelt het verhaal van Siviez met JOUW insider-tips:
+- Lac de Cleuson + dam (1947-1950, 87m, Grande Dixence)
+- Chapelle Saint-Barthélémy (oudste van Nendaz, 1447,
+  herbouwd 1951 door dam-arbeiders, kaaszegening 24 aug)
+- De Printse rivier + blotevoetenpad + koeien
+- Chez Caroline (in jullie Rosablanche-gebouw! Yeti Bar,
+  bakkerij op bestelling, pétanque, speeltuin)
+- Restaurant Les Bergers / Chez Benzine (ingang Siviez)
+- Getting there (auto/bus/seizoenen) + link naar nendaz.ch
+
+Alles in je eigen woorden, nergens gekopieerd. Nendaz-verwijzing
+staat netjes onderaan (jouw waarde eerst, link daarna).
+
+
+================================================================
+VOLGENDE STAP
+================================================================
+
+Na deze pagina: de wandeling uitbouwen (/hike verbeteren met
+de Combatseline -> Refuge Saint-Laurent -> Cleuson route en
+de juiste foto's).
+
 ================================================================

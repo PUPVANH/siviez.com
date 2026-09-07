@@ -1,0 +1,641 @@
+---
+// /discover/village — "The village": what Siviez is, the Cleuson dam & lake,
+// the Saint-Barthélémy chapel, the Printse river, and how to get there.
+// Trilingual NL/EN/FR via the shared siviez-lang switch.
+import Layout from '../../layouts/Layout.astro';
+import SiviezNav from '../../components/SiviezNav.astro';
+
+const pageTitle = 'The village of Siviez · A local guide to the 4 Vallées hamlet';
+const pageDescription = 'Discover Siviez (1730m) at the head of the Nendaz valley — the turquoise Lac de Cleuson and its dam, the historic Chapelle Saint-Barthélémy, the Printse river, and how to get there. A local guide.';
+
+// Structured data — this page is about the place itself.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Siviez",
+  "description": "Alpine hamlet at 1730m at the head of the Nendaz valley in Valais, Switzerland — gateway to the 4 Vallées ski area, home to the Lac de Cleuson and the Chapelle Saint-Barthélémy.",
+  "url": "https://siviez.com/discover/village",
+  "image": "https://siviez.com/photos/village/lac-de-cleuson-panorama.jpg",
+  "geo": { "@type": "GeoCoordinates", "latitude": 46.13471, "longitude": 7.31674 },
+  "containedInPlace": { "@type": "Place", "name": "Nendaz, Valais, Switzerland" },
+  "touristType": ["Hikers", "Skiers", "Families", "Nature lovers"]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} ogImage="https://siviez.com/photos/village/lac-de-cleuson-panorama.jpg">
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <SiviezNav />
+
+  <!-- 1 · HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker" data-i18n="v.kicker">Discover · Valais · 1730m</div>
+      <h1>The <em data-i18n="v.title.em">village</em></h1>
+      <p class="hero-tag" data-i18n="v.tag">Where the road stops and the mountains begin.</p>
+    </div>
+  </section>
+
+  <div class="page">
+
+    <!-- 2 · INTRO -->
+    <section class="intro">
+      <p class="lead" data-i18n="v.intro.lead">
+        Siviez is a small alpine hamlet at 1730 metres, at the very head of the Nendaz valley in Valais.
+        It's the last stop before the mountains take over — and the quiet back door into one of the largest
+        ski areas in the world, the 4 Vallées.
+      </p>
+      <p data-i18n="v.intro.body">
+        There's no old stone village square here. Siviez is a handful of buildings gathered around the lift
+        station, where the Printse river runs down from the Cleuson dam. In winter it's a ski hub; in summer
+        it's a trailhead. What it lacks in postcard charm it makes up for in space, silence, and a front-row
+        seat to the high Alps.
+      </p>
+    </section>
+
+    <!-- 3 · LAC DE CLEUSON & DAM -->
+    <section class="feature">
+      <div class="feature-text">
+        <div class="section-kicker" data-i18n="v.cleuson.kicker">Above the village</div>
+        <h2>Lac de <em data-i18n="v.cleuson.em">Cleuson</em></h2>
+        <p data-i18n="v.cleuson.p1">
+          A short climb above Siviez lies the Lac de Cleuson — a turquoise reservoir at 2179 metres, held back
+          by a dam wall built between 1947 and 1950. At 87 metres high and 420 metres long, it holds some
+          20 million cubic metres of water and feeds the great Grande Dixence hydroelectric scheme.
+        </p>
+        <p data-i18n="v.cleuson.p2">
+          The colour of the water changes with the season and the light — milky jade after the snowmelt,
+          deep turquoise in high summer. It's about an hour and a quarter on foot from the village, following
+          the Printse upstream.
+        </p>
+        <div class="tip">
+          <span class="tip-label" data-i18n="v.tip.label">Puppy's tip</span>
+          <p data-i18n="v.cleuson.tip">
+            Go early. The valley faces west, so the light on the water is best in the morning, and you'll have
+            the path largely to yourself before the day-trippers arrive.
+          </p>
+        </div>
+      </div>
+      <div class="feature-img">
+        <img src="/photos/village/lac-de-cleuson-dam-view.jpg" alt="Turquoise Lac de Cleuson and its dam wall above Siviez, Valais" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- 4 · CHAPEL -->
+    <section class="feature reverse">
+      <div class="feature-text">
+        <div class="section-kicker" data-i18n="v.chapel.kicker">History</div>
+        <h2>Chapelle <em data-i18n="v.chapel.em">Saint-Barthélémy</em></h2>
+        <p data-i18n="v.chapel.p1">
+          Just behind the dam stands a small white chapel — the oldest in all of Nendaz. A document from 1447,
+          signed by the Bishop of Sion, already mentions it, which means the building is older still.
+        </p>
+        <p data-i18n="v.chapel.p2">
+          The original wooden chapel stood lower down, in the Cleuson valley itself. When the dam was built,
+          it would have been lost — so in 1951 the dam workers built a new stone chapel on the present site,
+          looking out over the valley towards the Bernese Alps.
+        </p>
+        <div class="tip">
+          <span class="tip-label" data-i18n="v.tip.label">Puppy's tip</span>
+          <p data-i18n="v.chapel.tip">
+            Every year on 24 August, the cheeses from the surrounding mountain pastures are blessed here during
+            a service — a genuine local tradition that almost no visitor ever sees.
+          </p>
+        </div>
+      </div>
+      <div class="feature-img">
+        <img src="/photos/village/chapelle-saint-barthelemy-nendaz.jpg" alt="The white Chapelle Saint-Barthélémy, oldest chapel in Nendaz, near the Cleuson dam" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- 5 · THE PRINTSE -->
+    <section class="feature">
+      <div class="feature-text">
+        <div class="section-kicker" data-i18n="v.printse.kicker">Through the valley</div>
+        <h2>The <em data-i18n="v.printse.em">Printse</em></h2>
+        <p data-i18n="v.printse.p1">
+          The river that runs through Siviez is the Printse. It gathers the meltwater of the high peaks,
+          fills the Lac de Cleuson, and then tumbles down the valley that carries its name — the Vallée de la Printze.
+        </p>
+        <p data-i18n="v.printse.p2">
+          Along its banks near the village you'll find a barefoot path — a 2.4-kilometre loop over grass, stones
+          and cool water, made for lazy summer mornings — and a family picnic area with a barbecue.
+        </p>
+        <div class="tip">
+          <span class="tip-label" data-i18n="v.tip.label">Puppy's tip</span>
+          <p data-i18n="v.printse.tip">
+            In high summer the cows graze freely on the slopes beside the water. Bring a picnic, dip your feet,
+            and let the afternoon go by to the sound of cowbells.
+          </p>
+        </div>
+      </div>
+      <div class="feature-img">
+        <img src="/photos/village/cows-lac-de-cleuson-pasture.jpg" alt="Cows grazing freely on the alpine pasture beside Lac de Cleuson in summer" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- 6 · EAT & DRINK -->
+    <section class="eat">
+      <div class="section-kicker" data-i18n="v.eat.kicker">Eat & drink</div>
+      <h2 data-i18n="v.eat.title">Where to eat in Siviez</h2>
+      <p class="eat-lead" data-i18n="v.eat.lead">
+        Two places, both a short walk apart. One is in the very building of our apartment; the other guards
+        the entrance to the village.
+      </p>
+
+      <div class="eat-grid">
+
+        <article class="eat-card">
+          <div class="eat-badge" data-i18n="v.eat.caroline.badge">In our building</div>
+          <h3 data-i18n="v.eat.caroline.name">Chez Caroline</h3>
+          <p class="eat-where" data-i18n="v.eat.caroline.where">Rosablanche building · at the foot of the slopes</p>
+          <p data-i18n="v.eat.caroline.body">
+            Right in the Rosablanche building — the same block as our apartment. A sunny terrace over the valley
+            and the Lac de Cleuson, a seasonal menu of burgers, salads, soups and grilled meats, and breakfast
+            to start the day. In winter, the Yeti Bar keeps things going after the last run.
+          </p>
+          <p class="eat-insider" data-i18n="v.eat.caroline.insider">
+            It also works as the village bakery: order your bread and croissants the evening before and pick
+            them up fresh in the morning — a lift ride from bed.
+          </p>
+          <div class="pills">
+            <span class="pill" data-i18n="v.eat.caroline.p1">Terrace</span>
+            <span class="pill" data-i18n="v.eat.caroline.p2">Yeti Bar (winter)</span>
+            <span class="pill" data-i18n="v.eat.caroline.p3">Bakery on order</span>
+            <span class="pill" data-i18n="v.eat.caroline.p4">Pétanque</span>
+            <span class="pill" data-i18n="v.eat.caroline.p5">Playground</span>
+            <span class="pill" data-i18n="v.eat.caroline.p6">Family-friendly</span>
+          </div>
+          <a href="https://www.chezcaroline.ch/" target="_blank" rel="noopener" class="eat-link" data-track="village_chezcaroline" data-i18n="v.eat.caroline.link">chezcaroline.ch ↗</a>
+        </article>
+
+        <article class="eat-card">
+          <div class="eat-badge" data-i18n="v.eat.bergers.badge">Entrance of Siviez</div>
+          <h3 data-i18n="v.eat.bergers.name">Restaurant Les Bergers</h3>
+          <p class="eat-where" data-i18n="v.eat.bergers.where">At the entrance to the village</p>
+          <p data-i18n="v.eat.bergers.body">
+            An alpine-atmosphere restaurant at the entrance to Siviez, serving the real thing: open-hearth grills,
+            cheese dishes and other Valais specialities, with local products at the heart of it all. In both
+            summer and winter you can eat out on the sun-drenched terrace.
+          </p>
+          <p class="eat-insider" data-i18n="v.eat.bergers.insider">
+            Also known locally as "Chez Benzine" — a proper mountain grill where the fire does the work.
+          </p>
+          <div class="pills">
+            <span class="pill" data-i18n="v.eat.bergers.p1">Open-hearth grill</span>
+            <span class="pill" data-i18n="v.eat.bergers.p2">Valais dishes</span>
+            <span class="pill" data-i18n="v.eat.bergers.p3">Terrace</span>
+            <span class="pill" data-i18n="v.eat.bergers.p4">Free parking</span>
+            <span class="pill" data-i18n="v.eat.bergers.p5">Family-friendly</span>
+          </div>
+          <a href="https://www.restaurant-les-bergers.ch/" target="_blank" rel="noopener" class="eat-link" data-track="village_lesbergers" data-i18n="v.eat.bergers.link">restaurant-les-bergers.ch ↗</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 7 · GETTING THERE -->
+    <section class="practical">
+      <div class="section-kicker" data-i18n="v.getting.kicker">Getting there</div>
+      <h2 data-i18n="v.getting.title">How to reach Siviez</h2>
+      <div class="practical-grid">
+        <div class="practical-card">
+          <h3 data-i18n="v.getting.car.title">By car</h3>
+          <p data-i18n="v.getting.car.body">
+            About 40 minutes up from Sion, along winding mountain roads through Haute-Nendaz to the very end
+            of the valley. Large parking is available in the village.
+          </p>
+        </div>
+        <div class="practical-card">
+          <h3 data-i18n="v.getting.transport.title">By public transport</h3>
+          <p data-i18n="v.getting.transport.body">
+            Train to Sion, then the postbus up to Haute-Nendaz, and on to Siviez. A scenic way to arrive,
+            with no mountain driving.
+          </p>
+        </div>
+        <div class="practical-card">
+          <h3 data-i18n="v.getting.when.title">When to come</h3>
+          <p data-i18n="v.getting.when.body">
+            Winter for the 4 Vallées ski area on the doorstep; summer for hiking, the bisses and the lakes.
+            Late spring and autumn are quiet and beautiful, with fewer people about.
+          </p>
+        </div>
+      </div>
+      <p class="practical-note" data-i18n="v.getting.note">
+        For current road conditions, bus timetables and lift opening dates, the tourist office of Nendaz keeps
+        everything up to date at <a href="https://www.nendaz.ch/en" target="_blank" rel="noopener">nendaz.ch</a>.
+      </p>
+    </section>
+
+    <!-- 7 · CTA / LINKS -->
+    <section class="cta">
+      <h2 data-i18n="v.cta.title">Make it your base</h2>
+      <p data-i18n="v.cta.body">
+        Everything on this page is a few minutes from our own apartment, Rosablanche C34 —
+        ski-in/ski-out in winter, a trailhead in summer.
+      </p>
+      <div class="cta-buttons">
+        <a href="/appartement" class="btn btn-primary" data-track="village_to_apartment" data-i18n="v.cta.stay">See the apartment →</a>
+        <a href="/hike" class="btn btn-ghost" data-i18n="v.cta.hike">Summer trails</a>
+        <a href="/ski" class="btn btn-ghost" data-i18n="v.cta.ski">Winter & ski</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 · Hosted by Luc</span>
+      <span class="dot">·</span>
+      <span>Part of <a href="https://pupvanh.vercel.app" target="_blank" rel="noopener">PUPVANH Projects →</a></span>
+    </footer>
+
+  </div>
+</Layout>
+
+<style>
+  .hero {
+    position: relative; min-height: 70vh;
+    display: flex; align-items: flex-end;
+    padding: 120px 24px 60px; text-align: left;
+    color: #F4F0E8;
+    background:
+      linear-gradient(180deg, rgba(15,38,34,0.35) 0%, rgba(15,38,34,0.2) 35%, rgba(15,38,34,0.75) 100%),
+      url('/photos/village/lac-de-cleuson-panorama.jpg') center 45% / cover no-repeat;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase; color: #C8A35F; margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif; font-weight: 400;
+    font-size: clamp(56px, 10vw, 120px); line-height: 0.95; letter-spacing: -0.02em;
+    margin: 0 0 18px 0;
+  }
+  h1 em { font-style: italic; color: #C8A35F; }
+  .hero-tag {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(18px, 3vw, 26px); color: rgba(244,240,232,0.92); max-width: 620px;
+  }
+
+  .page { background: #0F2622; color: #F4F0E8; }
+  section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+
+  .section-kicker {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase; color: #C8A35F; margin-bottom: 16px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif; font-weight: 400;
+    font-size: clamp(34px, 5vw, 56px); line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 24px;
+  }
+  h2 em { font-style: italic; color: #C8A35F; }
+  p { font-size: 17px; line-height: 1.75; color: rgba(244,240,232,0.82); margin-bottom: 18px; }
+
+  /* INTRO */
+  .intro { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .intro .lead {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(20px, 3vw, 28px); line-height: 1.5; color: #C8A35F; margin-bottom: 28px;
+  }
+
+  /* FEATURE (foto + tekst) */
+  .feature {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    border-bottom: 1px solid rgba(200,163,95,0.15);
+  }
+  .feature.reverse .feature-text { order: 2; }
+  .feature.reverse .feature-img { order: 1; }
+  .feature-img {
+    height: 460px; border-radius: 8px; overflow: hidden;
+  }
+  .feature-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
+  .feature:hover .feature-img img { transform: scale(1.04); }
+  .feature-text p:last-of-type { margin-bottom: 0; }
+
+  /* TIP blok */
+  .tip {
+    background: rgba(232,93,47,0.10); border-left: 3px solid #E85D2F;
+    border-radius: 4px; padding: 16px 20px; margin-top: 24px;
+  }
+  .tip-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: #E85D2F;
+  }
+  .tip p { font-size: 15px; margin: 6px 0 0 0; color: rgba(244,240,232,0.9); }
+
+  /* EAT & DRINK */
+  .eat { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .eat-lead {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: clamp(18px, 2.5vw, 22px); color: rgba(244,240,232,0.85);
+    max-width: 640px; margin-bottom: 40px;
+  }
+  .eat-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+  }
+  .eat-card {
+    background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2);
+    border-radius: 8px; padding: 32px 30px; display: flex; flex-direction: column;
+  }
+  .eat-badge {
+    align-self: flex-start;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: #1E3A34; background: #C8A35F;
+    padding: 5px 12px; border-radius: 2px; margin-bottom: 18px;
+  }
+  .eat-card h3 {
+    font-family: 'Playfair Display', serif; font-weight: 400; font-size: 30px;
+    color: #F4F0E8; margin-bottom: 4px;
+  }
+  .eat-where {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px;
+    color: rgba(244,240,232,0.55); margin-bottom: 18px;
+  }
+  .eat-card > p { font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+  .eat-insider {
+    background: rgba(232,93,47,0.10); border-left: 3px solid #E85D2F;
+    border-radius: 4px; padding: 12px 16px; font-size: 14px !important;
+    color: rgba(244,240,232,0.9) !important;
+  }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 20px; }
+  .pill {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.5px;
+    color: #C8A35F; background: rgba(200,163,95,0.12);
+    border: 1px solid rgba(200,163,95,0.25);
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .eat-link {
+    margin-top: auto; align-self: flex-start;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px;
+    color: #C8A35F; text-decoration: none; padding-top: 8px;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s ease;
+  }
+  .eat-link:hover { border-bottom-color: #C8A35F; }
+
+  /* PRACTICAL */
+  .practical { border-bottom: 1px solid rgba(200,163,95,0.15); }
+  .practical-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px;
+  }
+  .practical-card {
+    background: rgba(30,58,52,0.5); border: 1px solid rgba(200,163,95,0.2);
+    border-radius: 6px; padding: 28px 24px;
+  }
+  .practical-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 22px; color: #F4F0E8; margin-bottom: 10px;
+  }
+  .practical-card p { font-size: 14px; margin: 0; }
+  .practical-note { margin-top: 28px; font-size: 15px; }
+  .practical-note a { color: #C8A35F; }
+
+  /* CTA */
+  .cta { text-align: center; }
+  .cta p { max-width: 600px; margin: 0 auto 32px; }
+  .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 1.5px; text-transform: uppercase; padding: 15px 28px;
+    border-radius: 999px; text-decoration: none; transition: all 0.25s ease;
+  }
+  .btn-primary { background: #E85D2F; color: #F4F0E8; }
+  .btn-primary:hover { background: #C8A35F; color: #1E3A34; transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid rgba(244,240,232,0.3); color: #F4F0E8; }
+  .btn-ghost:hover { border-color: #C8A35F; color: #C8A35F; }
+
+  footer {
+    max-width: 100%; text-align: center; padding: 40px 24px;
+    border-top: 1px solid rgba(200,163,95,0.1);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(244,240,232,0.5);
+  }
+  footer .dot { color: #E85D2F; margin: 0 8px; }
+  footer a { color: #C8A35F; text-decoration: none; }
+
+  @media (max-width: 820px) {
+    .feature { grid-template-columns: 1fr; gap: 32px; }
+    .feature.reverse .feature-text { order: 2; }
+    .feature.reverse .feature-img { order: 1; }
+    .feature-img { height: 300px; }
+    .practical-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 20px; }
+    .hero { min-height: 60vh; }
+  }
+</style>
+
+<script is:inline>
+  // Analytics event tracking
+  document.querySelectorAll('[data-track]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var name = this.getAttribute('data-track');
+      if (window.va && typeof window.va === 'function') window.va('event', { name: name });
+    });
+  });
+
+  // i18n dictionaries
+  const translations = {
+    en: {
+      "v.kicker": "Discover · Valais · 1730m",
+      "v.title.em": "village",
+      "v.tag": "Where the road stops and the mountains begin.",
+      "v.intro.lead": "Siviez is a small alpine hamlet at 1730 metres, at the very head of the Nendaz valley in Valais. It's the last stop before the mountains take over — and the quiet back door into one of the largest ski areas in the world, the 4 Vallées.",
+      "v.intro.body": "There's no old stone village square here. Siviez is a handful of buildings gathered around the lift station, where the Printse river runs down from the Cleuson dam. In winter it's a ski hub; in summer it's a trailhead. What it lacks in postcard charm it makes up for in space, silence, and a front-row seat to the high Alps.",
+      "v.cleuson.kicker": "Above the village",
+      "v.cleuson.em": "Cleuson",
+      "v.cleuson.p1": "A short climb above Siviez lies the Lac de Cleuson — a turquoise reservoir at 2179 metres, held back by a dam wall built between 1947 and 1950. At 87 metres high and 420 metres long, it holds some 20 million cubic metres of water and feeds the great Grande Dixence hydroelectric scheme.",
+      "v.cleuson.p2": "The colour of the water changes with the season and the light — milky jade after the snowmelt, deep turquoise in high summer. It's about an hour and a quarter on foot from the village, following the Printse upstream.",
+      "v.tip.label": "Puppy's tip",
+      "v.cleuson.tip": "Go early. The valley faces west, so the light on the water is best in the morning, and you'll have the path largely to yourself before the day-trippers arrive.",
+      "v.chapel.kicker": "History",
+      "v.chapel.em": "Saint-Barthélémy",
+      "v.chapel.p1": "Just behind the dam stands a small white chapel — the oldest in all of Nendaz. A document from 1447, signed by the Bishop of Sion, already mentions it, which means the building is older still.",
+      "v.chapel.p2": "The original wooden chapel stood lower down, in the Cleuson valley itself. When the dam was built, it would have been lost — so in 1951 the dam workers built a new stone chapel on the present site, looking out over the valley towards the Bernese Alps.",
+      "v.chapel.tip": "Every year on 24 August, the cheeses from the surrounding mountain pastures are blessed here during a service — a genuine local tradition that almost no visitor ever sees.",
+      "v.printse.kicker": "Through the valley",
+      "v.printse.em": "Printse",
+      "v.printse.p1": "The river that runs through Siviez is the Printse. It gathers the meltwater of the high peaks, fills the Lac de Cleuson, and then tumbles down the valley that carries its name — the Vallée de la Printze.",
+      "v.printse.p2": "Along its banks near the village you'll find a barefoot path — a 2.4-kilometre loop over grass, stones and cool water, made for lazy summer mornings — and a family picnic area with a barbecue.",
+      "v.printse.tip": "In high summer the cows graze freely on the slopes beside the water. Bring a picnic, dip your feet, and let the afternoon go by to the sound of cowbells.",
+      "v.getting.kicker": "Getting there",
+      "v.eat.kicker": "Eat & drink",
+      "v.eat.title": "Where to eat in Siviez",
+      "v.eat.lead": "Two places, both a short walk apart. One is in the very building of our apartment; the other guards the entrance to the village.",
+      "v.eat.caroline.badge": "In our building",
+      "v.eat.caroline.name": "Chez Caroline",
+      "v.eat.caroline.where": "Rosablanche building · at the foot of the slopes",
+      "v.eat.caroline.body": "Right in the Rosablanche building — the same block as our apartment. A sunny terrace over the valley and the Lac de Cleuson, a seasonal menu of burgers, salads, soups and grilled meats, and breakfast to start the day. In winter, the Yeti Bar keeps things going after the last run.",
+      "v.eat.caroline.insider": "It also works as the village bakery: order your bread and croissants the evening before and pick them up fresh in the morning — a lift ride from bed.",
+      "v.eat.caroline.p1": "Terrace",
+      "v.eat.caroline.p2": "Yeti Bar (winter)",
+      "v.eat.caroline.p3": "Bakery on order",
+      "v.eat.caroline.p4": "Pétanque",
+      "v.eat.caroline.p5": "Playground",
+      "v.eat.caroline.p6": "Family-friendly",
+      "v.eat.caroline.link": "chezcaroline.ch ↗",
+      "v.eat.bergers.badge": "Entrance of Siviez",
+      "v.eat.bergers.name": "Restaurant Les Bergers",
+      "v.eat.bergers.where": "At the entrance to the village",
+      "v.eat.bergers.body": "An alpine-atmosphere restaurant at the entrance to Siviez, serving the real thing: open-hearth grills, cheese dishes and other Valais specialities, with local products at the heart of it all. In both summer and winter you can eat out on the sun-drenched terrace.",
+      "v.eat.bergers.insider": "Also known locally as \"Chez Benzine\" — a proper mountain grill where the fire does the work.",
+      "v.eat.bergers.p1": "Open-hearth grill",
+      "v.eat.bergers.p2": "Valais dishes",
+      "v.eat.bergers.p3": "Terrace",
+      "v.eat.bergers.p4": "Free parking",
+      "v.eat.bergers.p5": "Family-friendly",
+      "v.eat.bergers.link": "restaurant-les-bergers.ch ↗",
+      "v.getting.title": "How to reach Siviez",
+      "v.getting.car.title": "By car",
+      "v.getting.car.body": "About 40 minutes up from Sion, along winding mountain roads through Haute-Nendaz to the very end of the valley. Large parking is available in the village.",
+      "v.getting.transport.title": "By public transport",
+      "v.getting.transport.body": "Train to Sion, then the postbus up to Haute-Nendaz, and on to Siviez. A scenic way to arrive, with no mountain driving.",
+      "v.getting.when.title": "When to come",
+      "v.getting.when.body": "Winter for the 4 Vallées ski area on the doorstep; summer for hiking, the bisses and the lakes. Late spring and autumn are quiet and beautiful, with fewer people about.",
+      "v.getting.note": "For current road conditions, bus timetables and lift opening dates, the tourist office of Nendaz keeps everything up to date at nendaz.ch.",
+      "v.cta.title": "Make it your base",
+      "v.cta.body": "Everything on this page is a few minutes from our own apartment, Rosablanche C34 — ski-in/ski-out in winter, a trailhead in summer.",
+      "v.cta.stay": "See the apartment →",
+      "v.cta.hike": "Summer trails",
+      "v.cta.ski": "Winter & ski"
+    },
+    nl: {
+      "v.kicker": "Ontdek · Valais · 1730m",
+      "v.title.em": "dorp",
+      "v.tag": "Waar de weg stopt en de bergen beginnen.",
+      "v.intro.lead": "Siviez is een klein alpendorp op 1730 meter, helemaal bovenaan de Nendaz-vallei in Valais. Het is de laatste halte voor de bergen het overnemen — en de stille achterdeur naar een van de grootste skigebieden ter wereld, de 4 Vallées.",
+      "v.intro.body": "Hier is geen oud dorpsplein met stenen huizen. Siviez is een handvol gebouwen rond het liftstation, waar de Printse van de Cleuson-dam naar beneden stroomt. In de winter een ski-hub, in de zomer een vertrekpunt voor wandelingen. Wat het mist aan ansichtkaart-charme maakt het goed met ruimte, stilte en een eerste rij zicht op de hoge Alpen.",
+      "v.cleuson.kicker": "Boven het dorp",
+      "v.cleuson.em": "Cleuson",
+      "v.cleuson.p1": "Een korte klim boven Siviez ligt het Lac de Cleuson — een turquoise stuwmeer op 2179 meter, tegengehouden door een dammuur gebouwd tussen 1947 en 1950. Met 87 meter hoog en 420 meter lang houdt hij zo'n 20 miljoen kubieke meter water vast, en voedt hij het grote Grande Dixence waterkrachtsysteem.",
+      "v.cleuson.p2": "De kleur van het water verandert met het seizoen en het licht — melkachtig jade na de sneeuwsmelt, diep turquoise in de hoogzomer. Het is ongeveer een uur en een kwartier te voet vanaf het dorp, stroomopwaarts langs de Printse.",
+      "v.tip.label": "Tip van Puppy",
+      "v.cleuson.tip": "Ga vroeg. De vallei ligt op het westen, dus het licht op het water is het mooist in de ochtend, en je hebt het pad grotendeels voor jezelf voordat de dagjesmensen arriveren.",
+      "v.chapel.kicker": "Geschiedenis",
+      "v.chapel.em": "Saint-Barthélémy",
+      "v.chapel.p1": "Net achter de dam staat een klein wit kapelletje — het oudste van heel Nendaz. Een document uit 1447, ondertekend door de bisschop van Sion, vermeldt het al, wat betekent dat het gebouw nog ouder is.",
+      "v.chapel.p2": "De oorspronkelijke houten kapel stond lager, in de Cleuson-vallei zelf. Bij de bouw van de dam zou ze verloren zijn gegaan — dus in 1951 bouwden de dam-arbeiders een nieuwe stenen kapel op de huidige plek, met uitzicht over de vallei richting de Berner Alpen.",
+      "v.chapel.tip": "Elk jaar op 24 augustus worden de kazen van de omliggende bergweiden hier gezegend tijdens een dienst — een echte lokale traditie die bijna geen enkele bezoeker ooit ziet.",
+      "v.printse.kicker": "Door de vallei",
+      "v.printse.em": "Printse",
+      "v.printse.p1": "De rivier die door Siviez loopt is de Printse. Ze verzamelt het smeltwater van de hoge toppen, vult het Lac de Cleuson, en stort dan naar beneden door de vallei die haar naam draagt — de Vallée de la Printze.",
+      "v.printse.p2": "Langs de oevers bij het dorp vind je een blotevoetenpad — een lus van 2,4 kilometer over gras, stenen en koel water, gemaakt voor luie zomerochtenden — en een picknickplek voor gezinnen met barbecue.",
+      "v.printse.tip": "In de hoogzomer grazen de koeien vrij op de hellingen naast het water. Neem een picknick mee, doop je voeten, en laat de middag voorbijgaan op het geluid van koebellen.",
+      "v.getting.kicker": "Er komen",
+      "v.eat.kicker": "Eten & drinken",
+      "v.eat.title": "Waar eten in Siviez",
+      "v.eat.lead": "Twee plekken, allebei op wandelafstand. Eén zit in het gebouw van ons appartement zelf; de andere bewaakt de ingang van het dorp.",
+      "v.eat.caroline.badge": "In ons gebouw",
+      "v.eat.caroline.name": "Chez Caroline",
+      "v.eat.caroline.where": "Rosablanche-gebouw · aan de voet van de pistes",
+      "v.eat.caroline.body": "Middenin het Rosablanche-gebouw — hetzelfde blok als ons appartement. Een zonnig terras met zicht op de vallei en het Lac de Cleuson, een seizoensmenu met burgers, salades, soepen en gegrild vlees, en ontbijt om de dag te beginnen. In de winter houdt de Yeti Bar het gaande na de laatste afdaling.",
+      "v.eat.caroline.insider": "Het werkt ook als dorpsbakkerij: bestel je brood en croissants de avond ervoor en haal ze 's morgens vers op — op een liftrit van je bed.",
+      "v.eat.caroline.p1": "Terras",
+      "v.eat.caroline.p2": "Yeti Bar (winter)",
+      "v.eat.caroline.p3": "Bakkerij op bestelling",
+      "v.eat.caroline.p4": "Pétanque",
+      "v.eat.caroline.p5": "Speeltuin",
+      "v.eat.caroline.p6": "Familievriendelijk",
+      "v.eat.caroline.link": "chezcaroline.ch ↗",
+      "v.eat.bergers.badge": "Ingang Siviez",
+      "v.eat.bergers.name": "Restaurant Les Bergers",
+      "v.eat.bergers.where": "Aan de ingang van het dorp",
+      "v.eat.bergers.body": "Een restaurant met alpensfeer aan de ingang van Siviez, dat het echte werk serveert: grills op open haard, kaasgerechten en andere Valais-specialiteiten, met lokale producten als kern. In zomer én winter kan je buiten eten op het zonovergoten terras.",
+      "v.eat.bergers.insider": "Lokaal ook bekend als \"Chez Benzine\" — een echte berggrill waar het vuur het werk doet.",
+      "v.eat.bergers.p1": "Grill op open haard",
+      "v.eat.bergers.p2": "Valais-gerechten",
+      "v.eat.bergers.p3": "Terras",
+      "v.eat.bergers.p4": "Gratis parking",
+      "v.eat.bergers.p5": "Familievriendelijk",
+      "v.eat.bergers.link": "restaurant-les-bergers.ch ↗",
+      "v.getting.title": "Hoe bereik je Siviez",
+      "v.getting.car.title": "Met de auto",
+      "v.getting.car.body": "Ongeveer 40 minuten omhoog vanaf Sion, over kronkelende bergwegen via Haute-Nendaz tot helemaal achteraan de vallei. Er is ruime parking in het dorp.",
+      "v.getting.transport.title": "Met openbaar vervoer",
+      "v.getting.transport.body": "Trein naar Sion, dan de postbus omhoog naar Haute-Nendaz, en verder naar Siviez. Een schilderachtige manier om aan te komen, zonder bergrijden.",
+      "v.getting.when.title": "Wanneer komen",
+      "v.getting.when.body": "Winter voor het 4 Vallées skigebied voor de deur; zomer voor wandelen, de bisses en de meren. Late lente en herfst zijn rustig en prachtig, met minder volk.",
+      "v.getting.note": "Voor actuele wegomstandigheden, busuren en lift-openingsdata houdt het toeristenbureau van Nendaz alles up-to-date op nendaz.ch.",
+      "v.cta.title": "Maak er je uitvalsbasis van",
+      "v.cta.body": "Alles op deze pagina ligt op een paar minuten van ons eigen appartement, Rosablanche C34 — ski-in/ski-out in de winter, vertrekpunt voor wandelingen in de zomer.",
+      "v.cta.stay": "Bekijk het appartement →",
+      "v.cta.hike": "Zomerwandelingen",
+      "v.cta.ski": "Winter & ski"
+    },
+    fr: {
+      "v.kicker": "Découvrir · Valais · 1730m",
+      "v.title.em": "village",
+      "v.tag": "Là où la route s'arrête et où les montagnes commencent.",
+      "v.intro.lead": "Siviez est un petit hameau alpin à 1730 mètres, tout au fond de la vallée de Nendaz en Valais. C'est le dernier arrêt avant que les montagnes ne prennent le relais — et la porte discrète vers l'un des plus grands domaines skiables du monde, les 4 Vallées.",
+      "v.intro.body": "Il n'y a pas de vieille place de village en pierre ici. Siviez, c'est une poignée de bâtiments rassemblés autour de la station des remontées, là où la Printse descend du barrage de Cleuson. En hiver, un carrefour du ski ; en été, un point de départ de randonnées. Ce qui lui manque en charme de carte postale, il le compense en espace, en silence et en vue imprenable sur les hautes Alpes.",
+      "v.cleuson.kicker": "Au-dessus du village",
+      "v.cleuson.em": "Cleuson",
+      "v.cleuson.p1": "Une courte montée au-dessus de Siviez se trouve le Lac de Cleuson — un réservoir turquoise à 2179 mètres, retenu par un barrage construit entre 1947 et 1950. Haut de 87 mètres et long de 420 mètres, il contient quelque 20 millions de mètres cubes d'eau et alimente le grand aménagement hydroélectrique de la Grande Dixence.",
+      "v.cleuson.p2": "La couleur de l'eau change avec la saison et la lumière — jade laiteux après la fonte des neiges, turquoise profond en plein été. Il est à environ une heure et quart à pied du village, en remontant la Printse.",
+      "v.tip.label": "Le conseil de Puppy",
+      "v.cleuson.tip": "Partez tôt. La vallée est orientée à l'ouest, donc la lumière sur l'eau est la plus belle le matin, et vous aurez le sentier presque pour vous avant l'arrivée des excursionnistes.",
+      "v.chapel.kicker": "Histoire",
+      "v.chapel.em": "Saint-Barthélémy",
+      "v.chapel.p1": "Juste derrière le barrage se dresse une petite chapelle blanche — la plus ancienne de tout Nendaz. Un document de 1447, signé par l'évêque de Sion, la mentionne déjà, ce qui signifie que le bâtiment est encore plus ancien.",
+      "v.chapel.p2": "La chapelle en bois d'origine se trouvait plus bas, dans la vallée de Cleuson elle-même. Avec la construction du barrage, elle aurait été perdue — alors en 1951, les ouvriers du barrage ont construit une nouvelle chapelle en pierre sur le site actuel, avec vue sur la vallée en direction des Alpes bernoises.",
+      "v.chapel.tip": "Chaque année, le 24 août, les fromages des alpages environnants sont bénis ici lors d'un office — une véritable tradition locale que presque aucun visiteur ne voit jamais.",
+      "v.printse.kicker": "À travers la vallée",
+      "v.printse.em": "Printse",
+      "v.printse.p1": "La rivière qui traverse Siviez est la Printse. Elle recueille l'eau de fonte des hauts sommets, remplit le Lac de Cleuson, puis dévale la vallée qui porte son nom — la Vallée de la Printze.",
+      "v.printse.p2": "Le long de ses rives près du village, vous trouverez un sentier pieds nus — une boucle de 2,4 kilomètres sur l'herbe, les pierres et l'eau fraîche, faite pour les matinées d'été paresseuses — et une aire de pique-nique familiale avec barbecue.",
+      "v.printse.tip": "En plein été, les vaches paissent librement sur les pentes au bord de l'eau. Apportez un pique-nique, trempez vos pieds, et laissez l'après-midi s'écouler au son des cloches.",
+      "v.getting.kicker": "Y accéder",
+      "v.eat.kicker": "Manger & boire",
+      "v.eat.title": "Où manger à Siviez",
+      "v.eat.lead": "Deux adresses, à quelques pas l'une de l'autre. L'une se trouve dans le bâtiment même de notre appartement ; l'autre garde l'entrée du village.",
+      "v.eat.caroline.badge": "Dans notre bâtiment",
+      "v.eat.caroline.name": "Chez Caroline",
+      "v.eat.caroline.where": "Bâtiment Rosablanche · au pied des pistes",
+      "v.eat.caroline.body": "En plein dans le bâtiment Rosablanche — le même bloc que notre appartement. Une terrasse ensoleillée sur la vallée et le Lac de Cleuson, une carte de saison avec burgers, salades, soupes et grillades, et le petit-déjeuner pour bien commencer la journée. En hiver, le Yeti Bar prend le relais après la dernière descente.",
+      "v.eat.caroline.insider": "Il fait aussi office de boulangerie du village : commandez votre pain et vos croissants la veille au soir et récupérez-les frais le matin — à un trajet de télésiège du lit.",
+      "v.eat.caroline.p1": "Terrasse",
+      "v.eat.caroline.p2": "Yeti Bar (hiver)",
+      "v.eat.caroline.p3": "Boulangerie sur commande",
+      "v.eat.caroline.p4": "Pétanque",
+      "v.eat.caroline.p5": "Place de jeux",
+      "v.eat.caroline.p6": "Familial",
+      "v.eat.caroline.link": "chezcaroline.ch ↗",
+      "v.eat.bergers.badge": "Entrée de Siviez",
+      "v.eat.bergers.name": "Restaurant Les Bergers",
+      "v.eat.bergers.where": "À l'entrée du village",
+      "v.eat.bergers.body": "Un restaurant à l'ambiance alpine à l'entrée de Siviez, qui sert l'authentique : grillades au feu de bois, plats au fromage et autres spécialités valaisannes, avec les produits locaux au cœur de tout. En été comme en hiver, on mange dehors sur la terrasse ensoleillée.",
+      "v.eat.bergers.insider": "Aussi connu localement sous le nom de « Chez Benzine » — un vrai grill de montagne où le feu fait le travail.",
+      "v.eat.bergers.p1": "Grill au feu de bois",
+      "v.eat.bergers.p2": "Plats valaisans",
+      "v.eat.bergers.p3": "Terrasse",
+      "v.eat.bergers.p4": "Parking gratuit",
+      "v.eat.bergers.p5": "Familial",
+      "v.eat.bergers.link": "restaurant-les-bergers.ch ↗",
+      "v.getting.title": "Comment rejoindre Siviez",
+      "v.getting.car.title": "En voiture",
+      "v.getting.car.body": "Environ 40 minutes de montée depuis Sion, par des routes de montagne sinueuses via Haute-Nendaz jusqu'au bout de la vallée. Un grand parking est disponible dans le village.",
+      "v.getting.transport.title": "En transports publics",
+      "v.getting.transport.body": "Train jusqu'à Sion, puis le car postal jusqu'à Haute-Nendaz, et jusqu'à Siviez. Une belle façon d'arriver, sans conduite en montagne.",
+      "v.getting.when.title": "Quand venir",
+      "v.getting.when.body": "L'hiver pour le domaine des 4 Vallées au pas de la porte ; l'été pour la randonnée, les bisses et les lacs. La fin du printemps et l'automne sont calmes et magnifiques, avec moins de monde.",
+      "v.getting.note": "Pour l'état des routes, les horaires de bus et les dates d'ouverture des remontées, l'office du tourisme de Nendaz tient tout à jour sur nendaz.ch.",
+      "v.cta.title": "Faites-en votre camp de base",
+      "v.cta.body": "Tout ce qui se trouve sur cette page est à quelques minutes de notre propre appartement, Rosablanche C34 — ski-in/ski-out en hiver, point de départ de randonnées en été.",
+      "v.cta.stay": "Voir l'appartement →",
+      "v.cta.hike": "Sentiers d'été",
+      "v.cta.ski": "Hiver & ski"
+    }
+  };
+
+  function setLang(lang) {
+    const dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    try { localStorage.setItem('siviez-lang', lang); } catch(e){}
+  }
+  window.addEventListener('siviez-lang-change', function(e) { setLang(e.detail.lang); });
+  let initial = 'en';
+  try {
+    const stored = localStorage.getItem('siviez-lang');
+    if (stored) initial = stored;
+    else if (navigator.language) { const b = navigator.language.slice(0,2); if (translations[b]) initial = b; }
+  } catch(e) {}
+  setLang(initial);
+</script>
