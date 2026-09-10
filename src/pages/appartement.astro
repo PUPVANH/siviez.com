@@ -26,9 +26,22 @@ import SiviezNav from '../components/SiviezNav.astro';
   "name": "Rosablanche C34 — Ski-in/ski-out apartment in Siviez",
   "description": "Spacious mountain apartment for up to 7 in Siviez, Valais, Switzerland. Ski-in/ski-out access to the 4 Vallées ski area (410 km of pistes).",
   "url": "https://siviez.com/appartement",
+  "identifier": {"@type": "PropertyValue","propertyID": "Airbnb","value": "10012437"},
   "image": ["https://siviez.com/photos/village/lac-de-cleuson-dam-view.jpg","https://siviez.com/photos/hike/printse-valley-towards-grand-desert.jpg","https://siviez.com/photos/apartment/rosablanche-c34-view-printse-valley.jpg"],
   "address": {"@type": "PostalAddress","addressLocality": "Siviez","addressRegion": "Valais","postalCode": "1997","addressCountry": "CH"},
   "geo": {"@type": "GeoCoordinates","latitude": 46.13471,"longitude": 7.31674},
+  "containsPlace": {
+    "@type": "Accommodation",
+    "additionalType": "EntirePlace",
+    "occupancy": {"@type": "QuantitativeValue","maxValue": 7},
+    "numberOfBedrooms": 2,
+    "numberOfBathroomsTotal": 1,
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification","name": "Ski-in/ski-out","value": true},
+      {"@type": "LocationFeatureSpecification","name": "Free parking","value": true},
+      {"@type": "LocationFeatureSpecification","name": "South-facing terrace","value": true}
+    ]
+  },
   "numberOfRooms": 1,
   "occupancy": {"@type": "QuantitativeValue","maxValue": 7},
   "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.81","reviewCount": 37,"bestRating": "5"},
